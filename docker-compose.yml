@@ -1,0 +1,25 @@
+
+services:
+  php:
+    image: trafex/php-nginx:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/var/www/html
+      - ./components:/var/www/components
+    restart: always
+    pull_policy: always
+    env_file: .env
+
+  mysql:
+    ports:
+      - "3306:3306"
+    image: mariadb:12
+    env_file: .env
+    volumes:
+      - ./mariadb:/var/lib/mysql:Z
+  phpmyadmin:
+    image: phpmyadmin:5
+    ports:
+      - "8081:80"
+    env_file: .env

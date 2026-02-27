@@ -1,0 +1,211 @@
+<?php
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php require '../components/global.php'; ?>
+    <?php seo("Project list", "lain's full project list"); ?>
+    <style>
+        .project {
+            margin-bottom: 20px;
+            background: #333;
+            color: #fff;
+            height: 100px;
+            background-position: center;
+            background-size: cover;
+            border: 4px solid gray;
+            border-bottom: 4px solid rgb(61, 61, 61);
+            border-right: 4px solid rgb(61, 61, 61);
+            margin: 4px;
+        }
+
+        .project h3 {
+            padding: 6px 0;
+            height: 30px;
+            font-size: medium;
+            text-shadow: 2px 2px 2px #000;
+            background: #333333aa;
+            padding-left: 10px;
+        }
+
+
+        .project p {
+            margin: 0;
+            padding-left: 20px;
+            color: #ffffff;
+            text-shadow: 2px 2px 2px #000;
+            background: #333333aa;
+            height: 70px;
+        }
+
+        .error {
+            background: rgb(94, 3, 3);
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .project a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .projectContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media screen and (max-width: 650px) {
+            .projectContainer {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <?php require '../components/header.php'; ?>
+
+    <h1>lain's projects</h1>
+    <p>This is a list of lain's projects.</p>
+    <div class="projectContainer">
+        <a href="https://akabot.xyz">
+            <div class="project" style="background-image: url(/project/akabot/akabot.png);">
+                <h3>Akabot</h3>
+                <p>A Discord bot with lots of features.</p>
+            </div>
+        </a>
+        <a href="/project/website">
+            <div class="project" style="background-image: url(/project/website/homepage.png);">
+                <h3>Website</h3>
+                <p>This very website! Add effects used on my site to yours!</p>
+            </div>
+        </a>
+        <a href="/project/collabmarkov">
+            <div class="project" style="background-image: url(/project/fedi/collabmarkov/collabmarkov.jpg);">
+                <h3>Collaborative Markov Bot</h3>
+                <p>A silly fediverse Markov bot</p>
+            </div>
+        </a>
+        <a href="/project/fedi/keysmash">
+            <div class="project" style="background-image: url(/project/fedi/keysmash/keysmash.jpg);">
+                <h3>Fedi Keysmash Bot</h3>
+                <p>Fedi keysmash detector and quoter</p>
+            </div>
+        </a>
+        <a href="/project/astolfoiscomingforyou">
+            <div class="project" style="background-image: url(/project/astolfoiscomingforyou/safe_1.png);">
+                <h3>Astolfo is coming for you</h3>
+                <p>Astolfo comes for you, with friendly and unfriendly variants.</p>
+            </div>
+        </a>
+        <a href="/project/astolfomod">
+            <div class="project" style="background-image: url(/project/astolfomod/biome.png);">
+                <h3>Astolfo Mod</h3>
+                <p>A Minecraft mod that adds many non-binary, transgender and femboy characters to the game.</p>
+            </div>
+        </a>
+        <a href="/project/sodiboost">
+            <div class="project" style="background-image: url(/project/sodiboost/sodiboost.png);">
+                <h3>Sodiboost</h3>
+                <p>A silly little mod about Sodiboo on fedi.</p>
+            </div>
+        </a>
+        <a href="/project/catgirlnonsense">
+            <div class="project" style="background-image: url(/project/catgirlnonsense/main.png);">
+                <h3>Catgirl Nonsense</h3>
+                <p>Catgirl nonsense generator.</p>
+            </div>
+        </a>
+        <a href="/project/mcfuck">
+            <div class="project" style="background-image: url(/project/mcfuck/main.png);">
+                <h3>MCFuck</h3>
+                <p>An application to mess up your Minecraft settings.</p>
+            </div>
+        </a>
+        <a href="/project/uwurandom-rs">
+            <div class="project" style="background-image: url(/project/uwurandom-rs/main.png);">
+                <h3>uwurandom-rs</h3>
+                <p>Catgirl nonsense, but in the Rust programming langauge, for maximum femininity.</p>
+            </div>
+        </a>
+        <a href="/project/birthday">
+            <div class="project" style="background-image: url(/project/birthday/main.png);">
+                <h3>Birthday</h3>
+                <p>Forces you to wish birthday to anyone in your circle so you never forget.</p>
+            </div>
+        </a>
+        <a href="/project/catlikebehaviourdetected">
+            <div class="project" style="background-image: url(/project/catlikebehaviourdetected/img1.png);">
+                <h3>Cat-Like Behaviour Detected</h3>
+                <p>A joke program that shows a cat-like behaviour detected dialog.</p>
+            </div>
+        </a>
+    </div>
+    <br />
+
+    <h2>My Summer Car Mods</h2>
+    <div class="projectContainer">
+        <a href="/project/lunyas-mini-mods">
+            <div class="project" style="background-image: url(/project/lunyas-mini-mods/lunyas-mini-mods.webp);">
+                <h3>lain's Mini Mods</h3>
+                <p>A bunch of mini mods for My Summer Car and My Winter Car</p>
+            </div>
+        </a>
+        <a href="/project/legacymsc">
+            <div class="project" style="background-image: url(/project/legacymsc/legacymsc.webp);">
+                <h3>Legacy MSC</h3>
+                <p>Brings current My Summer Car into older versions.</p>
+            </div>
+        </a>
+        <a href="/project/pridemod">
+            <div class="project" style="background-image: url(/project/pridemod/pridemod.webp);">
+                <h3>Pride Mod</h3>
+                <p>Adds pride to My Summer Car and My Winter Car</p>
+            </div>
+        </a>
+    </div>
+
+    <h2>Archived Projects</h2>
+    <p>A list of projects that are deprecated, archived or deleted. Downloads are available for certain projects.</p>
+    <div class="projectContainer">
+        <a href="/project/cutiequiz">
+            <div class="project" style="background-image: url(/project/cutiequiz/3.png);">
+                <h3>Cutie Quiz</h3>
+                <p>Cutie Quiz is a quiz app whic determines how cute you are. Archived and shut down on Oct 31st.</p>
+            </div>
+        </a>
+        <a href="/project/neko/chat" style="background-image: url(/project/neko/chat.png);">
+            <div class="project">
+                <h3>NekoChat</h3>
+                <p>embeddable chat for any nekoweb website</p>
+            </div>
+        </a>
+        <a href="/project/fedi/meow">
+            <div class="project" style="background-image: url(/project/fedi/meow/fedimeow.png);">
+                <h3>Fedi Meow</h3>
+                <p>This is a bot that meows every hour on fedi.</p>
+            </div>
+        </a>
+        <a href="/project/fedi/summarizer">
+            <div class="project" style="background-image: url(/project/fedi/summarizer/fedisummarizer.png);">
+                <h3>Fedi Summarizer</h3>
+                <p>This bot summarizes the amount of notes you post every midnight.</p>
+            </div>
+        </a>
+        <a href="/project/fedi/streaks">
+            <div class="project" style="background-image: url(/project/fedi/streaks/fedistreaks.png);">
+                <h3>Fedi Streaks</h3>
+                <p>This bot counts consecutive days of you posting on fedi.</p>
+            </div>
+        </a>
+    </div>
+
+    <?php require '../components/footer.php'; ?>
+</body>
+
+</html>

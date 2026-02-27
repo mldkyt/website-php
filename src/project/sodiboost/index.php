@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <?php require '../../../components/global.php'; ?>
+    <?php seo("Sodiboost", "A silly little mod about Sodiboo on fedi."); ?>
+</head>
+
+<body>
+    <?php require '../../../components/header.php'; ?>
+
+    <h1>The Sodiboost Minecraft Mod</h1>
+
+    <p>This mod adds a few items, mostly related to <a href="https://joinsharkey.org">Sharkey</a> and a fedizen named <a href="https://gaysex.cloud/@sodiboo">Sodiboo</a>.</p>
+
+    <h2>Items</h2>
+
+    <ul>
+        <li><strong>The Sodiboo Block</strong> - The base of this mod. Currently it doesn't naturally generate, that's planned together with animations for 1.1.0.</li>
+        <li><strong>Sodiboost item</strong> - Dropped from the Sodiboo block, can be used to craft a few items.</li>
+        <li><strong>The Sodiboost block</strong> - Not to be confused with the Sodiboo block</li>
+        <li><strong>An "Instance Moment" painting</strong> - This is the result of what happens when Sodiboo boosts all of your posts on your fedi instance. Peak 100% CPU moment.</li>
+        <li><strong>"Use Code Sodiboost50" item</strong> which is a reference to UpCloud's <code>sodiboost50</code> code.</li>
+        <li><strong>Sodiboost dimension</strong>, where all block are Sodiboo's.</li>
+        <li><strong>The Sodiboost igniter</strong></li>
+    </ul>
+
+    <h2>Recipes</h2>
+
+    <p>Here are a few recipes used to craft the items:</p>
+
+    <ul>
+        <li>
+            <p>A painting recipe to get the "Instance Moment" painting can be crafted like this</p>
+            <img src={painting.src} alt="3x3 Minecraft  crafting grid fully filled up with Sodiboo items, the result is a painting" />
+        </li>
+        <li>
+            <p>A Sodiboost Block recipe</p>
+            <img src={block.src} alt="3x3 crafting menu with only the 2x2 region the bottom right filled out with Sodiboost items. The result is 4 Sodiboo blocks" />
+        </li>
+        <li>
+            <p>Sodiboost portal igniter</p>
+            <img src={igniter.src} alt='A 3x3 recipe showing a flint and one Sodiboost item in the crafting grid. The result is a "Sodiboost Dimension Portal Igniter"' />
+        </li>
+        <li>
+            <p>Use Code Sodiboost50! item</p>
+            <img src={code.src} alt='A furnace recipe showing the player smelting a Sodiboo Item into a "Use Code Sodiboost50" item' />
+        </li>
+    </ul>
+
+    <h2>Videos</h2>
+
+    <p><a href="https://www.youtube.com/watch?v=Rk5XmItKA1w">View the YouTube video (takes you to YouTube)</a></p>
+
+    <p>
+        <a href="https://modrinth.com/mod/sodiboost">
+            <button>Download from Modrinth</button>
+        </a>
+        <a href="https://git.the-wired.club/lain/sodiboost">
+            <button>Source code</button>
+        </a>
+        <a href="https://forums.lunya.pet/viewforum.php?f=8">
+            <button>Discuss the project (Forums)</button>
+        </a>
+        <a href="/discord">
+            <button>Discuss the project (Discord)</button>
+        </a>
+    </p>
+    <?php require '../../../components/footer.php'; ?>
+
+</body>
+
+</html>

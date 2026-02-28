@@ -30,6 +30,13 @@ CREATE TABLE videos (
   url text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+CREATE TABLE buttons (
+  id int(11) NOT NULL,
+  filename varchar(50) NOT NULL,
+  alt text NOT NULL,
+  url text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
 
 ALTER TABLE anonymous_messages
   ADD PRIMARY KEY (id);
@@ -40,6 +47,8 @@ ALTER TABLE guestbook
 ALTER TABLE videos
   ADD PRIMARY KEY (id);
 
+ALTER TABLE buttons
+  ADD PRIMARY KEY (id);
 
 ALTER TABLE anonymous_messages
   MODIFY id int(11) NOT NULL AUTO_INCREMENT;
@@ -48,6 +57,9 @@ ALTER TABLE guestbook
   MODIFY id int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE videos
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT;
+  
+ALTER TABLE buttons
   MODIFY id int(11) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

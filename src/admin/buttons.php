@@ -1,17 +1,6 @@
 <?php
 $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
 
-$buttonList = [];
-
-$query = $conn->prepare("SELECT filename FROM buttons");
-$query->execute();
-$query->bind_result($filename);
-while ($query->fetch()) {
-    $buttonList[] = $filename;
-}
-$query->close();
-
-
 // Edit
 if (isset($_POST["id"]) && isset($_POST["alt"]) && isset($_POST["url"])) {
 
@@ -77,6 +66,16 @@ if (isset($_GET["delete"])) {
     $query->execute();
     $query->close();
 }
+
+$buttonList = [];
+
+$query = $conn->prepare("SELECT filename FROM buttons");
+$query->execute();
+$query->bind_result($filename);
+while ($query->fetch()) {
+    $buttonList[] = $filename;
+}
+$query->close();
 
 ?>
 

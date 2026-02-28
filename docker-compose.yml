@@ -3,7 +3,7 @@ services:
   php:
     image: trafex/php-nginx:latest
     ports:
-      - "8080:8080"
+      - "8001:8080"
     volumes:
       - ./src:/var/www/html
       - ./components:/var/www/components
@@ -22,6 +22,6 @@ services:
   phpmyadmin:
     image: phpmyadmin:5
     ports:
-      - "8081:80"
+      - "9002:80"
     pull_policy: always
     env_file: .env

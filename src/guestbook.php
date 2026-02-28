@@ -10,9 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ok = true;
 
     // Check params
-    if (!isset($_POST["username"]) || !isset($_POST["message"])) {
+    if (!isset($_POST["username"]) || !isset($_POST["message"]) || !isset($_POST["bot"])) {
         $ok = false;
         $postFail = "Missing username or message";
+    }
+
+    if ($_POST["bot"] == "automated") {
+        $ok = false;
+        $postFail = "Bot check failed";
     }
 
     // Check unpost for current IP
@@ -80,6 +85,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <textarea name="message" id="message" cols="60" rows="5"></textarea>
 
             <br />
+            <label for="bot">Please verify you are not a bot</label>
+            <br>
+            <select name="bot" id="bot">
+                <option value="automated">I'm an automated bot</option>
+                <option value="bot">I'm a bot</option>
+                <option value="critter">I'm a <i>critter</i></option>
+                <option value="human">I'm not an automated bot, not a bot and not a critter</option>
+            </select>
             <br />
 
             <button type="submit">Send</button>

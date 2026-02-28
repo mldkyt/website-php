@@ -89,8 +89,8 @@
     <?php endif; ?>
     <div>
         <div>
-            <h2>Lunya's website!</h2>
-            <p>Welcome to Lunya's website!</p>
+            <h2>lain's website!</h2>
+            <p>Welcome to lain's website!</p>
             <br />
         </div>
     </div>
@@ -101,13 +101,14 @@
             <li><a href="/projects">Projects</a></li>
             <li><a href="/social">Socials</a></li>
             <li><a href="/services">Services</a></li>
+            <li><a href="/minecraft">Minecraft</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/contact">Contact</a></li>
             <li><a href="https://ko-fi.com/c4tgirl">Donate</a></li>
         </ul>
     </nav>
     <div class="error" id="tenminutes" style="display: none;">
-        <script is:inline type="text/javascript">
+        <script type="text/javascript">
             let alertVisible = false;
 
             function hide10Minutes() {

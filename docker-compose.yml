@@ -16,10 +16,12 @@ services:
       - "3306:3306"
     image: mariadb:12
     env_file: .env
+    pull_policy: always
     volumes:
       - ./mariadb:/var/lib/mysql:Z
   phpmyadmin:
     image: phpmyadmin:5
     ports:
       - "8081:80"
+    pull_policy: always
     env_file: .env

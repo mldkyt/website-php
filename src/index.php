@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
             Ever felt like a catgirl? <a href="/project/catlikebehaviourdetected">Cat Like Behaviour Detected</a> is for you.
         </li>
         <li>
-            <a href="/project/astolfoforge"><strong>Astolfo Mod</strong></a> adds a bunch of femboys and transgirls into minecraft :3
+            <a href="/project/astolfomod"><strong>Astolfo Mod</strong></a> adds a bunch of femboys and transgirls into minecraft :3
         </li>
         <li>
             <a href="/project/catgirlnonsense"><strong>catgirls dreams mmwrmwamrwamrmwa &gt;/////////&lt; wrwageiogjaa uwu :3 *pats you*</strong></a>
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
 
     <ul>
         <?php
-        $conn = mysqli_connect("mysql", "lain", "lain", "lain");
+        $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
         $query = $conn->prepare("SELECT title, url FROM videos LIMIT 5");
         $query->execute();
         $query->bind_result($title, $url);
@@ -106,8 +106,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
 
     <h2>Buttons</h2>
 
-    <!-- todo ls /src/buttons and render buttons  -->
-    <!-- <Buttons /> -->
+    <?php require '../components/buttons.php'; ?>
 
     <p><small>If you decide to add my button, please <a href="/button">check here!</a></small></p>
 

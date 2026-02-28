@@ -17,12 +17,31 @@
     <p>Here you can join the Discord server that is owned by lain.</p>
     <p>Here you can get help with any of her mods, chat with the community or ask her questions.</p>
     <p>You will get video announcements, new project announcements and ability to get involved in developing of some projects.</p>
-    <!-- todo show discord link only after captcha -->
+    <?php if (isset($_POST["title"]) && (strtolower($_POST["title"] == "discord") || strtolower($_POST["title"]) == "lain's discord server" || strtolower($_POST["title"]) == "lains discord server")) : ?>
     <p>
         <a href="https://discord.gg/uTWjgy2E4v">
             <button>Join</button>
         </a>
     </p>
+    <?php else : ?>
+
+        <?php if (isset($_POST["title"])) : ?>
+        <div class="error">
+            That was not the page title, please enter the page title to show the Discord invite
+        </div>
+        <?php endif; ?>
+
+        <p>In order to view the Discord invite link (and for me to avoid bots), enter the title of this page into here:</p>
+
+        <form action="/discord/" method="post">
+            <label for="title">Page title:</label>
+            <br>
+            <input type="text" name="title" id="title">
+            <br>
+            <br>
+            <button type="submit">Show Discord invite</button>
+        </form>
+    <?php endif; ?>
     <h2>Updates directly from lain</h2>
     <p>This server is where you'll find the latest lain news. It's where we post new projects, YouTube videos, and when lain goes live.</p>
 

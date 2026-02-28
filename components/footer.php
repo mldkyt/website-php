@@ -11,7 +11,6 @@
     </style>
     <p>Copyright (C) <?= date("Y"); ?> lain</p>
     <div id="footerLinks">
-        <p><a href="mailto:lunya@murena.io">E-mail me</a> <a href="/pgp">(GPG Key)</a></p>
         <p><a href="/discord">Discord</a></p>
         <p><a href="/sitemap">Sitemap</a></p>
         <p id="views"></p>
@@ -30,7 +29,7 @@
         <input type="checkbox" name="enablechristmas" id="enableChristmas" />
         <label for="enableChristmas">Enable Christmas Effects (Available during Christmas)</label>
     </div>
-    <script is:inline type="text/javascript" defer>
+    <script type="text/javascript" defer>
         if (!localStorage.getItem("stars")) {
             localStorage.setItem("stars", "disable");
         }
@@ -75,5 +74,5 @@
 </footer>
 
 </main>
-<script is:inline src="/scripts/background.js"></script>
+<script src="/scripts/background.js"></script>
 </div>

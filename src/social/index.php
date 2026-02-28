@@ -95,7 +95,7 @@
         </a>
         <a href="https://git.the-wired.club/lain">
             <div class="social" style="background-image: url(forgejo.png)">
-                <h3>Forgejo (Lunya on git.the-wired.club)</h3>
+                <h3>Forgejo (lain on git.the-wired.club)</h3>
             </div>
         </a>
         <a href="https://www.twitch.tv/catgirl_ceo">

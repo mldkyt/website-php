@@ -63,12 +63,7 @@ function stars() {
         newStar();
         draw();
     }
-
-    document.onscroll = function () {
-        const scrollPos = window.scrollY;
-        canvas.style.transform = `translateY(${scrollPos}px)`;
-    };
-
+    
     window.addEventListener("resize", function () {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -142,12 +137,6 @@ function starsStatic() {
             }
         }
     }
-
-
-    document.onscroll = function () {
-        const scrollPos = window.scrollY;
-        canvas.style.transform = `translateY(${scrollPos}px)`;
-    };
 
     window.addEventListener("resize", function () {
         canvas.width = window.innerWidth;

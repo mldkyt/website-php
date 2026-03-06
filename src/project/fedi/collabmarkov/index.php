@@ -22,7 +22,7 @@
     <p>Users who want to follow the bot but not be part of the corpus can add <code>#NoMarkov</code> inside their bio to make the bot not interact with them <strong>at all.</strong></p>
 
     <p>
-        <a href="https://fedi.lunya.pet/@collabmarkov">
+        <a href="https://sk.lunya.pet/@collabmarkov">
             <button>Official account (feel free to follow!)</button>
         </a>
         <a href="https://git.the-wired.club/lain/collabmarkov">

@@ -24,23 +24,12 @@
         <li>
             Here's my configuration, which you can copy and paste and it will give you a non-binary cursor: <br />
             <code>
-                cursoreffects.fairyDustCursor(&lbrace; <br /> colors: ["#f3d100", "#ffffff", "#9656cd", "#000000"],
-                <br /> &rbrace;); <br /> cursoreffects.rainbowCursor(&lbrace; <br /> colors: ["yellow", "white", "purple", "black"],
-                <br /> length: 50, <br /> size: 5, <br /> &rbrace;);
-            </code>
-        </li>
-        <li>
-            Here's my older configuration, which you can copy and paste and it will give you a transgender themed cursor: <br />
-
-            <code>
-                cursoreffects.fairyDustCursor(&lbrace; <br />
-                colors: ["#f3d100", "#ffffff", "#9656cd", "#000000"], <br />
-                &rbrace;); <br />
-                cursoreffects.rainbowCursor(&lbrace; <br />
-                colors: ["yellow", "white", "purple", "black"], <br />
-                length: 50, <br />
-                size: 5, <br />
-                &rbrace;);
+                cursoreffects.fairyDustCursor({ <br />
+                    colors: ["#5BCEFA", "#F5A9B8", "#FFFFFF"] <br />
+                }); <br />
+                cursoreffects.rainbowCursor({ <br />
+                    colors: ["lightblue", "pink", "white", "pink", "lightblue"], length: 50, size: 5 <br />
+                }); <br />
             </code>
         </li>
         <li>Customize and create your own configuration by following the documentation</li>

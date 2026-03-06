@@ -34,9 +34,6 @@
             <a href="https://sk.lunya.pet/@collabmarkov">
                 <button>Follow the bot</button>
             </a>
-            <a href="https://sk.lunya.pet/@collabmarkov/notes/featured">
-                <button>Check out the best shitposts</button>
-            </a>
         </p>
         <?php require '../../../components/footer.php'; ?>
     </body>

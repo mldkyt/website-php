@@ -25,7 +25,8 @@ CREATE TABLE guestbook (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
 CREATE TABLE videos (
-  id int(11) NOT NULL,
+  id varchar(32) NOT NULL,
+  ord int(11) NOT NULL,
   title text NOT NULL,
   url text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;

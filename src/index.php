@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
     <ul>
         <?php
         $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
-        $query = $conn->prepare("SELECT title, url FROM videos LIMIT 5");
+        $query = $conn->prepare("SELECT title, url FROM videos ORDER BY ord DESC LIMIT 5");
         $query->execute();
         $query->bind_result($title, $url);
         while ($query->fetch()) :

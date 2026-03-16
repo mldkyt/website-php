@@ -5,8 +5,8 @@ services:
     ports:
       - "8001:8080"
     volumes:
-      - ./src:/var/www/html
-      - ./components:/var/www/components
+      - ./src:/var/www/html:z
+      - ./components:/var/www/components:z
     restart: always
     pull_policy: always
     env_file: .env

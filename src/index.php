@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
     <h2>About me</h2>
     <p>
         Hi, I'm lain, and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.the-wired.club/lain" target="_blank">code in production</a>, make <a
-            href="https://youtube.com/@lunyauwu"
+            href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw"
             target="_blank">YouTube videos</a> and <a href="https://sk.lunya.pet/@lunya" target="_blank">shitpost on fedi</a>! I have a <a href="/discord" target="_blank">Discord</a> server and <a href="https://forums.lunya.pet" target="_blank">forums</a> :3
     </p>
 
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
             href="https://www.youtube.com/watch?v=kebvJDNGDr0&list=PLBuV8_rRvRfDXeLbrypTB88hhOCZzLMcw&pp=gAQB"
             target="_blank">Mon Bazou</a>, <a href="https://www.youtube.com/watch?v=Rk5XmItKA1w&list=PLBuV8_rRvRfDDmQTZZ_F-L-PQkVAeMYBo&pp=gAQB" target="_blank">Minecraft</a>, <a
             href="https://www.youtube.com/watch?v=9-O8-Y6f818&list=PLBuV8_rRvRfD36HvpMg6BnfeLVzBVS5sq&pp=gAQB"
-            target="_blank">Celeste</a> and other games. Some of these videos are tutorials, some have a vTuber like appearance, some document my own projects, others are just shitposts. <a href="https://youtube.com/@lunyauwu" target="_blank">You're welcome to check out my YouTube channel</a>.
+            target="_blank">Celeste</a> and other games. Some of these videos are tutorials, some have a vTuber like appearance, some document my own projects, others are just shitposts. <a href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw" target="_blank">You're welcome to check out my YouTube channel</a>. <a href="/qna">I also have a QnA on this website.</a>
     </p>
 
     <p>
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
         </li>
     </ul>
 
-    <h3><a href="https://youtube.com/@lunyauwu">Latest YouTube videos</a></h3>
+    <h3><a href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw">Latest YouTube videos</a></h3>
 
     <ul>
         <?php
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
         while ($query->fetch()) :
         ?>
         <li><a href="<?= htmlspecialchars($url); ?>"><strong><?= htmlspecialchars($title); ?></strong></a></li>
-        <?php 
+        <?php
         endwhile;
         $query->close();
         $conn->close();

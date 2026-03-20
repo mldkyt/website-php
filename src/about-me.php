@@ -99,7 +99,11 @@
 
     <p>All of my machines generally run some flavour of Linux. As of writing this, the laptop and main PC run Arch btw, and the server runs Debian for stability.</p>
 
-    <p><i>(This page may be expanded in the future, once I discover more things about myself.)</i></p>
+    <h2>Missing anything?</h2>
+
+    <p>This page may be expanded in the future, once I discover more things about myself.</p>
+    <p>Additionally, feel free to ask questions <a href="/qna">here</a></p>
+
     <?php require '../components/footer.php'; ?>
 </body>
 

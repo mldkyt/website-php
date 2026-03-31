@@ -7,8 +7,8 @@
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("lain's socials", "All of lain's social and chat platforms"); ?>
-    
+    <?php seo("Lunya's socials", "All of Lunya's social and chat platforms"); ?>
+
     <style>
         .social {
             display: flex;
@@ -78,9 +78,9 @@
     </div>
     <h2>Social Networks</h2>
     <div class="socialContainer">
-        <a href="https://the-wired.club/users/lain">
+        <a href="https://sk.lunya.pet/@lunya">
             <div class="social" style="background-image: url(sharkey.png)">
-                <h3>The Fediverse (@lain@the-wired.club)</h3>
+                <h3>The Fediverse (@lunya@sk.lunya.pet)</h3>
             </div>
         </a>
         <a href="https://pt.lunya.pet/c/lunyavids">
@@ -93,9 +93,9 @@
                 <h3>YouTube (@LunyaUwU)</h3>
             </div>
         </a>
-        <a href="https://git.the-wired.club/lain">
+        <a href="https://git.the-wired.club/lunya">
             <div class="social" style="background-image: url(forgejo.png)">
-                <h3>Forgejo (lain on git.the-wired.club)</h3>
+                <h3>Forgejo (Lunya on git.the-wired.club)</h3>
             </div>
         </a>
         <a href="https://www.twitch.tv/catgirl_ceo">

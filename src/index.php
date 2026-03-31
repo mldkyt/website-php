@@ -16,16 +16,16 @@ if ($_SERVER["REQUEST_URI"] != "/") {
 
 <head>
     <?php require '../components/global.php'; ?>
-    <?php seo("Home page", "Welcome to lain's website!"); ?>
+    <?php seo("Home page", "Welcome to Lunya's website!"); ?>
 </head>
 
 <body>
     <?php require '../components/header.php'; ?>
-    <h1>Welcome to lain's website!</h1>
+    <h1>Welcome to Lunya's website!</h1>
 
     <h2>About me</h2>
     <p>
-        Hi, I'm lain, and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.the-wired.club/lain" target="_blank">code in production</a>, make <a
+        Hi, I'm Lunya, and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.the-wired.club/lunya" target="_blank">code in production</a>, make <a
             href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw"
             target="_blank">YouTube videos</a> and <a href="https://sk.lunya.pet/@lunya" target="_blank">shitpost on fedi</a>! I have a <a href="/discord" target="_blank">Discord</a> server and <a href="https://forums.lunya.pet" target="_blank">forums</a> :3
     </p>
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
     <h3><a href="/projects">Programming Projects</a></h3>
     <ul>
         <li>
-            <a href="https://akabot.xyz"><strong>Akabot</strong></a> is a general purpose discord bot with over 30 features. <a href="https://git.the-wired.club/lain/nekona">Nekona</a> is an upcoming rewrite.
+            <a href="https://akabot.xyz"><strong>Akabot</strong></a> is a general purpose discord bot with over 30 features. <a href="https://git.the-wired.club/lunya/nekona">Nekona</a> is an upcoming rewrite.
         </li>
         <li>
             Wanna be invaded by Astolfo? <a href="/project/astolfoiscomingforyou"><strong>Astolfo is coming for you</strong></a> is a Windows program that recreates the meme.

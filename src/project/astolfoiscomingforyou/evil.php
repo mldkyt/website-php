@@ -24,7 +24,7 @@
 
     <body>
         <?php require '../../../components/header.php'; ?>
-    
+
         <h1>Astolfo is coming for you</h1>
 
         <div class="tabs">
@@ -42,7 +42,7 @@
         <br />
         <img src="evil_2.png" alt="Astolfo shuts down your machine in anger" />
         <br />
-        <a href="https://git.the-wired.club/lain/AstolfoIsComingForYou/releases">
+        <a href="https://git.the-wired.club/lunya/AstolfoIsComingForYou/releases">
             <button>Download the unsafe variant</button>
         </a>
         <a href="https://forums.lunya.pet/viewforum.php?f=6">

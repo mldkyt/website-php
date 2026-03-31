@@ -84,7 +84,7 @@ $query->close();
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("Buttons", "Management of buttons for lain's website."); ?>
+    <?php seo("Buttons", "Management of buttons for Lunya's website."); ?>
 </head>
 
 <body>
@@ -119,7 +119,7 @@ $query->close();
             <?= $deleteError ?>
         </div>
     <?php endif; ?>
-    
+
     <h2>Current buttons</h2>
 
     <table>
@@ -194,7 +194,7 @@ $query->close();
                     </form>
                 </tr>
             <?php endforeach; ?>
-            
+
         </tbody>
     </table>
 

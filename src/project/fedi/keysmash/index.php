@@ -23,7 +23,7 @@
             <a href="https://sk.lunya.pet/@keysmash">
                 <button>Main instance</button>
             </a>
-            <a href="https://git.the-wired.club/lain/fedikeysmashbot">
+            <a href="https://git.the-wired.club/lunya/fedikeysmashbot">
                 <button>Source code</button>
             </a>
         </p>

@@ -89,8 +89,8 @@
     <?php endif; ?>
     <div>
         <div>
-            <h2>lain's website!</h2>
-            <p>Welcome to lain's website!</p>
+            <h2>Lunya's website!</h2>
+            <p>Welcome to Lunya's website!</p>
             <br />
         </div>
     </div>

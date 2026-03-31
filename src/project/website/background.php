@@ -2,7 +2,7 @@
 
 <head>
     <?php require '../../../components/global.php'; ?>
-    <?php seo("Background", "lain's background script for her website."); ?>
+    <?php seo("Background", "Lunya's background script for her website."); ?>
 </head>
 
 <body>

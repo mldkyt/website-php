@@ -18,7 +18,7 @@ function handle_post(mysqli $conn): bool|string {
         curl_setopt($curl, CURLOPT_HEADER, false);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-            "Content-Type: application/json", 
+            "Content-Type: application/json",
             "Authorization: Bearer " . getenv("SHARKEY_TOKEN")
         ));
         curl_setopt($curl, CURLOPT_POST, true);
@@ -82,7 +82,7 @@ $query->close();
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("Anonymous Messages", "Management of anonymous messages for lain's website."); ?>
+    <?php seo("Anonymous Messages", "Management of anonymous messages for Lunya's website."); ?>
 </head>
 
 <body>

@@ -57,7 +57,7 @@
         <a href="https://cutie-quiz.vercel.app">
             <button>Take it NOW!</button>
         </a>
-        <a href="https://git.the-wired.club/lain/CutieQuiz">
+        <a href="https://git.the-wired.club/lunya/CutieQuiz">
             <button>Open GitHub page</button>
         </a>
     </p>

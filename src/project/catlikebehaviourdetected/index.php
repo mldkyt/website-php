@@ -19,10 +19,10 @@
         <p>For the user to discard this message, they either have to click the button in the middle or type "human" or "terminate" in the box below.</p>
 
         <p>
-            <a href="https://git.the-wired.club/lain/CatLikeBehaviourDetected/releases">
+            <a href="https://git.the-wired.club/lunya/CatLikeBehaviourDetected/releases">
                 <button>Download</button>
             </a>
-            <a href="https://git.the-wired.club/lain/CatLikeBehaviourDetected">
+            <a href="https://git.the-wired.club/lunya/CatLikeBehaviourDetected">
                 <button>View the source code</button>
             </a>
             <a href="https://forums.lunya.pet/viewforum.php?f=13w">

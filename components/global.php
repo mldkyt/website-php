@@ -246,18 +246,18 @@
 
 <?php function seo($title, $description) { ?>
     <meta charset="UTF-8" />
-    <title><?= $title; ?> | lain's website</title>
+    <title><?= $title; ?> | Lunya's website</title>
     <meta name="description" content="<?= $description; ?>" />
-    <meta name="author" content="lain" />
+    <meta name="author" content="Lunya" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-language" content="en" />
-    <meta property="og:title" content="<?= $title; ?> | lain's website" />
+    <meta property="og:title" content="<?= $title; ?> | Lunya's website" />
     <meta property="og:description" content="<?= $description; ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lunya.pet" />
-    <meta property="og:site_name" content="lain's website" />
+    <meta property="og:site_name" content="Lunya's website" />
     <meta property="og:locale" content="en_US" />
-    <meta name="twitter:title" content="<?= $title; ?> | lain's website" />
+    <meta name="twitter:title" content="<?= $title; ?> | Lunya's website" />
     <meta name="twitter:description" content="<?= $description; ?>" />
-    <meta name="fediverse:creator" content="lain@the-wired.club" />
+    <meta name="fediverse:creator" content="lunya@sk.lunya.pet" />
 <?php } ?>

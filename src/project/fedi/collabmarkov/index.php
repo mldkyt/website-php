@@ -25,7 +25,7 @@
         <a href="https://sk.lunya.pet/@collabmarkov">
             <button>Official account (feel free to follow!)</button>
         </a>
-        <a href="https://git.the-wired.club/lain/collabmarkov">
+        <a href="https://git.the-wired.club/lunya/collabmarkov">
             <button>Source code</button>
         </a>
     </p>

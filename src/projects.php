@@ -7,7 +7,7 @@
 
 <head>
     <?php require '../components/global.php'; ?>
-    <?php seo("Project list", "lain's full project list"); ?>
+    <?php seo("Project list", "Lunya's full project list"); ?>
     <style>
         .project {
             margin-bottom: 20px;
@@ -70,8 +70,8 @@
 <body>
     <?php require '../components/header.php'; ?>
 
-    <h1>lain's projects</h1>
-    <p>This is a list of lain's projects.</p>
+    <h1>Lunya's projects</h1>
+    <p>This is a list of Lunya's projects.</p>
     <div class="projectContainer">
         <a href="https://akabot.xyz">
             <div class="project" style="background-image: url(/project/akabot/akabot.png);">
@@ -152,7 +152,7 @@
     <div class="projectContainer">
         <a href="/project/lunyas-mini-mods">
             <div class="project" style="background-image: url(/project/lunyas-mini-mods/lunyas-mini-mods.webp);">
-                <h3>lain's Mini Mods</h3>
+                <h3>Lunya's Mini Mods</h3>
                 <p>A bunch of mini mods for My Summer Car and My Winter Car</p>
             </div>
         </a>

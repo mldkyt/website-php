@@ -32,7 +32,7 @@
         <br />
 
         <p>
-            <a href="https://git.the-wired.club/lain/fedi-summarizer">
+            <a href="https://git.the-wired.club/lunya/fedi-summarizer">
                 <button>Source code</button>
             </a>
         </p>

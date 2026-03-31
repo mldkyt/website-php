@@ -12,7 +12,7 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
     }
 
     $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
-    
+
     // check existing post
     $query = $conn->prepare("SELECT id FROM anonymous_messages WHERE ip = ?");
     $query->bind_param("s", get_remote_addr());
@@ -41,15 +41,15 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
 
 <head>
     <?php require '../components/global.php'; ?>
-    <?php seo("Contact lain", "The contacts for lain"); ?>
+    <?php seo("Contact Lunya", "The contacts for Lunya"); ?>
 </head>
 
 <body>
     <?php require '../components/header.php'; ?>
 
-    <h1>Contact lain :3</h1>
+    <h1>Contact Lunya :3</h1>
 
-    <?php if (isset($_POST["title"]) && (strtolower($_POST["title"]) == "contact lain :3" || strtolower($_POST["title"]) == "contact")) : ?>
+    <?php if (isset($_POST["title"]) && (strtolower($_POST["title"]) == "contact lunya :3" || strtolower($_POST["title"]) == "contact")) : ?>
 
         <h2>Send me an anonymous message</h2>
 
@@ -64,18 +64,18 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
             </div>
         <?php endif; ?>
 
-        <?php     
+        <?php
         // check existing post
         $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
         $query = $conn->prepare("SELECT id FROM anonymous_messages WHERE ip = ?");
         $query->bind_param("s", get_remote_addr());
         $query->execute();
         if ($query->fetch()) { ?>
-        <p>You already sent a message and it is awaiting answering from lain</p>
+        <p>You already sent a message and it is awaiting answering from Lunya</p>
         <?php } else { ?>
         <form action="/contact.php" method="post">
             <!-- bypass hiding page -->
-            <input type="hidden" name="title" value="contact"> 
+            <input type="hidden" name="title" value="contact">
 
             <label for="text">Message</label>
             <br>
@@ -94,7 +94,7 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
             <br>
             <button type="submit">Send anonymous message</button>
         </form>
-        <?php 
+        <?php
         }
         $query->close();
         $conn->close();
@@ -135,7 +135,7 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
             </details>
         </li>
         <li>
-            <strong>Fedi</strong>: Send a DM on fedi to <code>@lain@the-wired.club</code>.
+            <strong>Fedi</strong>: Send a DM on fedi to <code>@lunya@sk.lunya.pet</code>.
         </li>
         <br>
     <?php else : ?>

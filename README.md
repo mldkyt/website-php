@@ -1,6 +1,6 @@
-# lain's website
+# Lunya's website
 
-lain's latest website, written in PHP. Looks exactly the same as [website-2026-02-28](https://git.the-wired.club/lain/website-2026-02-28) but it's written in PHP.
+Lunya's latest website, written in PHP. Looks exactly the same as [website-2026-02-28](https://git.the-wired.club/lunya/website-2026-02-28) but it's written in PHP.
 
 ## features
 

@@ -25,7 +25,7 @@
     <p>Here's where all my code (usually tested in production) is stored.</p>
     <ul>
         <li>
-            <a href="https://git.the-wired.club/lain" target="_blank">My account on my Forgejo instance</a>
+            <a href="https://git.the-wired.club/lunya" target="_blank">My account on my Forgejo instance</a>
         </li>
     </ul>
 

@@ -7,12 +7,12 @@
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("Administration", "lain's website administration"); ?>
+    <?php seo("Administration", "Lunya's website administration"); ?>
 </head>
 
 <body>
     <?php require '../../components/header.php'; ?>
-    
+
     <h1>Administration</h1>
 
     <ul>

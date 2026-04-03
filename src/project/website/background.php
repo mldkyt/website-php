@@ -32,7 +32,7 @@
 
     <h2>How do I add your button?</h2>
     <p>You can add the button from right below here:</p>
-    <img src={btn.src} alt="Button" />
+    <img src="/button.gif" alt="Button" />
     <p>
         Make sure to wrap it with an <code>&lt;a&gt;</code> tag to make it a link and set the <code>href</code> to
         <code>lunya.pet</code>

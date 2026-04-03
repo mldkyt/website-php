@@ -32,19 +32,19 @@
     <ul>
         <li>
             <p>A painting recipe to get the "Instance Moment" painting can be crafted like this</p>
-            <img src={painting.src} alt="3x3 Minecraft  crafting grid fully filled up with Sodiboo items, the result is a painting" />
+            <img src="painting.png" alt="3x3 Minecraft  crafting grid fully filled up with Sodiboo items, the result is a painting" />
         </li>
         <li>
             <p>A Sodiboost Block recipe</p>
-            <img src={block.src} alt="3x3 crafting menu with only the 2x2 region the bottom right filled out with Sodiboost items. The result is 4 Sodiboo blocks" />
+            <img src="block.png" alt="3x3 crafting menu with only the 2x2 region the bottom right filled out with Sodiboost items. The result is 4 Sodiboo blocks" />
         </li>
         <li>
             <p>Sodiboost portal igniter</p>
-            <img src={igniter.src} alt='A 3x3 recipe showing a flint and one Sodiboost item in the crafting grid. The result is a "Sodiboost Dimension Portal Igniter"' />
+            <img src="igniter.png" alt='A 3x3 recipe showing a flint and one Sodiboost item in the crafting grid. The result is a "Sodiboost Dimension Portal Igniter"' />
         </li>
         <li>
             <p>Use Code Sodiboost50! item</p>
-            <img src={code.src} alt='A furnace recipe showing the player smelting a Sodiboo Item into a "Use Code Sodiboost50" item' />
+            <img src="code.png" alt='A furnace recipe showing the player smelting a Sodiboo Item into a "Use Code Sodiboost50" item' />
         </li>
     </ul>
 

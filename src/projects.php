@@ -139,8 +139,8 @@
                 <p>Forces you to wish birthday to anyone in your circle so you never forget.</p>
             </div>
         </a>
-        <a href="/project/catlikebehaviourdetected">
-            <div class="project" style="background-image: url(/project/catlikebehaviourdetected/img1.png);">
+        <a href="/project/pawsense">
+            <div class="project" style="background-image: url(/project/pawsense/img1.png);">
                 <h3>PawSense</h3>
                 <p>A joke program that shows a cat-like behaviour detected dialog.</p>
             </div>

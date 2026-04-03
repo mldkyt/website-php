@@ -141,7 +141,7 @@
         </a>
         <a href="/project/catlikebehaviourdetected">
             <div class="project" style="background-image: url(/project/catlikebehaviourdetected/img1.png);">
-                <h3>Cat-Like Behaviour Detected</h3>
+                <h3>PawSense</h3>
                 <p>A joke program that shows a cat-like behaviour detected dialog.</p>
             </div>
         </a>

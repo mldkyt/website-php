@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
             Wanna be invaded by Astolfo? <a href="/project/astolfoiscomingforyou"><strong>Astolfo is coming for you</strong></a> is a Windows program that recreates the meme.
         </li>
         <li>
-            Ever felt like a catgirl? <a href="/project/catlikebehaviourdetected">Cat Like Behaviour Detected</a> is for you.
+            Ever felt like a catgirl? <a href="/project/catlikebehaviourdetected">PawSense</a> is for you.
         </li>
         <li>
             <a href="/project/astolfomod"><strong>Astolfo Mod</strong></a> adds a bunch of femboys and transgirls into minecraft :3

@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <?php require '../../../components/global.php'; ?>
-        <?php seo("Cat-Like behaviour detected", "A joke program that shows the cat-like behaviour detected dialog"); ?>
+        <?php seo("PawSense", "Leading Innovation for Detecting Cat(girls) at Computers"); ?>
     </head>
 
     <body>
         <?php require '../../../components/header.php'; ?>
 
-        <h1>Cat-Like Behaviour Detected</h1>
+        <h1>PawSense</h1>
 
         <p>This is a joke program that shows a "Cat-Like Behaviour Detected" window. This window is currently purely decorational</p>
 

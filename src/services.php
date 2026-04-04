@@ -17,9 +17,9 @@
 
     <p>Here's what I run. Some are my projects, some are FOSS software hosted for myself (and friends).</p>
 
-    <h2>Akabot: Discord Bot</h2>
-    <p>I maintain and run my own Discord bot. More on that is available <a href="https://akabot.xyz">in its project page</a>.</p>
-    <p>There are 2 versions of Akabot that are run on my server. One is the public version and the other is a more private version.</p>
+    <h2>Nekona: Discord Bot</h2>
+    <p>I maintain and run my own Discord bot. More on that is available <a href="/nekona">in its project page</a>.</p>
+    <p>There are 2 versions of Nekona that are run on my server. One is the public version and the other is a more private "friends only" version.</p>
 
     <h2>Forgejo: Git server</h2>
     <p>Here's where all my code (usually tested in production) is stored.</p>

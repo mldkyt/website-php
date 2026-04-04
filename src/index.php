@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
     <h3><a href="/projects">Programming Projects</a></h3>
     <ul>
         <li>
-            <a href="https://akabot.xyz"><strong>Akabot</strong></a> is a general purpose discord bot with over 30 features. <a href="https://git.the-wired.club/lunya/nekona">Nekona</a> is an upcoming rewrite.
+            <a href="/nekona"><strong>Nekona</strong></a> is a fully featured general purpose discord bot with over 30 features.
         </li>
         <li>
             Wanna be invaded by Astolfo? <a href="/project/astolfoiscomingforyou"><strong>Astolfo is coming for you</strong></a> is a Windows program that recreates the meme.

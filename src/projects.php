@@ -73,10 +73,10 @@
     <h1>Lunya's projects</h1>
     <p>This is a list of Lunya's projects.</p>
     <div class="projectContainer">
-        <a href="https://akabot.xyz">
-            <div class="project" style="background-image: url(/project/akabot/akabot.png);">
-                <h3>Akabot</h3>
-                <p>A Discord bot with lots of features.</p>
+        <a href="/project/nekona">
+            <div class="project" style="background-image: url(/project/nekona/nekona.jpg);">
+                <h3>Nekona</h3>
+                <p>A fully featured general purpose discord bot with over 30 features.</p>
             </div>
         </a>
         <a href="/project/website">

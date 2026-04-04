@@ -51,7 +51,7 @@
             text-decoration: none;
         }
 
-        .socialContainer {
+        .socCont {
             display: grid;
             grid-template-columns: 1fr;
         }
@@ -64,7 +64,7 @@
     <h1>Lunya's socials</h1>
     <h2>The Community</h2>
     <p>You can join Lunya's community using this Discord link:</p>
-    <div class="socialContainer">
+    <div class="socCont">
         <a href="/discord">
             <div class="social" style="background-image: url(discord.png)">
                 <h3>Discord Server</h3>
@@ -77,7 +77,7 @@
         </a>
     </div>
     <h2>Social Networks</h2>
-    <div class="socialContainer">
+    <div class="socCont">
         <a href="https://sk.lunya.pet/@lunya">
             <div class="social" style="background-image: url(sharkey.png)">
                 <h3>The Fediverse (@lunya@sk.lunya.pet)</h3>

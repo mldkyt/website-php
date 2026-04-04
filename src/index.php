@@ -106,9 +106,12 @@ if ($_SERVER["REQUEST_URI"] != "/") {
 
     <h2>Buttons</h2>
 
-    <?php require '../components/buttons.php'; ?>
+    <h3>My button :3</h3>
+    <p>I have my own button that <a href="/button.php">you can add to your website today. :3</a></p>
 
-    <p><small>If you decide to add my button, please <a href="/button">check here!</a></small></p>
+    <img src="/button.gif" alt="88x31 button for Lunya">
+
+    <?php require '../components/buttons.php'; ?>
 
     <br />
     <br />

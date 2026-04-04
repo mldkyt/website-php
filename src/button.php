@@ -11,8 +11,7 @@
             <h1>Lunya's 88x31 button!</h1>
 
             <p>
-                After countless months, I finally made an 88x31 button for my website! Add it to your website and link back when you do so! This page was made for the blog post you probably clicked on, as the only other link to here is
-                in the <a href="/sitemap">sitemap</a>.
+                After countless months, I finally made an 88x31 button for my website! Add it to your website and link back when you do so!
             </p>
 
             <p>The button is available as a GIF file. I don't know if hotlinking will work, but you can always host it yourself.</p>

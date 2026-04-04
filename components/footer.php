@@ -12,7 +12,6 @@
     <p>Copyright (C) <?= date("Y"); ?> Lunya</p>
     <div id="footerLinks">
         <p><a href="/discord">Discord</a></p>
-        <p><a href="/sitemap">Sitemap</a></p>
         <p id="views"></p>
     </div>
     <p>

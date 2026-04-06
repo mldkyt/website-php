@@ -45,6 +45,17 @@ CREATE TABLE `qna` (
   `answer` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+CREATE TABLE `views` (
+  `date` date NOT NULL,
+  `views` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+CREATE TABLE `views_expire` (
+  `id` int(11) NOT NULL,
+  `ip` text NOT NULL,
+  `expire` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
 ALTER TABLE anonymous_messages
   ADD PRIMARY KEY (id);
 
@@ -58,6 +69,12 @@ ALTER TABLE buttons
   ADD PRIMARY KEY (id);
 
 ALTER TABLE `qna`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `views`
+  ADD PRIMARY KEY (`date`);
+
+ALTER TABLE `views_expire`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE anonymous_messages
@@ -74,6 +91,10 @@ ALTER TABLE buttons
 
 ALTER TABLE `qna`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  
+ALTER TABLE `views_expire`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,12 +1,16 @@
+<?php require "../../../components/comments.php"; ?>
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require '../../../components/global.php'; ?>
-        <?php seo("Birthday", "Birthday is an app that tells you when someone has a birthday."); ?>
+        <?php require "../../../components/global.php"; ?>
+        <?php seo(
+            "Birthday",
+            "Birthday is an app that tells you when someone has a birthday.",
+        ); ?>
     </head>
 
     <body>
-        <?php require '../../../components/header.php'; ?>
+        <?php require "../../../components/header.php"; ?>
         <h1>Birthday</h1>
         <p>Forces you to wish birthday to anyone in your circle so you never forget.</p>
 
@@ -30,6 +34,8 @@
                 <button>Discuss the project (Discord)</button>
             </a>
         </p>
-        <?php require '../../../components/footer.php'; ?>
+
+        <?php project_comments("birthday"); ?>
+        <?php require "../../../components/footer.php"; ?>
     </body>
 </html>

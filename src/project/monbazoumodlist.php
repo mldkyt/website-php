@@ -1,13 +1,19 @@
+<?php
+require "../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../components/global.php'; ?>
-    <?php seo("Mon Bazou Mod List", "This is the Mon Bazou mod list. It lists mods, shows their settings, and has more features coming soon."); ?>
+    <?php require "../../components/global.php"; ?>
+    <?php seo(
+        "Mon Bazou Mod List",
+        "This is the Mon Bazou mod list. It lists mods, shows their settings, and has more features coming soon.",
+    ); ?>
 </head>
 
 <body>
-    <?php require '../../components/header.php'; ?>
+    <?php require "../../components/header.php"; ?>
 
     <h1>Mon Bazou Mod List</h1>
 
@@ -35,7 +41,11 @@
     <p>
         <a href="https://git.the-wired.club/lunya/MonBazouModMenu">Source code (Issues available)</a>
     </p>
-    <?php require '../../components/footer.php'; ?>
+
+
+    <?php project_comments("monbazoumodlist"); ?>
+
+    <?php require "../../components/footer.php"; ?>
 
 </body>
 

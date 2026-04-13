@@ -1,13 +1,15 @@
+
+<?php require "../../../components/comments.php"; ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
+    <?php require "../../../components/global.php"; ?>
     <?php seo("Sodiboost", "A silly little mod about Sodiboo on fedi."); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1>The Sodiboost Minecraft Mod</h1>
 
@@ -66,7 +68,10 @@
             <button>Discuss the project (Discord)</button>
         </a>
     </p>
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("sodiboost"); ?>
+    <?php require "../../../components/footer.php"; ?>
 
 </body>
 

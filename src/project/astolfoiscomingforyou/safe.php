@@ -1,8 +1,14 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
     <head>
-    <?php require '../../../components/global.php'; ?>
-    <?php seo("Astolfo is coming for you safe variant", "The safe variant of Astolfo is coming for you"); ?>
+    <?php require "../../../components/global.php"; ?>
+    <?php seo(
+        "Astolfo is coming for you safe variant",
+        "The safe variant of Astolfo is coming for you",
+    ); ?>
     <style>
         .tabs {
             display: flex;
@@ -23,7 +29,7 @@
     </head>
 
     <body>
-        <?php require '../../../components/header.php'; ?>
+        <?php require "../../../components/header.php"; ?>
 
         <h1>Astolfo is coming for you</h1>
 
@@ -54,7 +60,9 @@
             <button>Discuss the project (Discord)</button>
         </a>
 
-        <?php require '../../../components/footer.php'; ?>
+        <?php project_comments("astolfoiscomingforyou"); ?>
+
+        <?php require "../../../components/footer.php"; ?>
         <script type="text/javascript">
             $("#showSafeVariant").click(function () {
                 $("#safeVariant").html(

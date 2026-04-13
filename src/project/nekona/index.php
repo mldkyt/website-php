@@ -1,13 +1,19 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
-    <?php seo("Nekona", "A fully featured general purpose discord bot with over 30 features"); ?>
+    <?php require "../../../components/global.php"; ?>
+    <?php seo(
+        "Nekona",
+        "A fully featured general purpose discord bot with over 30 features",
+    ); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1 id="nekona">The Nekona Discord Bot</h1>
     <p>Nekona is a featureful open-source Discord bot!</p>
@@ -47,7 +53,11 @@
 
     <br />
     <br />
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("nekona"); ?>
+
+    <?php require "../../../components/footer.php"; ?>
 </body>
 
 </html>

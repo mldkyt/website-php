@@ -1,13 +1,19 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
-    <?php seo("uwurandom-rs", "Catgirl nonsense, but in the Rust programming langauge, for maximum femininity."); ?>
+    <?php require "../../../components/global.php"; ?>
+    <?php seo(
+        "uwurandom-rs",
+        "Catgirl nonsense, but in the Rust programming langauge, for maximum femininity.",
+    ); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1>uwurandom-rs</h1>
     <p>Catgirl nonsense, but in the Rust programming langauge, for maximum femininity.</p>
@@ -29,7 +35,11 @@
             <button>Discuss the project (Discord)</button>
         </a>
     </p>
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("uwurandom-rs"); ?>
+
+    <?php require "../../../components/footer.php"; ?>
 
 </body>
 

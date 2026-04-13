@@ -1,12 +1,18 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require '../../../components/global.php'; ?>
-        <?php seo("PawSense", "Leading Innovation for Detecting Cat(girls) at Computers"); ?>
+        <?php require "../../../components/global.php"; ?>
+        <?php seo(
+            "PawSense",
+            "Leading Innovation for Detecting Cat(girls) at Computers",
+        ); ?>
     </head>
 
     <body>
-        <?php require '../../../components/header.php'; ?>
+        <?php require "../../../components/header.php"; ?>
 
         <h1>PawSense</h1>
 
@@ -33,6 +39,9 @@
             </a>
         </p>
 
-        <?php require '../../../components/footer.php'; ?>
+
+        <?php project_comments("pawsense"); ?>
+
+        <?php require "../../../components/footer.php"; ?>
     </body>
 </html>

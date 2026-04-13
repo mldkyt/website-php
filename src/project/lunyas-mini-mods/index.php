@@ -1,13 +1,19 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
-    <?php seo("Lunya's Mini Mods", "A bunch of mini mods for My Summer Car and My Winter Car, by Lunya :3"); ?>
+    <?php require "../../../components/global.php"; ?>
+    <?php seo(
+        "Lunya's Mini Mods",
+        "A bunch of mini mods for My Summer Car and My Winter Car, by Lunya :3",
+    ); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1>Lunya's Mini Mods</h1>
     <p>This mod for My Summer Car and My Winter Car is a collection of tweaks and mini mods that I use, compiled into one big mod.</p>
@@ -185,7 +191,11 @@
             <button>Discuss the project (Discord)</button>
         </a>
     </p>
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("lunyasminimods"); ?>
+
+    <?php require "../../../components/footer.php"; ?>
 
 </body>
 

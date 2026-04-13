@@ -1,13 +1,16 @@
+<?php
+require "../../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
+    <?php require "../../../components/global.php"; ?>
     <?php seo("MCFuck", "A program to fuck with your Minecraft settings!"); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1>MCFuck</h1>
     <p>MCFuck is a program that attempts to fuck with your Minecraft settings, as the name implies, without corrupting them.</p>
@@ -24,7 +27,11 @@
             <button>Discuss the project (Discord)</button>
         </a>
     </p>
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("mcfuck"); ?>
+
+    <?php require "../../../components/footer.php"; ?>
 </body>
 
 </html>

@@ -1,13 +1,16 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
+    <?php require "../../../components/global.php"; ?>
     <?php seo("NekoChat", "Chat across websites"); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1>Nekochat!</h1>
     <br />
@@ -20,7 +23,11 @@
 
     <br />
     <br />
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("nekochat"); ?>
+
+    <?php require "../../../components/footer.php"; ?>
 </body>
 
 </html>

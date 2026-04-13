@@ -1,13 +1,16 @@
+<?php
+require "../../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
+    <?php require "../../../components/global.php"; ?>
     <?php seo("Collaborative Markov Bot", "A bot that makes a "); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
     <h1>Collaborative Markov Bot</h1>
 
     <img src="collabmarkov.jpg" alt="Collaborative Markov bot's profile, with some fire effect over it and a few posts overlaid over each other." />
@@ -29,7 +32,11 @@
             <button>Source code</button>
         </a>
     </p>
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("collabmarkov"); ?>
+
+    <?php require "../../../components/footer.php"; ?>
 </body>
 
 </html>

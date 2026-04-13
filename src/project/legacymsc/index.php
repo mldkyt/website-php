@@ -1,13 +1,15 @@
+
+<?php require "../../../../components/comments.php"; ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
+    <?php require "../../../components/global.php"; ?>
     <?php seo("Legacy MSC", "Revert the game to the old versions."); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
     <h1>Legacy MSC</h1>
     <p>Reverts the game into old versions.</p>
     <p>The Good Old MSC mod combines all of the mods created by Akatsuki2555. It includes:</p>
@@ -136,7 +138,11 @@
             <button>Discuss the project (Discord)</button>
         </a>
     </p>
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("legacymsc"); ?>
+
+    <?php require "../../../components/footer.php"; ?>
 
 </body>
 

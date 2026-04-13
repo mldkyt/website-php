@@ -1,8 +1,11 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
+    <?php require "../../../components/global.php"; ?>
     <?php seo("Cutie Quiz", "A cutie quiz to determine how cute you are :3"); ?>
     <script type="text/javascript">
         function showMedia() {
@@ -27,7 +30,7 @@
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1>Cutie Quiz</h1>
     <div class="error">
@@ -61,7 +64,10 @@
             <button>Open GitHub page</button>
         </a>
     </p>
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("cutiequiz"); ?>
+    <?php require "../../../components/footer.php"; ?>
 </body>
 
 </html>

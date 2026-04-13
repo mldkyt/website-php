@@ -1,7 +1,10 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require '../../../components/global.php'; ?>
+        <?php require "../../../components/global.php"; ?>
         <?php seo("Astolfo Mod", "The Astolfo Forge Mod for Minecraft"); ?>
 
         <style>
@@ -14,7 +17,7 @@
     </head>
 
     <body>
-        <?php require '../../../components/header.php'; ?>
+        <?php require "../../../components/header.php"; ?>
         <h1>Astolfo Mod</h1>
 
         <div class="message">
@@ -138,7 +141,10 @@
         <a href="/discord">
             <button>Discuss the project (Discord)</button>
         </a>
-        <?php require '../../../components/footer.php'; ?>
+
+        <?php project_comments("astolfomod"); ?>
+
+        <?php require "../../../components/footer.php"; ?>
         <script type="text/javascript">
             function showVideo() {
                 $("#video").html(

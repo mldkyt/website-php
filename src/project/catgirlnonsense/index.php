@@ -1,4 +1,6 @@
 <?php
+require "../../../components/comments.php";
+
 function uwu_nonsense($length)
 {
     $out = [];
@@ -43,7 +45,7 @@ function uwu_scrunkly($length)
     return "aw " . uwu_keysmash($length - 3);
 }
 
-function generate($maxlen, $softlimit=false)
+function generate($maxlen, $softlimit = false)
 {
     $uwu = isset($_POST["uwu"]);
     $owo = isset($_POST["owo"]);
@@ -69,7 +71,7 @@ function generate($maxlen, $softlimit=false)
         "*sneezes*",
         "*plays with yarn*",
         "*eats all ur doritos*",
-        "*lies down on a random surface*"
+        "*lies down on a random surface*",
     ];
 
     $GLOBALS["nonsense"] = [
@@ -98,7 +100,7 @@ function generate($maxlen, $softlimit=false)
         "wp",
         "wr",
         "ww",
-        "ya"
+        "ya",
     ];
 
     // How many characters so far
@@ -119,75 +121,97 @@ function generate($maxlen, $softlimit=false)
         }
 
         if ($random == 0) {
-            if (!$uwu) continue;
+            if (!$uwu) {
+                continue;
+            }
 
             $str = "uwu";
             $out[] = $str;
             $currentlen += strlen($str);
         } elseif ($random == 1) {
-            if (!$nonsense) continue;
+            if (!$nonsense) {
+                continue;
+            }
 
             // nonsense
             $str = uwu_nonsense(mt_rand(5, 25));
             $out[] = $str;
             $currentlen += strlen($str);
         } elseif ($random == 2) {
-            if (!$nya) continue;
+            if (!$nya) {
+                continue;
+            }
 
             // nyaaa~
             $str = uwu_nya(mt_rand(3, 6));
             $out[] = $str;
             $currentlen += strlen($str);
         } elseif ($random == 3) {
-            if (!$blush) continue;
-        
+            if (!$blush) {
+                continue;
+            }
+
             // >///<
             $str = uwu_blush(mt_rand(3, 5));
             $out[] = $str;
             $currentlen += strlen($str);
         } elseif ($random == 4) {
-            if (!$three) continue;
+            if (!$three) {
+                continue;
+            }
 
             // :3
             $str = ":3";
             $out[] = $str;
             $currentlen += strlen($str);
         } elseif ($random == 5) {
-            if (!$actions) continue;
+            if (!$actions) {
+                continue;
+            }
 
             // Actions
             $str = uwu_action(mt_rand(0, sizeof($GLOBALS["actions"])));
             $out[] = $str;
             $currentlen += strlen($str);
         } elseif ($random == 6) {
-            if (!$keysmashing) continue;
+            if (!$keysmashing) {
+                continue;
+            }
 
             // Keysmash;
             $str = uwu_keysmash(mt_rand(5, 25));
             $out[] = $str;
             $currentlen += strlen($str);
         } elseif ($random == 7) {
-            if (!$screaming) continue;
+            if (!$screaming) {
+                continue;
+            }
 
             // screaming
             $str = str_repeat("A", mt_rand(3, 5));
             $out[] = $str;
             $currentlen += strlen($str);
         } elseif ($random == 8) {
-            if (!$scrunkly) continue;
+            if (!$scrunkly) {
+                continue;
+            }
 
             // aww the scrunkly
             $str = uwu_scrunkly(mt_rand(5, 25));
             $out[] = $str;
             $currentlen += strlen($str);
         } elseif ($random == 9) {
-            if (!$owo) continue;
+            if (!$owo) {
+                continue;
+            }
 
             // owo
             $out[] = "owo";
             $currentlen += strlen("owo");
         } elseif ($random == 10) {
-            if (!$ara) continue;
+            if (!$ara) {
+                continue;
+            }
 
             //ara ara
             $out[] = "ara ara~";
@@ -199,29 +223,32 @@ function generate($maxlen, $softlimit=false)
         $last = $random;
     }
 
-    if ($softlimit == false){
+    if ($softlimit == false) {
         return substr(implode(" ", $out), 0, $maxlen);
     } else {
         return implode(" ", $out);
     }
 }
-
 ?>
 
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require '../../../components/global.php'; ?>
+        <?php require "../../../components/global.php"; ?>
         <?php seo("Catgirl Nonsense", "Catgirl nonsense generator"); ?>
     </head>
 
     <body>
-        <?php require '../../../components/header.php'; ?>
+        <?php require "../../../components/header.php"; ?>
 
         <h1>CatGirl nonsense generator</h1>
         <form id="catgirlForm" style="margin-left: 1em;" method="post" action="/project/catgirlnonsense/">
             <label for="amount">Amount:</label>
-            <input id="amount" name="amount" type="number" min="1" value="<?= isset($_POST["amount"]) ? $_POST["amount"] : "100"; ?>" />
+            <input id="amount" name="amount" type="number" min="1" value="<?= isset(
+                $_POST["amount"],
+            )
+                ? $_POST["amount"]
+                : "100" ?>" />
             <br />
             <label for="uwu">uwu~</label>
             <input id="uwu" name="uwu" type="checkbox" checked />
@@ -260,7 +287,6 @@ function generate($maxlen, $softlimit=false)
         </form>
         <div id="generatedOutput">
         <?php
-        
         $uwu = isset($_POST["uwu"]);
         $owo = isset($_POST["owo"]);
         $nya = isset($_POST["nya"]);
@@ -274,16 +300,25 @@ function generate($maxlen, $softlimit=false)
         $ara = isset($_POST["ara"]);
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-            if (($uwu || $owo || $nya || $blush || $three || $actions || $keysmashing || $screaming || $scrunkly || $nonsense || $ara)) {
+            if (
+                $uwu ||
+                $owo ||
+                $nya ||
+                $blush ||
+                $three ||
+                $actions ||
+                $keysmashing ||
+                $screaming ||
+                $scrunkly ||
+                $nonsense ||
+                $ara
+            ) {
                 $amount = isset($_POST["amount"]) ? $_POST["amount"] : 100;
-                echo generate($amount, softlimit: true);   
-            }
-            else {
+                echo generate($amount, softlimit: true);
+            } else {
                 echo "Invalid parameters, please check at least one checkbox";
             }
         }
-
         ?>
         </div>
 
@@ -295,7 +330,11 @@ function generate($maxlen, $softlimit=false)
         <a href="/discord">
             <button>Discuss the project (Discord)</button>
         </a>
-        <?php require '../../../components/footer.php'; ?>
+
+
+        <?php project_comments("catgirlnonsense"); ?>
+
+        <?php require "../../../components/footer.php"; ?>
 
     </body>
 </html>

@@ -1,12 +1,18 @@
+<?php
+require "../../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require '../../../../components/global.php'; ?>
-        <?php seo("Fedi Summarizer", "This bot summarizes the amount of notes you post every midnight."); ?>
+        <?php require "../../../../components/global.php"; ?>
+        <?php seo(
+            "Fedi Summarizer",
+            "This bot summarizes the amount of notes you post every midnight.",
+        ); ?>
     </head>
 
     <body>
-        <?php require '../../../../components/header.php'; ?>
+        <?php require "../../../../components/header.php"; ?>
 
         <h1>Fedi Summarizer</h1>
         <p>This bot summarizes the amount of notes you post every midnight.</p>
@@ -36,6 +42,9 @@
                 <button>Source code</button>
             </a>
         </p>
-        <?php require '../../../../components/footer.php'; ?>
+
+
+        <?php project_comments("fedisummarizer"); ?>
+        <?php require "../../../../components/footer.php"; ?>
     </body>
 </html>

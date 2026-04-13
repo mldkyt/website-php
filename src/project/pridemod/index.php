@@ -1,13 +1,19 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php require '../../../components/global.php'; ?>
-    <?php seo("Pride Mod", "Le Pride mod for My Summer Car and My Winter Car"); ?>
+    <?php require "../../../components/global.php"; ?>
+    <?php seo(
+        "Pride Mod",
+        "Le Pride mod for My Summer Car and My Winter Car",
+    ); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1>Pride Mod</h1>
     <p>A mod for celebrating pride month in My Summer Car and My Winter Car.</p>
@@ -33,7 +39,10 @@
             <button>Discuss the project (Discord)</button>
         </a>
     </p>
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("pridemod"); ?>
+    <?php require "../../../components/footer.php"; ?>
 
 </body>
 

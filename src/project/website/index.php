@@ -1,12 +1,15 @@
+<?php
+require "../../../components/comments.php"; ?>
+
 <html>
 
 <head>
-    <?php require '../../../components/global.php'; ?>
+    <?php require "../../../components/global.php"; ?>
     <?php seo("Website", "Lunya's website"); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1>Lunya's website</h1>
     <p>On this page I (as part of a request) put some resources that you can use on your site. When using these resources, make sure to credit me and add my button!</p>
@@ -33,7 +36,11 @@
     <a href="/discord">
         <button>Discuss the project (Discord)</button>
     </a>
-    <?php require '../../../components/footer.php'; ?>
+
+
+    <?php project_comments("website"); ?>
+
+    <?php require "../../../components/footer.php"; ?>
 
 </body>
 

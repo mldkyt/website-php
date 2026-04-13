@@ -1,13 +1,14 @@
-
+<?php
+require "../../../../components/comments.php"; ?>
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require '../../../../components/global.php'; ?>
+        <?php require "../../../../components/global.php"; ?>
         <?php seo("Fedi meow", "A fedi bot that meows every hour."); ?>
     </head>
 
     <body>
-        <?php require '../../../../components/header.php'; ?>
+        <?php require "../../../../components/header.php"; ?>
 
         <h1>Fedi Keysmash Bot</h1>
 
@@ -28,6 +29,7 @@
             </a>
         </p>
 
-        <?php require '../../../../components/footer.php'; ?>
+        <?php project_comments("keysmash"); ?>
+        <?php require "../../../../components/footer.php"; ?>
     </body>
 </html>

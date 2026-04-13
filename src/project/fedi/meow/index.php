@@ -1,12 +1,18 @@
+<?php
+require "../../../../components/comments.php"; ?>
+
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require '../../../../components/global.php'; ?>
-        <?php seo("FediMeow", "This is a bot that meows every hour on fedi."); ?>
+        <?php require "../../../../components/global.php"; ?>
+        <?php seo(
+            "FediMeow",
+            "This is a bot that meows every hour on fedi.",
+        ); ?>
     </head>
 
     <body>
-        <?php require '../../../../components/header.php'; ?>
+        <?php require "../../../../components/header.php"; ?>
 
         <h1>Fedi Meow</h1>
         <p>This is a bot that meows every hour on fedi.</p>
@@ -19,7 +25,10 @@
                 <button>Source code</button>
             </a>
         </p>
-        <?php require '../../../../components/footer.php'; ?>
+
+        <?php project_comments("fedimeow"); ?>
+
+        <?php require "../../../../components/footer.php"; ?>
 
     </body>
 </html>

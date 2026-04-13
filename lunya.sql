@@ -56,6 +56,15 @@ CREATE TABLE `views_expire` (
   `expire` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+CREATE TABLE `project_comments` (
+  `id` int(11) NOT NULL,
+  `ip` text NOT NULL,
+  `project` text NOT NULL,
+  `name` text NOT NULL,
+  `comment` text NOT NULL,
+  `approved` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
 ALTER TABLE anonymous_messages
   ADD PRIMARY KEY (id);
 
@@ -77,6 +86,9 @@ ALTER TABLE `views`
 ALTER TABLE `views_expire`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `project_comments`
+  ADD PRIMARY KEY (`id`);
+
 ALTER TABLE anonymous_messages
   MODIFY id int(11) NOT NULL AUTO_INCREMENT;
 
@@ -85,16 +97,18 @@ ALTER TABLE guestbook
 
 ALTER TABLE videos
   MODIFY id int(11) NOT NULL AUTO_INCREMENT;
-  
+
 ALTER TABLE buttons
   MODIFY id int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `qna`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-  
+
 ALTER TABLE `views_expire`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `project_comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

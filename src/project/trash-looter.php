@@ -1,16 +1,5 @@
 <?php
-require "../../components/comments.php";
-
-if ($_SERVER["REQUEST_URI"] != "/") {
-    if (!str_ends_with($_SERVER["REQUEST_URI"], ".php")) {
-        header("Location: " . $_SERVER["REQUEST_URI"] . ".php");
-        die("Redirecting...");
-    } else {
-        http_response_code(404);
-        die("404 page not found");
-    }
-}
-?>
+require "../../components/comments.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">

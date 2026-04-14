@@ -207,6 +207,12 @@
                 <p>An old game from 2017 about racing. Made without code!</p>
             </div>
         </a>
+        <a href="/project/soobscrib">
+            <div class="project" style="background-image: url(/project/soobscrib/soobscrib.webp);">
+                <h3>Soobscrib</h3>
+                <p>A game where you have to subscribe to win.</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

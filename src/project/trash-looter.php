@@ -27,11 +27,6 @@ require "../../components/comments.php"; ?>
 
     <p>I would love to attach some videos or pictures of the game here but unfortunately the original video contains information that I want to keep private (namely my dead name) so there's basically no media. The upload dates back to November 28, 2021.</p>
 
-    <h2>Downloads</h2>
-    <p>
-        <a href="https://git.lunya.pet/lunya/racing-game/releases">Download the game</a>
-        <a href="https://git.lunya.pet/lunya/racing-game">The "source code"</a>
-    </p>
     <?php require "../../components/footer.php"; ?>
 </body>
 

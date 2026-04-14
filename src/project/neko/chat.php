@@ -1,6 +1,3 @@
-<?php
-require "../../../components/comments.php"; ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -23,9 +20,6 @@ require "../../../components/comments.php"; ?>
 
     <br />
     <br />
-
-
-    <?php project_comments("nekochat"); ?>
 
     <?php require "../../../components/footer.php"; ?>
 </body>

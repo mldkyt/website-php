@@ -1,5 +1,5 @@
 <?php
-require "../../../../components/comments.php"; ?>
+require "../../../components/comments.php"; ?>
 
 <!doctype html>
 <html lang="en">

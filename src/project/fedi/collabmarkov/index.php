@@ -1,9 +1,9 @@
 
-<?php require "../../../components/comments.php"; ?>
+<?php require "../../../../components/comments.php"; ?>
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require "../../../components/global.php"; ?>
+        <?php require "../../../../components/global.php"; ?>
         <?php seo(
             "Collaborative Markov Bot",
             "A fedi bot that posts markov generated posts based on what followers post",
@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <?php require "../../../components/header.php"; ?>
+        <?php require "../../../../components/header.php"; ?>
 
         <h1>Collaborative Markov Bot</h1>
         <p>The Collaborative Markov Bot is a fedi bot that takes posts from every follower it gets and generates a markovified post from that.</p>
@@ -43,6 +43,6 @@
 
 
         <?php project_comments("collabmarkov"); ?>
-        <?php require "../../../components/footer.php"; ?>
+        <?php require "../../../../components/footer.php"; ?>
     </body>
 </html>

@@ -83,7 +83,7 @@
                 <p>This very website! Add effects used on my site to yours!</p>
             </div>
         </a>
-        <a href="/project/collabmarkov">
+        <a href="/project/fedi/collabmarkov">
             <div class="project" style="background-image: url(/project/fedi/collabmarkov/collabmarkov.png);">
                 <h3>Collaborative Markov Bot</h3>
                 <p>A silly fediverse Markov bot</p>

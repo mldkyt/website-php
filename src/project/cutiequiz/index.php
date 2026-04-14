@@ -60,7 +60,7 @@ require "../../../components/comments.php"; ?>
         <a href="https://cutie-quiz.vercel.app">
             <button>Take it NOW!</button>
         </a>
-        <a href="https://git.the-wired.club/lunya/CutieQuiz">
+        <a href="https://git.lunya.pet/lunya/CutieQuiz">
             <button>Open GitHub page</button>
         </a>
     </p>

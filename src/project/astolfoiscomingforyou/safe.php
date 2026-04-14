@@ -50,7 +50,7 @@ require "../../../components/comments.php"; ?>
         <br />
         <img src="safe_2.png" alt="Astolfo gives you lots of compliments" />
         <br />
-        <a href="https://git.the-wired.club/lunya/AstolfoIsComingForYou/releases">
+        <a href="https://git.lunya.pet/lunya/AstolfoIsComingForYou/releases">
             <button>Download the safe variant</button>
         </a>
         <a href="https://forums.lunya.pet/viewforum.php?f=6">

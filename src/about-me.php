@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <?php require '../components/global.php'; ?>
+    <?php require "../components/global.php"; ?>
     <?php seo("About me", "Who I am, what I do and what I like/dislike"); ?>
 </head>
 
 <body>
-    <?php require '../components/header.php'; ?>
+    <?php require "../components/header.php"; ?>
     <h1>About me</h1>
 
     <p><strong>Recommended that you read this before you interact with me.</strong></p>
@@ -42,7 +42,7 @@
     <ul>
         <li>Women, fem-adjacent creatures and critters and other genders but a bit less</li>
         <li>Yuri, women kissing and gay women in general</li>
-        <li><a href="https://git.the-wired.club/lunya">Making software</a>, and chatting about my projects</li>
+        <li><a href="https://git.lunya.pet/lunya">Making software</a>, and chatting about my projects</li>
         <li>Free software, sometimes contributing to it</li>
         <li>Linux (Arch Linux, my beloved)</li>
     </ul>
@@ -104,7 +104,7 @@
     <p>This page may be expanded in the future, once I discover more things about myself.</p>
     <p>Additionally, feel free to ask questions <a href="/qna">here</a></p>
 
-    <?php require '../components/footer.php'; ?>
+    <?php require "../components/footer.php"; ?>
 </body>
 
 </html>

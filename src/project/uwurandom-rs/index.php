@@ -25,7 +25,7 @@ require "../../../components/comments.php"; ?>
         <a href="https://crates.io/crates/mldkyt-uwurandom-rs">
             <button>Download from crates.io</button>
         </a>
-        <a href="https://git.the-wired.club/lunya/uwurandom-rs">
+        <a href="https://git.lunya.pet/lunya/uwurandom-rs">
             <button>Download from git.lunya.pet</button>
         </a>
         <a href="https://forums.lunya.pet/viewforum.php?f=11">

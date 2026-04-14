@@ -48,7 +48,7 @@ require "../../../components/comments.php"; ?>
         <br />
         <img src="evil_2.png" alt="Astolfo shuts down your machine in anger" />
         <br />
-        <a href="https://git.the-wired.club/lunya/AstolfoIsComingForYou/releases">
+        <a href="https://git.lunya.pet/lunya/AstolfoIsComingForYou/releases">
             <button>Download the unsafe variant</button>
         </a>
         <a href="https://forums.lunya.pet/viewforum.php?f=6">

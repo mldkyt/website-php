@@ -38,7 +38,7 @@ require "../../../../components/comments.php"; ?>
         <br />
 
         <p>
-            <a href="https://git.the-wired.club/lunya/fedi-summarizer">
+            <a href="https://git.lunya.pet/lunya/fedi-summarizer">
                 <button>Source code</button>
             </a>
         </p>

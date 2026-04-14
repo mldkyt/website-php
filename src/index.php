@@ -1,31 +1,29 @@
 <?php
 if ($_SERVER["REQUEST_URI"] != "/") {
-
     if (!str_ends_with($_SERVER["REQUEST_URI"], ".php")) {
         header("Location: " . $_SERVER["REQUEST_URI"] . ".php");
         die("Redirecting...");
-    }else{
+    } else {
         http_response_code(404);
         die("404 page not found");
     }
-}
-?>
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require '../components/global.php'; ?>
+    <?php require "../components/global.php"; ?>
     <?php seo("Home page", "Welcome to Lunya's website!"); ?>
 </head>
 
 <body>
-    <?php require '../components/header.php'; ?>
+    <?php require "../components/header.php"; ?>
     <h1>Welcome to Lunya's website!</h1>
 
     <h2>About me</h2>
     <p>
-        Hi, I'm Lunya, and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.the-wired.club/lunya" target="_blank">code in production</a>, make <a
+        Hi, I'm Lunya, and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.lunya.pet/lunya" target="_blank">code in production</a>, make <a
             href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw"
             target="_blank">YouTube videos</a> and <a href="https://sk.lunya.pet/@lunya" target="_blank">shitpost on fedi</a>! I have a <a href="/discord" target="_blank">Discord</a> server and <a href="https://forums.lunya.pet" target="_blank">forums</a> :3
     </p>
@@ -70,15 +68,22 @@ if ($_SERVER["REQUEST_URI"] != "/") {
 
     <ul>
         <?php
-        $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
-        $query = $conn->prepare("SELECT title, url FROM videos ORDER BY ord DESC LIMIT 5");
+        $conn = mysqli_connect(
+            getenv("MARIADB_HOST"),
+            getenv("MARIADB_USER"),
+            getenv("MARIADB_PASSWORD"),
+            getenv("MARIADB_DATABASE"),
+        );
+        $query = $conn->prepare(
+            "SELECT title, url FROM videos ORDER BY ord DESC LIMIT 5",
+        );
         $query->execute();
         $query->bind_result($title, $url);
-        while ($query->fetch()) :
-        ?>
-        <li><a href="<?= htmlspecialchars($url); ?>"><strong><?= htmlspecialchars($title); ?></strong></a></li>
-        <?php
-        endwhile;
+        while ($query->fetch()): ?>
+        <li><a href="<?= htmlspecialchars(
+            $url,
+        ) ?>"><strong><?= htmlspecialchars($title) ?></strong></a></li>
+        <?php endwhile;
         $query->close();
         $conn->close();
         ?>
@@ -111,11 +116,11 @@ if ($_SERVER["REQUEST_URI"] != "/") {
 
     <img src="/button.gif" alt="88x31 button for Lunya">
 
-    <?php require '../components/buttons.php'; ?>
+    <?php require "../components/buttons.php"; ?>
 
     <br />
     <br />
-    <?php require '../components/footer.php'; ?>
+    <?php require "../components/footer.php"; ?>
 </body>
 
 </html>

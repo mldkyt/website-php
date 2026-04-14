@@ -24,7 +24,7 @@ require "../../../../components/comments.php"; ?>
             <a href="https://sk.lunya.pet/@keysmash">
                 <button>Main instance</button>
             </a>
-            <a href="https://git.the-wired.club/lunya/fedikeysmashbot">
+            <a href="https://git.lunya.pet/lunya/fedikeysmashbot">
                 <button>Source code</button>
             </a>
         </p>

@@ -23,7 +23,7 @@ require "../../../../components/comments.php"; ?>
         </p>
         <p>Fedi streaks had very low usage on fedi, so the main instance of it was shut down. But if you want to host an instance for yourself, the source code is below.</p>
         <p>
-            <a href="https://git.the-wired.club/lunya/fedi-streaks">
+            <a href="https://git.lunya.pet/lunya/fedi-streaks">
                 <button>Source code</button>
             </a>
         </p>

@@ -1,12 +1,10 @@
-<?php
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require '../../components/global.php'; ?>
+    <?php require "../../components/global.php"; ?>
     <?php seo("Lunya's socials", "All of Lunya's social and chat platforms"); ?>
 
     <style>
@@ -59,7 +57,7 @@
 </head>
 
 <body>
-    <?php require '../../components/header.php'; ?>
+    <?php require "../../components/header.php"; ?>
 
     <h1>Lunya's socials</h1>
     <h2>The Community</h2>
@@ -93,7 +91,7 @@
                 <h3>YouTube (@LunyaUwU)</h3>
             </div>
         </a>
-        <a href="https://git.the-wired.club/lunya">
+        <a href="https://git.lunya.pet/lunya">
             <div class="social" style="background-image: url(forgejo.png)">
                 <h3>Forgejo (Lunya on git.the-wired.club)</h3>
             </div>
@@ -125,7 +123,7 @@
         <li><a href="https://e-z.bio/lunya">E-Z bio (lunya)</a></li>
     </ul>
 
-    <?php require '../../components/footer.php'; ?>
+    <?php require "../../components/footer.php"; ?>
 </body>
 
 </html>

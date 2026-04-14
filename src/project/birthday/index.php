@@ -24,7 +24,7 @@
         <p>Please note that because of this app being old, there is a link pointing to mldkyt.com, which doesn't work.</p>
 
         <p>
-            <a href="https://git.the-wired.club/lunya/Birthday/releases">
+            <a href="https://git.lunya.pet/lunya/Birthday/releases">
                 <button>Download latest release</button>
             </a>
             <a href="https://forums.lunya.pet/viewforum.php?f=12">

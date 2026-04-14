@@ -1,17 +1,18 @@
-<?php
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require '../components/global.php'; ?>
-    <?php seo("Services", "Check out my list of self-hosted services, including Forgejo and Akkoma! :3"); ?>
+    <?php require "../components/global.php"; ?>
+    <?php seo(
+        "Services",
+        "Check out my list of self-hosted services, including Forgejo and Akkoma! :3",
+    ); ?>
 </head>
 
 <body>
-    <?php require '../components/header.php'; ?>
+    <?php require "../components/header.php"; ?>
 
     <h1>Self-hosted services</h1>
 
@@ -25,7 +26,7 @@
     <p>Here's where all my code (usually tested in production) is stored.</p>
     <ul>
         <li>
-            <a href="https://git.the-wired.club/lunya" target="_blank">My account on my Forgejo instance</a>
+            <a href="https://git.lunya.pet/lunya" target="_blank">My account on my Forgejo instance</a>
         </li>
     </ul>
 
@@ -47,7 +48,7 @@
         <li><a href="https://forums.lunya.pet" target="_blank">Open my forums</a></li>
     </ul>
 
-    <?php require '../components/footer.php'; ?>
+    <?php require "../components/footer.php"; ?>
 </body>
 
 </html>

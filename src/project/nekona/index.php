@@ -43,7 +43,7 @@ require "../../../components/comments.php"; ?>
         <a href="https://top.gg/bot/1426903542601613444/vote">
             <button>Vote for Nekona</button>
         </a>
-        <a href="https://git.the-wired.club/lain/nekona/wiki">
+        <a href="https://git.lunya.pet/lunya/nekona/wiki">
             <button>Read the docs</button>
         </a>
         <a href="/discord">

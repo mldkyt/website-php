@@ -34,12 +34,12 @@ require "../../components/comments.php"; ?>
     <h2>Downloads</h2>
     <p>
         <a href="https://www.nexusmods.com/monbazou/mods/288">Download from NexusMods</a>
-        <a href="https://git.the-wired.club/lunya/MonBazouModMenu/releases">Download from GitHub</a>
+        <a href="https://git.lunya.pet/lunya/MonBazouModMenu/releases">Download from GitHub</a>
     </p>
 
     <h2>Additional</h2>
     <p>
-        <a href="https://git.the-wired.club/lunya/MonBazouModMenu">Source code (Issues available)</a>
+        <a href="https://git.lunya.pet/lunya/MonBazouModMenu">Source code (Issues available)</a>
     </p>
 
 

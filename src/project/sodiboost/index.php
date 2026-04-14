@@ -58,7 +58,7 @@
         <a href="https://modrinth.com/mod/sodiboost">
             <button>Download from Modrinth</button>
         </a>
-        <a href="https://git.the-wired.club/lunya/sodiboost">
+        <a href="https://git.lunya.pet/lunya/sodiboost">
             <button>Source code</button>
         </a>
         <a href="https://forums.lunya.pet/viewforum.php?f=8">

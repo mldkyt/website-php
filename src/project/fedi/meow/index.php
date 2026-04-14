@@ -21,7 +21,7 @@ require "../../../../components/comments.php"; ?>
         <p>Because of low usage, the main instance of fedi meow was shut down because it polluted the DB. But if you want to run this, the code will forever be available.</p>
 
         <p>
-            <a href="https://git.the-wired.club/lunya/fedimeow">
+            <a href="https://git.lunya.pet/lunya/fedimeow">
                 <button>Source code</button>
             </a>
         </p>

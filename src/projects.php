@@ -1,12 +1,10 @@
-<?php
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require '../components/global.php'; ?>
+    <?php require "../components/global.php"; ?>
     <?php seo("Project list", "Lunya's full project list"); ?>
     <style>
         .project {
@@ -68,7 +66,7 @@
 </head>
 
 <body>
-    <?php require '../components/header.php'; ?>
+    <?php require "../components/header.php"; ?>
 
     <h1>Lunya's projects</h1>
     <p>This is a list of Lunya's projects.</p>
@@ -86,7 +84,7 @@
             </div>
         </a>
         <a href="/project/collabmarkov">
-            <div class="project" style="background-image: url(/project/fedi/collabmarkov/collabmarkov.jpg);">
+            <div class="project" style="background-image: url(/project/fedi/collabmarkov/collabmarkov.png);">
                 <h3>Collaborative Markov Bot</h3>
                 <p>A silly fediverse Markov bot</p>
             </div>
@@ -203,9 +201,27 @@
                 <p>This bot counts consecutive days of you posting on fedi.</p>
             </div>
         </a>
+        <a href="/project/racing-game">
+            <div class="project" style="background-image: url(/project/racing-game/img.webp);">
+                <h3>Racing Game</h3>
+                <p>An old game from 2017 about racing. Made without code!</p>
+            </div>
+        </a>
     </div>
 
-    <?php require '../components/footer.php'; ?>
+    <h2>Lost Projects</h2>
+    <p>A list of projects that I know of or have documentation of, but are otherwise lost.</p>
+    <div class="projectContainer">
+
+        <a href="/project/trash-looter.php">
+            <div class="project">
+                <h3>Trash Looter</h3>
+                <p>A small game made for teamseas. Lost media as of now.</p>
+            </div>
+        </a>
+    </div>
+
+    <?php require "../components/footer.php"; ?>
 </body>
 
 </html>

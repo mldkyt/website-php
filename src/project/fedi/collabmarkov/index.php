@@ -1,5 +1,7 @@
 
+<?php require "../../../../components/util.php"; ?>
 <?php require "../../../../components/comments.php"; ?>
+<?php require "../../../../components/likes.php"; ?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -42,6 +44,7 @@
         </p>
 
 
+        <?php project_likes("collabmarkov"); ?>
         <?php project_comments("collabmarkov"); ?>
         <?php require "../../../../components/footer.php"; ?>
     </body>

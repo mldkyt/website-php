@@ -1,5 +1,8 @@
 <?php
-require "../../../components/comments.php"; ?>
+require "../../../components/util.php";
+require "../../../components/comments.php";
+require "../../../components/likes.php";
+?>
 
 <!doctype html>
 <html lang="en">
@@ -48,16 +51,20 @@ require "../../../components/comments.php"; ?>
         <br />
         <img src="evil_2.png" alt="Astolfo shuts down your machine in anger" />
         <br />
-        <a href="https://git.lunya.pet/lunya/AstolfoIsComingForYou/releases">
-            <button>Download the unsafe variant</button>
-        </a>
-        <a href="https://forums.lunya.pet/viewforum.php?f=6">
-            <button>Discuss the project (Forums)</button>
-        </a>
-        <a href="/discord">
-            <button>Discuss the project (Discord)</button>
-        </a>
 
+        <div>
+            <a href="https://git.lunya.pet/lunya/AstolfoIsComingForYou/releases">
+                <button>Download the unsafe variant</button>
+            </a>
+            <a href="https://forums.lunya.pet/viewforum.php?f=6">
+                <button>Discuss the project (Forums)</button>
+            </a>
+            <a href="/discord">
+                <button>Discuss the project (Discord)</button>
+            </a>
+        </div>
+
+        <?php project_likes("astolfoiscomingforyou"); ?>
         <?php project_comments("astolfoiscomingforyou"); ?>
 
         <?php require "../../../components/footer.php"; ?>

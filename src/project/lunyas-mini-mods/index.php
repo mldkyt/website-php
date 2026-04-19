@@ -1,5 +1,8 @@
 <?php
-require "../../../components/comments.php"; ?>
+require "../../../components/util.php";
+require "../../../components/comments.php";
+require "../../../components/likes.php";
+?>
 
 <!doctype html>
 <html lang="en">
@@ -193,6 +196,7 @@ require "../../../components/comments.php"; ?>
     </p>
 
 
+    <?php project_likes("lunyasminimods"); ?>
     <?php project_comments("lunyasminimods"); ?>
 
     <?php require "../../../components/footer.php"; ?>

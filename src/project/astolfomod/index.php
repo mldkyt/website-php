@@ -1,5 +1,8 @@
 <?php
-require "../../../components/comments.php"; ?>
+require "../../../components/util.php";
+require "../../../components/comments.php";
+require "../../../components/likes.php";
+?>
 
 <!doctype html>
 <html lang="en">
@@ -129,19 +132,23 @@ require "../../../components/comments.php"; ?>
         </details>
 
         <h2>Download</h2>
-        <a href="https://modrinth.com/mod/astolfo-mod">
-            <button>View Modrinth page!</button>
-        </a>
-        <a href="https://git.lunya.pet/lunya/AstolfoForge/releases/latest">
-            <button>Download the latest <strong>Forge 1.20.1</strong> release from GitHub</button>
-        </a>
-        <a href="https://forums.lunya.pet/viewforum.php?f=7">
-            <button>Discuss the project (Forums)</button>
-        </a>
-        <a href="/discord">
-            <button>Discuss the project (Discord)</button>
-        </a>
 
+        <div>
+            <a href="https://modrinth.com/mod/astolfo-mod">
+                <button>View Modrinth page!</button>
+            </a>
+            <a href="https://git.lunya.pet/lunya/AstolfoForge/releases/latest">
+                <button>Download the latest <strong>Forge 1.20.1</strong> release from GitHub</button>
+            </a>
+            <a href="https://forums.lunya.pet/viewforum.php?f=7">
+                <button>Discuss the project (Forums)</button>
+            </a>
+            <a href="/discord">
+                <button>Discuss the project (Discord)</button>
+            </a>
+        </div>
+
+        <?php project_likes("astolfomod"); ?>
         <?php project_comments("astolfomod"); ?>
 
         <?php require "../../../components/footer.php"; ?>

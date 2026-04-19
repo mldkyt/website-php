@@ -1,4 +1,8 @@
-
+<?php
+require "../../../components/util.php";
+require "../../../components/likes.php";
+require "../../../components/comments.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +35,9 @@
             <button>Download this game (Itch.IO)</button>
         </a>
     </p>
+
+    <?php project_likes("soobscrib"); ?>
+    <?php project_comments("soobscrib"); ?>
     <?php require "../../../components/footer.php"; ?>
 </body>
 

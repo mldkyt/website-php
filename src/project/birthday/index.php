@@ -1,4 +1,8 @@
-<?php require "../../../components/comments.php"; ?>
+<?php
+require "../../../components/util.php";
+require "../../../components/comments.php";
+require "../../../components/likes.php";
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -35,6 +39,7 @@
             </a>
         </p>
 
+        <?php project_likes("birthday"); ?>
         <?php project_comments("birthday"); ?>
         <?php require "../../../components/footer.php"; ?>
     </body>

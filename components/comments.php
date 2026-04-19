@@ -1,6 +1,5 @@
 <?php
 
-require "util.php";
 function project_handle_post(mysqli $conn, string $ip, string $project): bool
 {
     if (

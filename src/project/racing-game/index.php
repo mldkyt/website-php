@@ -1,4 +1,9 @@
+<?php
 
+require "../../../components/util.php";
+require "../../../components/comments.php";
+require "../../../components/likes.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +44,9 @@
             <button>The "source code"</button>
         </a>
     </p>
+
+    <?php project_likes("racing-game"); ?>
+    <?php project_comments("racing-game"); ?>
     <?php require "../../../components/footer.php"; ?>
 </body>
 

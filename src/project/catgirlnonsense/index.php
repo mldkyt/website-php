@@ -1,5 +1,7 @@
 <?php
+require "../../../components/util.php";
 require "../../../components/comments.php";
+require "../../../components/likes.php";
 
 function uwu_nonsense($length)
 {
@@ -324,14 +326,16 @@ function generate($maxlen, $softlimit = false)
 
         <br>
 
-        <a href="https://forums.lunya.pet/viewforum.php?f=9">
-            <button>Discuss the project (Forums)</button>
-        </a>
-        <a href="/discord">
-            <button>Discuss the project (Discord)</button>
-        </a>
+        <div>
+            <a href="https://forums.lunya.pet/viewforum.php?f=9">
+                <button>Discuss the project (Forums)</button>
+            </a>
+            <a href="/discord">
+                <button>Discuss the project (Discord)</button>
+            </a>
+        </div>
 
-
+        <?php project_likes("catgirlnonsense"); ?>
         <?php project_comments("catgirlnonsense"); ?>
 
         <?php require "../../../components/footer.php"; ?>

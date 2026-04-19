@@ -65,6 +65,12 @@ CREATE TABLE `project_comments` (
   `approved` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+CREATE TABLE `project_likes` (
+  `id` int(11) NOT NULL,
+  `project` text NOT NULL,
+  `ip` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
 ALTER TABLE anonymous_messages
   ADD PRIMARY KEY (id);
 
@@ -89,6 +95,10 @@ ALTER TABLE `views_expire`
 ALTER TABLE `project_comments`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `project_likes`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `project` (`project`,`ip`) USING HASH;
+
 ALTER TABLE anonymous_messages
   MODIFY id int(11) NOT NULL AUTO_INCREMENT;
 
@@ -108,6 +118,9 @@ ALTER TABLE `views_expire`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `project_comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `project_likes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,5 +1,8 @@
 <?php
-require "../../../components/comments.php"; ?>
+require "../../../components/util.php";
+require "../../../components/comments.php";
+require "../../../components/likes.php";
+?>
 
 <html>
 
@@ -30,14 +33,16 @@ require "../../../components/comments.php"; ?>
     <br />
     <br />
 
-    <a href="https://forums.lunya.pet/viewforum.php?f=4">
-        <button>Discuss the project (Forums)</button>
-    </a>
-    <a href="/discord">
-        <button>Discuss the project (Discord)</button>
-    </a>
+    <div>
+        <a href="https://forums.lunya.pet/viewforum.php?f=4">
+            <button>Discuss the project (Forums)</button>
+        </a>
+        <a href="/discord">
+            <button>Discuss the project (Discord)</button>
+        </a>
+    </div>
 
-
+    <?php project_likes("website"); ?>
     <?php project_comments("website"); ?>
 
     <?php require "../../../components/footer.php"; ?>

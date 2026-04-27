@@ -116,9 +116,9 @@
 
     <ul>
         <li><a href="https://github.com/c4tgrl">GitHub (Unused)</a></li>
-        <li><a href="https://gitlab.com/catgrl">GitLab.com (catgrl)</a></li>
+        <li><a href="https://gitlab.com/estradiol">GitLab.com (estradiol)</a></li>
         <li><a href="https://git.gay/catgirl">git.gay (catgirl)</a></li>
-        <li><a href="https://codeberg.org/c4tgirl">Codeberg (c4tgirl)</a></li>
+        <li><a href="https://codeberg.org/estradiol">Codeberg (estradiol)</a></li>
         <li><a href="https://namemc.com/profile/gothcatgrl.1">NameMC (gothcatgrl)</a></li>
         <li><a href="https://e-z.bio/lunya">E-Z bio (lunya)</a></li>
     </ul>

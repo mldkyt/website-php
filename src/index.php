@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
     <h3><a href="/projects">Programming Projects</a></h3>
     <ul>
         <li>
-            <a href="/nekona"><strong>Nekona</strong></a> is a fully featured general purpose discord bot with over 30 features.
+            <a href="/project/nekona"><strong>Nekona</strong></a> is a fully featured general purpose discord bot with over 30 features.
         </li>
         <li>
             Wanna be invaded by Astolfo? <a href="/project/astolfoiscomingforyou"><strong>Astolfo is coming for you</strong></a> is a Windows program that recreates the meme.
@@ -68,21 +68,12 @@ if ($_SERVER["REQUEST_URI"] != "/") {
 
     <ul>
         <?php
-        $conn = mysqli_connect(
-            getenv("MARIADB_HOST"),
-            getenv("MARIADB_USER"),
-            getenv("MARIADB_PASSWORD"),
-            getenv("MARIADB_DATABASE"),
-        );
-        $query = $conn->prepare(
-            "SELECT title, url FROM videos ORDER BY ord DESC LIMIT 5",
-        );
+        $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
+        $query = $conn->prepare("SELECT title, url FROM videos ORDER BY ord DESC LIMIT 5");
         $query->execute();
         $query->bind_result($title, $url);
         while ($query->fetch()): ?>
-        <li><a href="<?= htmlspecialchars(
-            $url,
-        ) ?>"><strong><?= htmlspecialchars($title) ?></strong></a></li>
+        <li><a href="<?= htmlspecialchars($url) ?>"><strong><?= htmlspecialchars($title) ?></strong></a></li>
         <?php endwhile;
         $query->close();
         $conn->close();

@@ -60,8 +60,7 @@
     </style>
     <?php
     $month = date("n");
-    if ($month == 6) :
-    ?>
+    if ($month == 6): ?>
     <div id="headerprideflag">
         <div class="prideflags">
             <div class="prideflag" style="background-color: red;"></div>
@@ -86,7 +85,8 @@
             <div class="prideflag" style="background-color: #28B3FF;"></div>
         </div>
     </div>
-    <?php endif; ?>
+    <?php endif;
+    ?>
     <div>
         <div>
             <h2>Lunya's website!</h2>
@@ -97,6 +97,7 @@
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
+            <li><a href="/pronouns">Pronouns</a></li>
             <li><a href="/guestbook.php">Guestbook</a></li>
             <li><a href="/projects">Projects</a></li>
             <li><a href="/social">Socials</a></li>

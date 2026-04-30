@@ -1,12 +1,12 @@
 <html>
 
 <head>
-    <?php require '../../../components/global.php'; ?>
+    <?php require "../../../components/global.php"; ?>
     <?php seo("Background", "Lunya's background script for her website."); ?>
 </head>
 
 <body>
-    <?php require '../../../components/header.php'; ?>
+    <?php require "../../../components/header.php"; ?>
 
     <h1>The background stars effect</h1>
     <a href="/project/website">&lt; Go back to full list</a>
@@ -38,13 +38,10 @@
         <code>lunya.pet</code>
     </p>
 
-    <a href="https://forums.lunya.pet/viewforum.php?f=4">
-        <button>Discuss my website (Forums)</button>
-    </a>
     <a href="/discord">
         <button>Discuss my website (Discord)</button>
     </a>
-    <?php require '../../../components/footer.php'; ?>
+    <?php require "../../../components/footer.php"; ?>
 
 </body>
 

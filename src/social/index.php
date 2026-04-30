@@ -68,11 +68,6 @@
                 <h3>Discord Server</h3>
             </div>
         </a>
-        <a href="https://forums.lunya.pet">
-            <div class="social" style="background-image: url(forums.png)">
-                <h3>Forums</h3>
-            </div>
-        </a>
     </div>
     <h2>Social Networks</h2>
     <div class="socCont">
@@ -108,7 +103,7 @@
         </a>
     </div>
 
-    <p>Also check out my <a href="/discord">Discord server</a> and <a href="https://forums.lunya.pet" target="_blank">forums</a>.</p>
+    <p>Also check out my <a href="/discord">Discord server</a>.</p>
 
     <h2>Other accounts</h2>
 

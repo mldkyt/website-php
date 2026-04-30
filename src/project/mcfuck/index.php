@@ -23,9 +23,6 @@ require "../../../components/likes.php";
         <a href="https://git.lunya.pet/lunya/MCFuck/releases">
             <button>Download this abomination</button>
         </a>
-        <a href="https://forums.lunya.pet/viewforum.php?f=10">
-            <button>Discuss the project (Forums)</button>
-        </a>
         <a href="/discord">
             <button>Discuss the project (Discord)</button>
         </a>

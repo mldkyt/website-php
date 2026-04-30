@@ -7,10 +7,7 @@ require "../../../components/likes.php";
 <html lang="en">
     <head>
         <?php require "../../../components/global.php"; ?>
-        <?php seo(
-            "Birthday",
-            "Birthday is an app that tells you when someone has a birthday.",
-        ); ?>
+        <?php seo("Birthday", "Birthday is an app that tells you when someone has a birthday."); ?>
     </head>
 
     <body>
@@ -30,9 +27,6 @@ require "../../../components/likes.php";
         <p>
             <a href="https://git.lunya.pet/lunya/Birthday/releases">
                 <button>Download latest release</button>
-            </a>
-            <a href="https://forums.lunya.pet/viewforum.php?f=12">
-                <button>Discuss the project (Forums)</button>
             </a>
             <a href="/discord">
                 <button>Discuss the project (Discord)</button>

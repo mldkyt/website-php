@@ -8,10 +8,7 @@ require "../../../components/likes.php";
 <html lang="en">
     <head>
         <?php require "../../../components/global.php"; ?>
-        <?php seo(
-            "PawSense",
-            "Leading Innovation for Detecting Cat(girls) at Computers",
-        ); ?>
+        <?php seo("PawSense", "Leading Innovation for Detecting Cat(girls) at Computers"); ?>
     </head>
 
     <body>
@@ -33,9 +30,6 @@ require "../../../components/likes.php";
             </a>
             <a href="https://git.lunya.pet/lunya/PawSense">
                 <button>View the source code</button>
-            </a>
-            <a href="https://forums.lunya.pet/viewforum.php?f=13w">
-                <button>Discuss the project (Forums)</button>
             </a>
             <a href="/discord">
                 <button>Discuss the project (Discord)</button>

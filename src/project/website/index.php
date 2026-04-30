@@ -34,9 +34,6 @@ require "../../../components/likes.php";
     <br />
 
     <div>
-        <a href="https://forums.lunya.pet/viewforum.php?f=4">
-            <button>Discuss the project (Forums)</button>
-        </a>
         <a href="/discord">
             <button>Discuss the project (Discord)</button>
         </a>

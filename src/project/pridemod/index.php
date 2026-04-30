@@ -9,10 +9,7 @@ require "../../../components/likes.php";
 
 <head>
     <?php require "../../../components/global.php"; ?>
-    <?php seo(
-        "Pride Mod",
-        "Le Pride mod for My Summer Car and My Winter Car",
-    ); ?>
+    <?php seo("Pride Mod", "Le Pride mod for My Summer Car and My Winter Car"); ?>
 </head>
 
 <body>
@@ -34,9 +31,6 @@ require "../../../components/likes.php";
         </a>
         <a href="https://www.nexusmods.com/mywintercar/mods/838">
             <button>Download the mod on NexusMods (My Winter Car)</button>
-        </a>
-        <a href="https://forums.lunya.pet/viewforum.php?f=16">
-            <button>Discuss the project (Forums)</button>
         </a>
         <a href="/discord">
             <button>Discuss the project (Discord)</button>

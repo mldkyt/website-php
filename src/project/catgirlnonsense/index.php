@@ -76,34 +76,7 @@ function generate($maxlen, $softlimit = false)
         "*lies down on a random surface*",
     ];
 
-    $GLOBALS["nonsense"] = [
-        "aa",
-        "am",
-        "an",
-        "ao",
-        "eo",
-        "ew",
-        "me",
-        "mr",
-        "ny",
-        "ow",
-        "pp",
-        "pu",
-        "ra",
-        "re",
-        "rm",
-        "rn",
-        "ro",
-        "rp",
-        "rw",
-        "ur",
-        "wm",
-        "wn",
-        "wp",
-        "wr",
-        "ww",
-        "ya",
-    ];
+    $GLOBALS["nonsense"] = ["aa", "am", "an", "ao", "eo", "ew", "me", "mr", "ny", "ow", "pp", "pu", "ra", "re", "rm", "rn", "ro", "rp", "rw", "ur", "wm", "wn", "wp", "wr", "ww", "ya"];
 
     // How many characters so far
     $currentlen = 0;
@@ -246,11 +219,7 @@ function generate($maxlen, $softlimit = false)
         <h1>CatGirl nonsense generator</h1>
         <form id="catgirlForm" style="margin-left: 1em;" method="post" action="/project/catgirlnonsense/">
             <label for="amount">Amount:</label>
-            <input id="amount" name="amount" type="number" min="1" value="<?= isset(
-                $_POST["amount"],
-            )
-                ? $_POST["amount"]
-                : "100" ?>" />
+            <input id="amount" name="amount" type="number" min="1" value="<?= isset($_POST["amount"]) ? $_POST["amount"] : "100" ?>" />
             <br />
             <label for="uwu">uwu~</label>
             <input id="uwu" name="uwu" type="checkbox" checked />
@@ -302,19 +271,7 @@ function generate($maxlen, $softlimit = false)
         $ara = isset($_POST["ara"]);
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (
-                $uwu ||
-                $owo ||
-                $nya ||
-                $blush ||
-                $three ||
-                $actions ||
-                $keysmashing ||
-                $screaming ||
-                $scrunkly ||
-                $nonsense ||
-                $ara
-            ) {
+            if ($uwu || $owo || $nya || $blush || $three || $actions || $keysmashing || $screaming || $scrunkly || $nonsense || $ara) {
                 $amount = isset($_POST["amount"]) ? $_POST["amount"] : 100;
                 echo generate($amount, softlimit: true);
             } else {
@@ -327,9 +284,6 @@ function generate($maxlen, $softlimit = false)
         <br>
 
         <div>
-            <a href="https://forums.lunya.pet/viewforum.php?f=9">
-                <button>Discuss the project (Forums)</button>
-            </a>
             <a href="/discord">
                 <button>Discuss the project (Discord)</button>
             </a>

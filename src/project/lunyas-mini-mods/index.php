@@ -9,10 +9,7 @@ require "../../../components/likes.php";
 
 <head>
     <?php require "../../../components/global.php"; ?>
-    <?php seo(
-        "Lunya's Mini Mods",
-        "A bunch of mini mods for My Summer Car and My Winter Car, by Lunya :3",
-    ); ?>
+    <?php seo("Lunya's Mini Mods", "A bunch of mini mods for My Summer Car and My Winter Car, by Lunya :3"); ?>
 </head>
 
 <body>
@@ -186,9 +183,6 @@ require "../../../components/likes.php";
         </a>
         <a href="https://www.nexusmods.com/mywintercar/mods/1127">
             <button>Download this mod on NexusMods (My Winter Car)</button>
-        </a>
-        <a href="https://forums.lunya.pet/viewforum.php?f=14">
-            <button>Discuss the project (Forums)</button>
         </a>
         <a href="/discord">
             <button>Discuss the project (Discord)</button>

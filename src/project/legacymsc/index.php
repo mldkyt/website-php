@@ -135,9 +135,6 @@ require "../../../components/likes.php";
         <a href="https://www.nexusmods.com/mysummercar/mods/8947">
             <button>Download this mod on NexusMods</button>
         </a>
-        <a href="https://forums.lunya.pet/viewforum.php?f=15">
-            <button>Discuss the project (Forums)</button>
-        </a>
         <a href="/discord">
             <button>Discuss the project (Discord)</button>
         </a>

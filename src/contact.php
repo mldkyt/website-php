@@ -1,6 +1,6 @@
 <?php
 
-require '../components/util.php';
+require "../components/util.php";
 
 if (isset($_POST["text"]) && isset($_POST["bot"])) {
     $ok = true;
@@ -33,34 +33,33 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
     }
     $conn->close();
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require '../components/global.php'; ?>
+    <?php require "../components/global.php"; ?>
     <?php seo("Contact Lunya", "The contacts for Lunya"); ?>
 </head>
 
 <body>
-    <?php require '../components/header.php'; ?>
+    <?php require "../components/header.php"; ?>
 
     <h1>Contact Lunya :3</h1>
 
-    <?php if (isset($_POST["title"]) && (strtolower($_POST["title"]) == "contact lunya :3" || strtolower($_POST["title"]) == "contact")) : ?>
+    <?php if (isset($_POST["title"]) && (strtolower($_POST["title"]) == "contact lunya :3" || strtolower($_POST["title"]) == "contact")): ?>
 
         <h2>Send me an anonymous message</h2>
 
-        <?php if (isset($postOk)) : ?>
+        <?php if (isset($postOk)): ?>
         <div class="success">
             Anonymous message was sent successfully!
         </div>
         <?php endif; ?>
-        <?php if (isset($postError)) : ?>
+        <?php if (isset($postError)): ?>
             <div class="error">
-                <?= $postError; ?>
+                <?= $postError ?>
             </div>
         <?php endif; ?>
 
@@ -94,8 +93,7 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
             <br>
             <button type="submit">Send anonymous message</button>
         </form>
-        <?php
-        }
+        <?php }
         $query->close();
         $conn->close();
         ?>
@@ -106,9 +104,6 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
 
         <li>
             <strong>Discord</strong>: Join my <a href="/discord">Discord server</a>
-        </li>
-        <li>
-            <strong>Forums</strong>: Create an account on <a href="https://forums.lunya.pet">forums.lunya.pet</a> and send me a DM from there.
         </li>
 
         <br />
@@ -138,9 +133,9 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
             <strong>Fedi</strong>: Send a DM on fedi to <code>@lunya@sk.lunya.pet</code>.
         </li>
         <br>
-    <?php else : ?>
+    <?php else: ?>
 
-        <?php if (isset($_POST["title"])) : ?>
+        <?php if (isset($_POST["title"])): ?>
         <div class="error">
             That was not the page title, please enter the page title to show the contact page
         </div>
@@ -162,7 +157,7 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
 
     <?php endif; ?>
 
-    <?php require '../components/footer.php'; ?>
+    <?php require "../components/footer.php"; ?>
 </body>
 
 </html>

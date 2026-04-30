@@ -5,10 +5,7 @@
 
 <head>
     <?php require "../components/global.php"; ?>
-    <?php seo(
-        "Services",
-        "Check out my list of self-hosted services, including Forgejo and Akkoma! :3",
-    ); ?>
+    <?php seo("Services", "Check out my list of self-hosted services, including Forgejo and Akkoma! :3"); ?>
 </head>
 
 <body>
@@ -41,12 +38,6 @@
     <p>Wanna join Sharkey? <a href="https://sharkey.fediverse.observer" target="_blank">Find yourself a Sharkey instance</a>. You can sign up on any instance, and you'll still be able to follow me.</p>
 
     <p>There are a few bots hosted on my Sharkey instance. They are followable generally from the whole fediverse.</p>
-
-    <h2>PHPBB: Forums</h2>
-    <p>I run a forum as an alternative to Discord. Anyone can sign up and post.</p>
-    <ul>
-        <li><a href="https://forums.lunya.pet" target="_blank">Open my forums</a></li>
-    </ul>
 
     <?php require "../components/footer.php"; ?>
 </body>

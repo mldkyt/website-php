@@ -8,10 +8,7 @@ require "../../../components/likes.php";
 <html lang="en">
     <head>
     <?php require "../../../components/global.php"; ?>
-    <?php seo(
-        "Astolfo is coming for you safe variant",
-        "The safe variant of Astolfo is coming for you",
-    ); ?>
+    <?php seo("Astolfo is coming for you safe variant", "The safe variant of Astolfo is coming for you"); ?>
     <style>
         .tabs {
             display: flex;
@@ -57,9 +54,6 @@ require "../../../components/likes.php";
         <div>
             <a href="https://git.lunya.pet/lunya/AstolfoIsComingForYou/releases">
                 <button>Download the safe variant</button>
-            </a>
-            <a href="https://forums.lunya.pet/viewforum.php?f=6">
-                <button>Discuss the project (Forums)</button>
             </a>
             <a href="/discord">
                 <button>Discuss the project (Discord)</button>

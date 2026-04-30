@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
     <p>
         Hi, I'm Lunya (<a href="/pronouns">she/her</a>), and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.lunya.pet/lunya" target="_blank">code in production</a>, make <a
             href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw"
-            target="_blank">YouTube videos</a> and <a href="https://sk.lunya.pet/@lunya" target="_blank">shitpost on fedi</a>! I have a <a href="/discord" target="_blank">Discord</a> server and <a href="https://forums.lunya.pet" target="_blank">forums</a> :3
+            target="_blank">YouTube videos</a> and <a href="https://sk.lunya.pet/@lunya" target="_blank">shitpost on fedi</a>! I have a <a href="/discord" target="_blank">Discord</a> server :3
     </p>
 
     <p>

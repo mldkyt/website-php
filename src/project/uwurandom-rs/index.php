@@ -9,10 +9,7 @@ require "../../../components/likes.php";
 
 <head>
     <?php require "../../../components/global.php"; ?>
-    <?php seo(
-        "uwurandom-rs",
-        "Catgirl nonsense, but in the Rust programming langauge, for maximum femininity.",
-    ); ?>
+    <?php seo("uwurandom-rs", "Catgirl nonsense, but in the Rust programming langauge, for maximum femininity."); ?>
 </head>
 
 <body>
@@ -30,9 +27,6 @@ require "../../../components/likes.php";
         </a>
         <a href="https://git.lunya.pet/lunya/uwurandom-rs">
             <button>Download from git.lunya.pet</button>
-        </a>
-        <a href="https://forums.lunya.pet/viewforum.php?f=11">
-            <button>Discuss the project (Forums)</button>
         </a>
         <a href="/discord">
             <button>Discuss the project (Discord)</button>

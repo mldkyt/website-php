@@ -3,7 +3,7 @@
 
 <head>
     <?php require "../components/global.php"; ?>
-    <?php seo("Pronouns", "Lunya's Pronouns"); ?>
+    <?php seo("Pronouns", "Luna's Pronouns"); ?>
 
     <style>
         .hellyeah {
@@ -37,7 +37,7 @@
 
 <body>
     <?php require "../components/header.php"; ?>
-    <h1>Lunya's Pronouns Page</h1>
+    <h1>Luna's Pronouns Page</h1>
     <p><small>hell yeah</small></p>
 
     <p>This is a page for my pronouns and other things. </p>
@@ -73,8 +73,20 @@
         </thead>
 
         <?php
-        $names = [["class" => "hellyeah", "name" => "Lunya"], ["class" => "hellyeah", "name" => "lunya"], ["class" => "no", "name" => "mldkyt"], ["class" => "no", "name" => "mldchan"], ["class" => "no", "name" => "[Deadname]"]];
-        $pronouns = [["class" => "hellyeah", "pronoun" => "she/her"], ["class" => "ok", "pronoun" => "they/them"], ["class" => "neutral", "pronoun" => "it/its"], ["class" => "no", "pronoun" => "he/him"]];
+        $names = [
+            ["class" => "hellyeah", "name" => "Luna"],
+            ["class" => "hellyeah", "name" => "lunya"],
+            ["class" => "ok", "name" => "mldchan"],
+            ["class" => "no", "name" => "mldkyt"],
+            ["class" => "no", "name" => "mldchan"],
+            ["class" => "no", "name" => "[Deadname]"],
+        ];
+        $pronouns = [
+            ["class" => "hellyeah", "pronoun" => "she/her"],
+            ["class" => "neutral", "pronoun" => "they/them"],
+            ["class" => "neutral", "pronoun" => "it/its"],
+            ["class" => "no", "pronoun" => "he/him"],
+        ];
         $terms = [
             ["class" => "hellyeah", "term" => "girl"],
             ["class" => "hellyeah", "term" => "catgirl"],
@@ -114,7 +126,13 @@
             ["class" => "hellyeah", "compliment" => "hottie"],
             ["class" => "no", "compliment" => "handsome"],
         ];
-        $relationshipTerms = [["class" => "hellyeah", "term" => "friend"], ["class" => "hellyeah", "term" => "girlfriend"], ["class" => "hellyeah", "term" => "wife"], ["class" => "ok", "term" => "enbyfriend"], ["class" => "no", "term" => "boyfriend"]];
+        $relationshipTerms = [
+            ["class" => "hellyeah", "term" => "friend"],
+            ["class" => "hellyeah", "term" => "girlfriend"],
+            ["class" => "hellyeah", "term" => "wife"],
+            ["class" => "ok", "term" => "enbyfriend"],
+            ["class" => "no", "term" => "boyfriend"],
+        ];
 
         if (isset($_GET["profanity"]) && $_GET["profanity"] === "1") {
             $terms[] = ["class" => "hellyeah", "term" => "dyke"];
@@ -140,12 +158,30 @@
         }
         ?>
         <tbody>
-            <?php for ($i = 0; $i < max(sizeof($names), sizeof($pronouns), sizeof($gender), sizeof($honorifics)); $i++): ?>
+            <?php for (
+                $i = 0;
+                $i <
+                max(
+                    sizeof($names),
+                    sizeof($pronouns),
+                    sizeof($gender),
+                    sizeof($honorifics),
+                );
+                $i++
+            ): ?>
                 <tr>
-                    <td class="<?= $names[$i]["class"] ?>"><?= $names[$i]["name"] ?></td>
-                    <td class="<?= $pronouns[$i]["class"] ?>"><?= $pronouns[$i]["pronoun"] ?></td>
-                    <td class="<?= $gender[$i]["class"] ?>"><?= $gender[$i]["descriptor"] ?></td>
-                    <td class="<?= $honorifics[$i]["class"] ?>"><?= $honorifics[$i]["honorific"] ?></td>
+                    <td class="<?= $names[$i]["class"] ?>"><?= $names[$i][
+    "name"
+] ?></td>
+                    <td class="<?= $pronouns[$i]["class"] ?>"><?= $pronouns[$i][
+    "pronoun"
+] ?></td>
+                    <td class="<?= $gender[$i]["class"] ?>"><?= $gender[$i][
+    "descriptor"
+] ?></td>
+                    <td class="<?= $honorifics[$i]["class"] ?>"><?= $honorifics[
+    $i
+]["honorific"] ?></td>
                 </tr>
             <?php endfor; ?>
         </tbody>
@@ -162,11 +198,26 @@
             </tr>
         </thead>
         <tbody>
-            <?php for ($i = 0; $i < max(sizeof($terms), sizeof($compliments), sizeof($relationshipTerms)); $i++): ?>
+            <?php for (
+                $i = 0;
+                $i <
+                max(
+                    sizeof($terms),
+                    sizeof($compliments),
+                    sizeof($relationshipTerms),
+                );
+                $i++
+            ): ?>
                 <tr>
-                    <td class="<?= $terms[$i]["class"] ?>"><?= $terms[$i]["term"] ?></td>
-                    <td class="<?= $compliments[$i]["class"] ?>"><?= $compliments[$i]["compliment"] ?></td>
-                    <td class="<?= $relationshipTerms[$i]["class"] ?>"><?= $relationshipTerms[$i]["term"] ?></td>
+                    <td class="<?= $terms[$i]["class"] ?>"><?= $terms[$i][
+    "term"
+] ?></td>
+                    <td class="<?= $compliments[$i][
+                        "class"
+                    ] ?>"><?= $compliments[$i]["compliment"] ?></td>
+                    <td class="<?= $relationshipTerms[$i][
+                        "class"
+                    ] ?>"><?= $relationshipTerms[$i]["term"] ?></td>
                 </tr>
             <?php endfor; ?>
         </tbody>

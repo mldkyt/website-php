@@ -4,7 +4,10 @@
 
 <head>
     <?php require "../components/global.php"; ?>
-    <?php seo("Services", "Check out my list of self-hosted services, including Forgejo and Akkoma! :3"); ?>
+    <?php seo(
+        "Services",
+        "Check out my list of self-hosted services, including Forgejo and Akkoma! :3",
+    ); ?>
 </head>
 
 <body>
@@ -22,21 +25,21 @@
     <p>Here's where all my code (usually tested in production) is stored.</p>
     <ul>
         <li>
-            <a href="https://git.lunya.pet/lunya" target="_blank">My account on my Forgejo instance</a>
+            <a href="https://git.mldchan.dev/luna" target="_blank">My account on my Forgejo instance</a>
         </li>
     </ul>
 
-    <h2>Sharkey: The Fediverse</h2>
-    <p>Sharkey is a silly federated microblogging platform which spend most of my time on and post on very frequently.</p>
+    <h2>Akkoma: The fediverse</h2>
+    <p>Akkoma is basically the cooler Pleroma. It is a social network that connects with the fediverse, a decentralized network similarly to how e-mail works.</p>
     <ul>
         <li>
-            <a href="https://sk.lunya.pet/@lunya" target="_blank">View my profile on Sharkey</a>
+            <a href="https://fedi.mldchan.dev/users/luna" target="_blank">View my profile on Akkoma</a>
         </li>
     </ul>
 
-    <p>Wanna join Sharkey? <a href="https://sharkey.fediverse.observer" target="_blank">Find yourself a Sharkey instance</a>. You can sign up on any instance, and you'll still be able to follow me.</p>
+    <p><a href="https://akkoma.fediverse.observer/list">Find yourself an Akkoma instance</a></p>
 
-    <p>There are a few bots hosted on my Sharkey instance. They are followable generally from the whole fediverse.</p>
+    <p>I host a few bots on this account. All posts are unlisted and the accounts can be followed from any instance</p>
 
     <?php require "../components/footer.php"; ?>
 </body>

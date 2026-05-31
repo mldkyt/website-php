@@ -28,11 +28,11 @@
                 <p>
                     as I figured out back in 2023 (Specifically around August-September 2023) that I am transgender, and that I would love to live as a girl, a new challenge was with it. i should find myself a name. like not a new username,
                     a new name, like for a person. it took me a pretty long time to figure that out (about 1.5 years!) but I finally settled on Luna (<i>now which Luna?</i>). there were many iterations of this, there was "Emily", created
-                    from how "mld" sounded. with this I also modified the name slightly and added a "nya" (a cat sound) into it, resulting with "Lunya".
+                    from how "mld" sounded. with this I also modified the name slightly and added a "nya" (a cat sound) into it, resulting with "Luna".
                 </p>
 
                 <p>
-                    with this, I started registering any new social accounts under that new name, and frequently started updating any existing profiles from the name "mldchan" or "mldkyt" to "Lunya", "LunyaUwU", "lunya.pet" or anything
+                    with this, I started registering any new social accounts under that new name, and frequently started updating any existing profiles from the name "mldchan" or "mldkyt" to "Luna", "LunaUwU", "lunya.pet" or anything
                     similar. I registered the domain <a href="https://lunya.pet">lunya.pet</a> which hosts my website and almost all of my services. I migrated a lot of them over.
                 </p>
 

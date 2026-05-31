@@ -3,12 +3,12 @@
 <html lang="en">
     <head>
         <?php require '../components/global.php'; ?>
-        <?php seo("Lunya's Button", "Lunya finally made an 88x31 button for her website! Add it to your website and link back when you do so!"); ?>
+        <?php seo("Luna's Button", "Luna finally made an 88x31 button for her website! Add it to your website and link back when you do so!"); ?>
     </head>
 
     <body>
         <?php require '../components/header.php'; ?>
-            <h1>Lunya's 88x31 button!</h1>
+            <h1>Luna's 88x31 button!</h1>
 
             <p>
                 After countless months, I finally made an 88x31 button for my website! Add it to your website and link back when you do so!

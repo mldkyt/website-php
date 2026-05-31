@@ -2,7 +2,7 @@
 
 <head>
     <?php require "../../../components/global.php"; ?>
-    <?php seo("Cursor Effects", "Lunya's cursor effects on her website."); ?>
+    <?php seo("Cursor Effects", "Luna's cursor effects on her website."); ?>
 </head>
 
 <body>

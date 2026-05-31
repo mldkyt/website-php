@@ -24,7 +24,7 @@ require "../../../../components/likes.php";
         <p>Because of low usage, the main instance of fedi meow was shut down because it polluted the DB. But if you want to run this, the code will forever be available.</p>
 
         <p>
-            <a href="https://git.lunya.pet/lunya/fedimeow">
+            <a href="https://git.mldchan.dev/luna/fedimeow">
                 <button>Source code</button>
             </a>
         </p>

@@ -9,7 +9,7 @@
             margin-right: 1em;
         }
     </style>
-    <p>Copyright (C) <?= date("Y"); ?> Lunya</p>
+    <p>Copyright (C) <?= date("Y"); ?> Luna</p>
     <div id="footerLinks">
         <p><a href="/discord">Discord</a></p>
         <p id="views"></p>

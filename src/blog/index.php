@@ -7,14 +7,14 @@
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("Lunya's Blog", "Welcome to Lunya's blog. Here are all of her posts! :3"); ?>
+    <?php seo("Luna's Blog", "Welcome to Luna's blog. Here are all of her posts! :3"); ?>
 </head>
 
 <body>
     <?php require '../../components/header.php'; ?>
 
-    <h1>Lunya's Blog</h1>
-    <p>Welcome to my blog! If you don't know me, <a href="/">I'm Lunya, and this is my personal page</a>.</p>
+    <h1>Luna's Blog</h1>
+    <p>Welcome to my blog! If you don't know me, <a href="/">I'm Luna, and this is my personal page</a>.</p>
 
     <p>This is my blog.</p>
 
@@ -78,7 +78,7 @@
                 <h3>The Beginning</h3>
                 <span>2019/11/26</span>
             </div>
-            <span>Where Lunya started.</span>
+            <span>Where Luna started.</span>
         </div>
     </a>
 

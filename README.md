@@ -1,6 +1,6 @@
-# Lunya's website
+# Luna's website
 
-Lunya's latest website, written in PHP. Looks exactly the same as [website-2026-02-28](https://git.lunya.pet/lunya/website-2026-02-28) but it's written in PHP.
+Luna's latest website, written in PHP. Looks exactly the same as [website-2026-02-28](https://git.mldchan.dev/luna/website-2026-02-28) but it's written in PHP.
 
 ## features
 

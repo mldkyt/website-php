@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <?php require '../../../../components/global.php'; ?>
-        <?php seo("The Beginning", "Where Lunya started."); ?>
+        <?php seo("The Beginning", "Where Luna started."); ?>
     </head>
     <body>
         <?php require '../../../../components/header.php'; ?>

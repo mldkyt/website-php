@@ -40,13 +40,13 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
 
 <head>
     <?php require "../components/global.php"; ?>
-    <?php seo("Contact Lunya", "The contacts for Lunya"); ?>
+    <?php seo("Contact Luna", "The contacts for Luna"); ?>
 </head>
 
 <body>
     <?php require "../components/header.php"; ?>
 
-    <h1>Contact Lunya :3</h1>
+    <h1>Contact Luna :3</h1>
 
     <?php if (isset($_POST["title"]) && (strtolower($_POST["title"]) == "contact lunya :3" || strtolower($_POST["title"]) == "contact")): ?>
 
@@ -70,7 +70,7 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
         $query->bind_param("s", get_remote_addr());
         $query->execute();
         if ($query->fetch()) { ?>
-        <p>You already sent a message and it is awaiting answering from Lunya</p>
+        <p>You already sent a message and it is awaiting answering from Luna</p>
         <?php } else { ?>
         <form action="/contact.php" method="post">
             <!-- bypass hiding page -->

@@ -41,7 +41,7 @@ require "../../../../components/likes.php";
         <br />
 
         <p>
-            <a href="https://git.lunya.pet/lunya/fedi-summarizer">
+            <a href="https://git.mldchan.dev/luna/fedi-summarizer">
                 <button>Source code</button>
             </a>
         </p>

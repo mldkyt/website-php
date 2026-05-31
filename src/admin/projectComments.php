@@ -35,7 +35,7 @@ if (isset($_GET["approve"])) {
 
 <head>
     <?php require "../../components/global.php"; ?>
-    <?php seo("Project Comments", "Lunya's website administration"); ?>
+    <?php seo("Project Comments", "Luna's website administration"); ?>
 </head>
 
 <body>

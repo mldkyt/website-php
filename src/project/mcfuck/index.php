@@ -20,7 +20,7 @@ require "../../../components/likes.php";
     <p>When this program finishes messing up your settings file, you'll be able to witness those changes, if your game starts up, in game.</p>
     <p>Since this was written purely for fun, the UI looks like so. <strong style="color: red;">Although before you run it and let your options file get corrupted, I highly recommend making a backup!</strong></p>
     <p>
-        <a href="https://git.lunya.pet/lunya/MCFuck/releases">
+        <a href="https://git.mldchan.dev/luna/MCFuck/releases">
             <button>Download this abomination</button>
         </a>
         <a href="/discord">

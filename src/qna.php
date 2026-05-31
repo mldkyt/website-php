@@ -47,7 +47,7 @@ if (isset($_POST["question"]) && isset($_POST["bot"])) {
 
 <head>
     <?php require '../components/global.php'; ?>
-    <?php seo("QnA", "Lunya's commonly asked questions (QnA) page"); ?>
+    <?php seo("QnA", "Luna's commonly asked questions (QnA) page"); ?>
 </head>
 
 <body>
@@ -61,7 +61,7 @@ if (isset($_POST["question"]) && isset($_POST["bot"])) {
     <?php } ?>
     <?php if ($postSuccess) { ?>
     <div class="success">
-        <span>Your question was sent successfully, please wait for answer by Lunya for it to show up</span>
+        <span>Your question was sent successfully, please wait for answer by Luna for it to show up</span>
     </div>
     <?php } ?>
 

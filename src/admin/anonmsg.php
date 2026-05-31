@@ -82,7 +82,7 @@ $query->close();
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("Anonymous Messages", "Management of anonymous messages for Lunya's website."); ?>
+    <?php seo("Anonymous Messages", "Management of anonymous messages for Luna's website."); ?>
 </head>
 
 <body>

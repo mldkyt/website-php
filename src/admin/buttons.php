@@ -84,7 +84,7 @@ $query->close();
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("Buttons", "Management of buttons for Lunya's website."); ?>
+    <?php seo("Buttons", "Management of buttons for Luna's website."); ?>
 </head>
 
 <body>

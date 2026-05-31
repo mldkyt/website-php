@@ -14,16 +14,16 @@ if ($_SERVER["REQUEST_URI"] != "/") {
 
 <head>
     <?php require "../components/global.php"; ?>
-    <?php seo("Home page", "Welcome to Lunya's website!"); ?>
+    <?php seo("Home page", "Welcome to Luna's website!"); ?>
 </head>
 
 <body>
     <?php require "../components/header.php"; ?>
-    <h1>Welcome to Lunya's website!</h1>
+    <h1>Welcome to Luna's website!</h1>
 
     <h2>About me</h2>
     <p>
-        Hi, I'm Lunya (<a href="/pronouns">she/her</a>), and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.lunya.pet/lunya" target="_blank">code in production</a>, make <a
+        Hi, I'm Luna (<a href="/pronouns">she/her</a>), and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.mldchan.dev/luna" target="_blank">code in production</a>, make <a
             href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw"
             target="_blank">YouTube videos</a> and <a href="https://sk.lunya.pet/@lunya" target="_blank">shitpost on fedi</a>! I have a <a href="/discord" target="_blank">Discord</a> server :3
     </p>
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_URI"] != "/") {
     <h3>My button :3</h3>
     <p>I have my own button that <a href="/button.php">you can add to your website today. :3</a></p>
 
-    <img src="/button.gif" alt="88x31 button for Lunya">
+    <img src="/button.gif" alt="88x31 button for Luna">
 
     <?php require "../components/buttons.php"; ?>
 

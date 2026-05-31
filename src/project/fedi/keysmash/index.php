@@ -27,7 +27,7 @@ require "../../../../components/likes.php";
             <a href="https://sk.lunya.pet/@keysmash">
                 <button>Main instance</button>
             </a>
-            <a href="https://git.lunya.pet/lunya/fedikeysmashbot">
+            <a href="https://git.mldchan.dev/luna/fedikeysmashbot">
                 <button>Source code</button>
             </a>
         </p>

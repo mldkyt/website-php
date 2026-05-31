@@ -5,7 +5,7 @@
 
 <head>
     <?php require "../../components/global.php"; ?>
-    <?php seo("Administration", "Lunya's website administration"); ?>
+    <?php seo("Administration", "Luna's website administration"); ?>
 </head>
 
 <body>

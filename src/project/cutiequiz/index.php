@@ -16,7 +16,7 @@ require "../../../components/likes.php";
             $("#media_wrapper").html(`
                         <img src="1.png" alt="Cutie Quiz home page"></img>
                         <img src="2.png" alt="Cutie Quiz enter username page"></img>
-                        <img src="3.png" alt="Cutie Quiz results page for user Lunya"></img>
+                        <img src="3.png" alt="Cutie Quiz results page for user Luna"></img>
                         <p>
                             <button onclick="hideMedia()">Hide Media</button>
                         </p>
@@ -64,7 +64,7 @@ require "../../../components/likes.php";
         <a href="https://cutie-quiz.vercel.app">
             <button>Take it NOW!</button>
         </a>
-        <a href="https://git.lunya.pet/lunya/CutieQuiz">
+        <a href="https://git.mldchan.dev/luna/CutieQuiz">
             <button>Open GitHub page</button>
         </a>
     </p>

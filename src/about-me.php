@@ -25,7 +25,7 @@
     <br />
 
     <p>
-        My name is Lunya. Refrain from using any of my older usernames, pronouns or similar. Tell me when I'm <i>too silly</i> for your comfort.
+        My name is Luna. Refrain from using any of my older usernames, pronouns or similar. Tell me when I'm <i>too silly</i> for your comfort.
     </p>
 
     <p>
@@ -42,7 +42,7 @@
     <ul>
         <li>Women, fem-adjacent creatures and critters and other genders but a bit less</li>
         <li>Yuri, women kissing and gay women in general</li>
-        <li><a href="https://git.lunya.pet/lunya">Making software</a>, and chatting about my projects</li>
+        <li><a href="https://git.mldchan.dev/luna">Making software</a>, and chatting about my projects</li>
         <li>Free software, sometimes contributing to it</li>
         <li>Linux (Arch Linux, my beloved)</li>
     </ul>
@@ -62,7 +62,7 @@
         <li>(2023) Programmer Astolfo</li>
         <li>(2020-2023) mldkyt, MLDKYT</li>
     </ul>
-    <p>If you know any of these usernames, my username online is Lunya. Please do not refer to me as mldkyt to avoid confusion, because people won&apos;t be able to find me.</p>
+    <p>If you know any of these usernames, my username online is Luna. Please do not refer to me as mldkyt to avoid confusion, because people won&apos;t be able to find me.</p>
 
     <h2>Hardware at home</h2>
 

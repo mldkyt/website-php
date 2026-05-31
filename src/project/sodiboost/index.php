@@ -62,7 +62,7 @@ require "../../../components/likes.php";
         <a href="https://modrinth.com/mod/sodiboost">
             <button>Download from Modrinth</button>
         </a>
-        <a href="https://git.lunya.pet/lunya/sodiboost">
+        <a href="https://git.mldchan.dev/luna/sodiboost">
             <button>Source code</button>
         </a>
         <a href="/discord">

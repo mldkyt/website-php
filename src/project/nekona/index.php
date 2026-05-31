@@ -46,7 +46,7 @@ require "../../../components/likes.php";
         <a href="https://top.gg/bot/1426903542601613444/vote">
             <button>Vote for Nekona</button>
         </a>
-        <a href="https://git.lunya.pet/lunya/nekona/wiki">
+        <a href="https://git.mldchan.dev/luna/nekona/wiki">
             <button>Read the docs</button>
         </a>
         <a href="/discord">

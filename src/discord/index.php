@@ -7,14 +7,14 @@
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("Discord Server", "Lunya's Discord Server"); ?>
+    <?php seo("Discord Server", "Luna's Discord Server"); ?>
 </head>
 
 <body>
     <?php require '../../components/header.php'; ?>
 
-    <h1>Lunya's Discord Server</h1>
-    <p>Here you can join the Discord server that is owned by Lunya.</p>
+    <h1>Luna's Discord Server</h1>
+    <p>Here you can join the Discord server that is owned by Luna.</p>
     <p>Here you can get help with any of her mods, chat with the community or ask her questions.</p>
     <p>You will get video announcements, new project announcements and ability to get involved in developing of some projects.</p>
     <?php if (isset($_POST["title"]) && (strtolower($_POST["title"] == "discord") || strtolower($_POST["title"]) == "lunya's discord server" || strtolower($_POST["title"]) == "lunyas discord server")) : ?>
@@ -42,15 +42,15 @@
             <button type="submit">Show Discord invite</button>
         </form>
     <?php endif; ?>
-    <h2>Updates directly from Lunya</h2>
-    <p>This server is where you'll find the latest Lunya news. It's where we post new projects, YouTube videos, and when Lunya goes live.</p>
+    <h2>Updates directly from Luna</h2>
+    <p>This server is where you'll find the latest Luna news. It's where we post new projects, YouTube videos, and when Luna goes live.</p>
 
     <h2>Nekona Support</h2>
-    <p>The Lunya server also is a support server for Nekona. Get help with commands, report bugs, and suggest improvements for the bot.</p>
+    <p>The Luna server also is a support server for Nekona. Get help with commands, report bugs, and suggest improvements for the bot.</p>
     <p>The bot has an updates channel for news and to announce when it's offline.</p>
 
     <h2>Custom bot: Ai</h2>
-    <p>There's a custom bot called Lunya's Ai. It's a bot that helps with everything in the server.</p>
+    <p>There's a custom bot called Luna's Ai. It's a bot that helps with everything in the server.</p>
 
     <h2>Friendly and safe community</h2>
     <p>With our rules, you can expect to not be uncomfortable chatting in this Discord server.</p>

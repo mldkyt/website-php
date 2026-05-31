@@ -9,7 +9,7 @@ require "../../components/likes.php";
 
 <head>
     <?php require "../../components/global.php"; ?>
-    <?php seo("Trash Looter", "Trash Looter is a lost project by Lunya"); ?>
+    <?php seo("Trash Looter", "Trash Looter is a lost project by Luna"); ?>
 </head>
 
 <body>

@@ -9,13 +9,13 @@ require "../../../components/likes.php";
 
 <head>
     <?php require "../../../components/global.php"; ?>
-    <?php seo("Lunya's Mini Mods", "A bunch of mini mods for My Summer Car and My Winter Car, by Lunya :3"); ?>
+    <?php seo("Luna's Mini Mods", "A bunch of mini mods for My Summer Car and My Winter Car, by Luna :3"); ?>
 </head>
 
 <body>
     <?php require "../../../components/header.php"; ?>
 
-    <h1>Lunya's Mini Mods</h1>
+    <h1>Luna's Mini Mods</h1>
     <p>This mod for My Summer Car and My Winter Car is a collection of tweaks and mini mods that I use, compiled into one big mod.</p>
     <p><strong>All mods are disabled by default, you'll need to enable them to use them.</strong></p>
     <p>Note: The MWC version of this mod was just released. Improvements and more MWC-exclusive items will be added soon.</p>

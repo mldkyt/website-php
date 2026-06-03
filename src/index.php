@@ -7,7 +7,16 @@ if ($_SERVER["REQUEST_URI"] != "/") {
         http_response_code(404);
         die("404 page not found");
     }
-} ?>
+}
+
+$host = getenv('DB_POSTGRES_HOST');
+$user = getenv('DB_POSTGRES_USER');
+$pass = getenv('DB_POSTGRES_PASSWORD');
+$name = getenv('DB_POSTGRES_NAME');
+$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,15 +77,10 @@ if ($_SERVER["REQUEST_URI"] != "/") {
 
     <ul>
         <?php
-        $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
-        $query = $conn->prepare("SELECT title, url FROM videos ORDER BY ord DESC LIMIT 5");
-        $query->execute();
-        $query->bind_result($title, $url);
-        while ($query->fetch()): ?>
-        <li><a href="<?= htmlspecialchars($url) ?>"><strong><?= htmlspecialchars($title) ?></strong></a></li>
+        $res = pg_query("SELECT title, url FROM videos ORDER BY ord DESC LIMIT 5");
+        while ($row = pg_fetch_assoc($res)): ?>
+        <li><a href="<?= htmlspecialchars($row["url"]) ?>"><strong><?= htmlspecialchars($row["title"]) ?></strong></a></li>
         <?php endwhile;
-        $query->close();
-        $conn->close();
         ?>
     </ul>
 

@@ -1,6 +1,8 @@
 <?php
 
-function project_handle_post(mysqli $conn, string $ip, string $project): bool
+use PgSql\Connection;
+
+function project_handle_post(Connection $conn, string $ip, string $project): bool
 {
     if (
         isset($_POST["pc_name"]) &&
@@ -23,23 +25,13 @@ function project_handle_post(mysqli $conn, string $ip, string $project): bool
             return false;
         }
 
-        $query = $conn->prepare(
-            "SELECT id FROM project_comments WHERE project = ? AND ip = ? AND approved = 0",
-        );
-        $query->bind_param("ss", $project, $ip);
-        $query->execute();
-        if ($query->fetch()) {
-            $query->close();
+        $res = pg_query_params("SELECT id FROM project_comments WHERE project = $1 AND ip = $2 AND approved = 0", [$project, $ip]);
+        if (pg_fetch_assoc($res)) {
             return false;
         }
-        $query->close();
 
-        $query = $conn->prepare(
-            "INSERT INTO project_comments(ip, project, name, comment) VALUES (?, ?, ?, ?)",
-        );
-        $query->bind_param("ssss", $ip, $project, $name, $comment);
-        $query->execute();
-        $query->close();
+        pg_query_params($conn, "INSERT INTO project_comments(ip, project, \"name\", comment) VALUES ($1, $2, $3, $4)",
+            [$ip, $project, $name, $comment]);      
 
         return true;
     } else {
@@ -52,12 +44,13 @@ function project_comments(string $project)
     $ip = get_remote_addr();
     global $conn;
     if (!isset($conn)) {
-        $conn = mysqli_connect(
-            getenv("MARIADB_HOST"),
-            getenv("MARIADB_USER"),
-            getenv("MARIADB_PASSWORD"),
-            getenv("MARIADB_DATABASE"),
-        );
+        $host = getenv('DB_POSTGRES_HOST');
+        $user = getenv('DB_POSTGRES_USER');
+        $pass = getenv('DB_POSTGRES_PASSWORD');
+        $name = getenv('DB_POSTGRES_NAME');
+        $port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+        $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
     }
 
     if (!project_handle_post($conn, $ip, $project)) {
@@ -66,23 +59,11 @@ function project_comments(string $project)
 
     $comments = [];
 
-    $query = $conn->prepare(
-        "SELECT id FROM project_comments WHERE project = ? AND ip = ? AND approved = 0",
-    );
-    $query->bind_param("ss", $project, $ip);
-    $query->execute();
-    $showForm = !$query->fetch();
-    $query->close();
+    $res = pg_query_params($conn, "SELECT ip FROM project_comments WHERE project = $1 AND ip = $2 AND approved = 0",
+        [$project, $ip]);
+    $showForm = !pg_fetch_assoc($res);
 
-    $query = $conn->prepare(
-        "SELECT name, comment FROM project_comments WHERE approved = 1 AND project = ?",
-    );
-    $query->bind_param("s", $project);
-    $query->execute();
-    $query->bind_result($commentName, $commentComment);
-    while ($query->fetch()) {
-        $comments[] = ["name" => $commentName, "comment" => $commentComment];
-    }
+    $res = pg_query_params("SELECT \"name\", comment FROM project_comments WHERE approved = 1 AND project = $1", [$project]);
 
     if ($showForm): ?>
 

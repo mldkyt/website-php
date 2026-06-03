@@ -40,9 +40,9 @@ def upgrade() -> None:
     sa.Column('name', sa.VARCHAR(), nullable=False),
     sa.Column('text', sa.VARCHAR(), nullable=False),
     sa.Column('approved', sa.Integer(), server_default='0', nullable=False),
-    sa.Column('created_at', sa.DateTime(timezone=True), server_default='now()', nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default='now()', nullable=False),
     sa.Column('reply', sa.VARCHAR(), nullable=True),
-    sa.Column('reply_at', sa.DateTime(timezone=True), nullable=True),
+    sa.Column('reply_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('project_comments',
@@ -74,13 +74,13 @@ def upgrade() -> None:
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('views',
-    sa.Column('date', sa.VARCHAR(), nullable=True),
+    sa.Column('date', sa.VARCHAR(), primary_key=True, nullable=False),
     sa.Column('views', sa.Integer(), server_default='0', nullable=False)
     )
     op.create_table('views_expire',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('ip', sa.VARCHAR(), nullable=False),
-    sa.Column('expire', sa.DateTime(timezone=True), server_default='now()', nullable=False),
+    sa.Column('expire', sa.DateTime(), server_default='now()', nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

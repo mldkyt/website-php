@@ -25,11 +25,18 @@ if (!array_is_list($data)) {
     die(json_encode(["ok" => false, "error" => "Not a list"]));
 }
 
-$conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
+
+$host = getenv('DB_POSTGRES_HOST');
+$user = getenv('DB_POSTGRES_USER');
+$pass = getenv('DB_POSTGRES_PASSWORD');
+$name = getenv('DB_POSTGRES_NAME');
+$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
 if (!$conn) {
     http_response_code(500);
-    die(json_encode(["error" => mysqli_connect_error()]));
+    die(json_encode(["error" => "Connection error"]));
 }
 
 foreach ($data as $key => $value) {
@@ -37,12 +44,8 @@ foreach ($data as $key => $value) {
         continue;
     }
 
-    $query = $conn->prepare("INSERT INTO videos (id, ord, title, url) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE title = VALUES(title), url = VALUES(url), ord = VALUES(ord)");
-    $query->bind_param("siss",  $value["id"], $value["order"], $value["title"], $value["url"]);
-    $query->execute();
-    $query->close();
+    pg_query_params($conn, "INSERT INTO videos (id, ord, title, url) VALUES ($1, $2, $3, $4) ON CONFLICT DO UPDATE SET ord = $2, title = $3, url = $4",
+        [$value["id"], $value["order"], $value["title"], $value["url"]]);
 }
-
-$conn->close();
 
 print(json_encode(["ok" => true]));

@@ -19,9 +19,9 @@ guestbook = Table(
     Column("name", VARCHAR, nullable=False),
     Column("text", VARCHAR, nullable=False),
     Column("approved", Integer, nullable=False, server_default="0"),
-    Column("created_at", DateTime(timezone=True), nullable=False, server_default="now()"),
+    Column("created_at", DateTime(), nullable=False, server_default="now()"),
     Column("reply", VARCHAR),
-    Column("reply_at", DateTime(timezone=True))
+    Column("reply_at", DateTime())
 )
 
 videos = Table(
@@ -53,7 +53,7 @@ qna = Table(
 views = Table(
     "views",
     md,
-    Column("date", VARCHAR),
+    Column("date", VARCHAR, primary_key=True),
     Column("views", Integer, nullable=False, server_default="0"),
 )
 
@@ -62,7 +62,7 @@ views_expire = Table(
     md,
     Column("id", Integer, primary_key=True, autoincrement=True),
     Column("ip", VARCHAR, nullable=False),
-    Column("expire", DateTime(timezone=True), nullable=False, server_default="now()"),
+    Column("expire", DateTime(), nullable=False, server_default="now()"),
 )
 
 project_comments = Table(

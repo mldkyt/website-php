@@ -1,19 +1,27 @@
 <?php
-$conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
+
+
+$host = getenv('DB_POSTGRES_HOST');
+$user = getenv('DB_POSTGRES_USER');
+$pass = getenv('DB_POSTGRES_PASSWORD');
+$name = getenv('DB_POSTGRES_NAME');
+$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
 // Edit
 if (isset($_POST["id"]) && isset($_POST["alt"]) && isset($_POST["url"])) {
-
     if (strlen($_POST["url"]) === 0) {
-        $query = $conn->prepare("UPDATE buttons SET alt = ?, url = NULL WHERE id = ?");
-        $query->bind_param("si", $_POST["alt"], $_POST["id"]);
-    } else {
-        $query = $conn->prepare("UPDATE buttons SET alt = ?, url = ? WHERE id = ?");
-        $query->bind_param("ssi", $_POST["alt"], $_POST["url"], $_POST["id"]);
-    }
+        // $query = $conn->prepare("UPDATE buttons SET alt = ?, url = NULL WHERE id = ?");
+        // $query->bind_param("si", $_POST["alt"], $_POST["id"]);
 
-    $query->execute();
-    $query->close();
+        pg_query_params($conn, "UPDATE buttons SET alt = $2, url = NULL WHERE id = $1", [$_POST["id"], $_POST["alt"]]);
+    } else {
+        // $query = $conn->prepare("UPDATE buttons SET alt = ?, url = ? WHERE id = ?");
+        // $query->bind_param("ssi", $_POST["alt"], $_POST["url"], $_POST["id"]);
+
+        pg_query_params($conn, "UPDATE buttons SET alt = $2, url = $3 WHERE id = $1", [$_POST["id"], $_POST["alt"], $_POST["url"]]);
+    }
 
     $editOk = true;
 }
@@ -23,14 +31,18 @@ if (isset($_POST["id"]) && isset($_POST["alt"]) && isset($_POST["url"])) {
 if (isset($_POST["filename"]) && isset($_POST["alt"])) {
 
     if (isset($_POST["url"]) && strlen($_POST["url"]) > 0) {
-        $query = $conn->prepare("INSERT INTO buttons(filename, alt, url) VALUES (?, ?, ?)");
-        $query->bind_param("sss", $_POST["filename"], $_POST["alt"], $_POST["url"]);
+        // $query = $conn->prepare("INSERT INTO buttons(filename, alt, url) VALUES (?, ?, ?)");
+        // $query->bind_param("sss", $_POST["filename"], $_POST["alt"], $_POST["url"]);
+
+        pg_query_params($conn, "INSERT INTO buttons(\"filename\", alt, \"url\") VALUES ($1, $2, $3)", [$_POST["filename"], $_POST["alt"], $_POST["url"]]);
     } else {
-        $query = $conn->prepare("INSERT INTO buttons(filename, alt) VALUES (?, ?)");
-        $query->bind_param("ss", $_POST["filename"], $_POST["alt"]);
+        // $query = $conn->prepare("INSERT INTO buttons(filename, alt) VALUES (?, ?)");
+        // $query->bind_param("ss", $_POST["filename"], $_POST["alt"]);
+
+        pg_query_params($conn, "INSERT INTO buttons(\"filename\", alt) VALUES ($1, $2)", [$_POST["filename"], $_POST["alt"]]);
     }
-    $query->execute();
-    $query->close();
+    // $query->execute();
+    // $query->close();
 
     $addOk = true;
 }
@@ -61,21 +73,27 @@ if (isset($_GET["delete"])) {
         $deleteError = "Unable to find file";
     }
 
-    $query = $conn->prepare("DELETE FROM buttons WHERE filename = ?");
-    $query->bind_param("s", $_GET["delete"]);
-    $query->execute();
-    $query->close();
+    // $query = $conn->prepare("DELETE FROM buttons WHERE filename = ?");
+    // $query->bind_param("s", $_GET["delete"]);
+    // $query->execute();
+    // $query->close();
+
+    pg_query_params($conn, "DELETE FROM buttons WHERE \"filename\" = $1", [$_GET["delete"]]);
 }
 
 $buttonList = [];
 
-$query = $conn->prepare("SELECT filename FROM buttons");
-$query->execute();
-$query->bind_result($filename);
-while ($query->fetch()) {
-    $buttonList[] = $filename;
+// $query = $conn->prepare("SELECT filename FROM buttons");
+// $query->execute();
+// $query->bind_result($filename);
+// while ($query->fetch()) {
+//     $buttonList[] = $filename;
+// }
+// $query->close();
+$res = pg_query($conn, "SELECT \"filename\" FROM buttons");
+while ($row = pg_fetch_assoc($res)) {
+    $buttonList[] = $row["filename"];
 }
-$query->close();
 
 ?>
 
@@ -133,28 +151,26 @@ $query->close();
         </thead>
         <tbody>
             <?php
-            $query = $conn->prepare("SELECT id, filename, alt, url FROM buttons");
-            $query->execute();
-            $query->bind_result($id, $filename, $alt, $url);
-            while ($query->fetch()) { ?>
+            $res = pg_query("SELECT id, \"filename\", alt, \"url\" FROM buttons");
+            while ($row = pg_fetch_assoc($res)) { ?>
                 <form action="/admin/buttons.php" method="post">
-                    <input type="hidden" name="id" value="<?= htmlspecialchars($id); ?>">
+                    <input type="hidden" name="id" value="<?= htmlspecialchars($row["id"]); ?>">
                     <tr>
-                        <td><?= $filename; ?></td>
+                        <td><?= $row["filename"]; ?></td>
                         <td>
-                            <input type="text" name="alt" value="<?= htmlspecialchars($alt); ?>">
+                            <input type="text" name="alt" value="<?= htmlspecialchars($row["alt"]); ?>">
                         </td>
                         <td>
-                            <input type="text" name="url" value="<?= isset($url) ? htmlspecialchars($url) : ""; ?>">
+                            <input type="text" name="url" value="<?= isset($row["url"]) ? htmlspecialchars($row["url"]) : ""; ?>">
                         </td>
                         <td>
                             <button type="submit">Update</button>
-                            <a href="?delete=<?= htmlspecialchars($filename); ?>">Delete</a>
+                            <a href="?delete=<?= htmlspecialchars($row["filename"]); ?>">Delete</a>
                         </td>
                     </tr>
                 </form>
             <?php }
-            $query->close(); ?>
+            ?>
         </tbody>
     </table>
 

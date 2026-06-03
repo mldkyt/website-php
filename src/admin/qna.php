@@ -1,24 +1,24 @@
 <?php
-$conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
+
+$host = getenv('DB_POSTGRES_HOST');
+$user = getenv('DB_POSTGRES_USER');
+$pass = getenv('DB_POSTGRES_PASSWORD');
+$name = getenv('DB_POSTGRES_NAME');
+$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
+
 
 // Edit
 
 if (isset($_POST["question"]) && isset($_POST["answer"]) && isset($_POST["id"])) {
-    // check existence
-    $query = $conn->prepare("SELECT * FROM qna WHERE id = ?");
-    $query->bind_param("i", $_POST["id"]);
-    $query->execute();
-    if (!$query->fetch()) {
+    $res = pg_query_params($conn, "SELECT * FROM qna WHERE id = $1", [$_POST["id"]]);
+    if (!pg_fetch_assoc($res)) {
         $error = "Non-existant record";
     }
-
-    $query->close();
     
     if (!isset($error)) {
-        $query = $conn->prepare("UPDATE qna SET question = ?, answer = ? WHERE id = ?");
-        $query->bind_param("ssi", $_POST["question"], $_POST["answer"], $_POST["id"]);
-        $query->execute();
-        $query->close();
+        pg_query_params($conn, "UPDATE qna SET question = $2, answer = $3 WHERE id = $1", [$_POST["id"], $_POST["question"], $_POST["answer"]]);
     }
     
     header("Location: /admin/qna.php");
@@ -28,10 +28,7 @@ if (isset($_POST["question"]) && isset($_POST["answer"]) && isset($_POST["id"]))
 // Add
 
 elseif (isset($_POST["question"]) && isset($_POST["answer"])) {
-    $query = $conn->prepare("INSERT INTO qna(question, answer) VALUES(?, ?)");
-    $query->bind_param("ss", $_POST["question"], $_POST["answer"]);
-    $query->execute();
-    $query->close();
+    pg_query_params($conn, "INSERT INTO qna(question, answer) VALUES ($1, $2)", [$_POST["question"], $_POST["answer"]]);
 
     header("Location: /admin/qna.php");
     die();
@@ -40,10 +37,7 @@ elseif (isset($_POST["question"]) && isset($_POST["answer"])) {
 // Delete
 
 if (isset($_GET["delete"])) {
-    $query = $conn->prepare("DELETE FROM qna WHERE id = ?");
-    $query->bind_param("i", $_GET["delete"]);
-    $query->execute();
-    $query->close();
+    pg_query_params($conn, "DELETE FROM qna WHERE id = $1", [$_GET["delete"]]);
 
     header("Location: /admin/qna.php");
     die();
@@ -68,52 +62,46 @@ if (isset($_GET["delete"])) {
     
     <h2>To answer</h2>
     <?php
-    $query = $conn->prepare("SELECT id, question FROM qna WHERE answer IS NULL");
-    $query->execute();
-    $query->bind_result($id, $question);
-    while ($query->fetch()) {
+    $res = pg_query($conn, "SELECT id, question FROM qna WHERE answer IS NULL");
+    while ($row = pg_fetch_assoc($res)) {
         ?>
         <div style="border: 1px solid white; padding: 4px">
             <form method="post">
-                <input type="hidden" name="id" value="<?= $id; ?>">
+                <input type="hidden" name="id" value="<?= $row["id"]; ?>">
                 <label for="answer">Q: </label>
-                <input type="text" name="question" id="question" value="<?= htmlspecialchars($question); ?>">
+                <input type="text" name="question" id="question" value="<?= htmlspecialchars($row["question"]); ?>">
                 <br>
                 <label for="answer">A: </label>
                 <input type="text" name="answer" id="answer" placeholder="...">
                 <br>
                 <button type="submit">Add reply</button>
             </form>
-            <span><a href="?delete=<?= $id; ?>">Delete this answer</a></span> <br>
+            <span><a href="?delete=<?= $row["id"]; ?>">Delete this answer</a></span> <br>
         </div>
         <?php
-    } 
-    $query->close();
+    }
     ?>
 
     <h2>Existing QnA</h2>
 
     <?php
-    $query = $conn->prepare("SELECT id, question, answer FROM qna WHERE answer IS NOT NULL");
-    $query->execute();
-    $query->bind_result($id, $question, $answer);
-    while ($query->fetch()) {
+    $res = pg_query($conn, "SELECT id, question, answer FROM qna WHERE answer IS NOT NULL");
+    while ($row = pg_fetch_assoc($res)) {
         ?>
         <form method="post">
-            <input type="hidden" name="id" value="<?= $id; ?>">
+            <input type="hidden" name="id" value="<?= $row["id"]; ?>">
             <label for="answer">Q: </label>
-            <input type="text" name="question" id="question" value="<?= htmlspecialchars($question); ?>">
+            <input type="text" name="question" id="question" value="<?= htmlspecialchars($row["question"]); ?>">
             <br>
             <label for="answer">A: </label>
-            <input type="text" name="answer" id="answer" value="<?= htmlspecialchars($answer); ?>">
+            <input type="text" name="answer" id="answer" value="<?= htmlspecialchars($row["answer"]); ?>">
             <br>
             <button type="submit">Add reply</button>
         </form>
-        <span><a href="?delete=<?= $id; ?>">Delete this answer</a></span> <br>
+        <span><a href="?delete=<?= $row["id"]; ?>">Delete this answer</a></span> <br>
         <br>
         <?php
-    } 
-    $query->close();
+    }
     ?>
 
     <h2>Add QnA</h2>
@@ -133,6 +121,3 @@ if (isset($_GET["delete"])) {
 </body>
 
 </html>
-<?php
-$conn->close();
-?>

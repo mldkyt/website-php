@@ -1,29 +1,21 @@
 <?php
+$host = getenv('DB_POSTGRES_HOST');
+$user = getenv('DB_POSTGRES_USER');
+$pass = getenv('DB_POSTGRES_PASSWORD');
+$name = getenv('DB_POSTGRES_NAME');
+$port = getenv('DB_POSTGRES_PORT') ?: '5432';
 
-$conn = mysqli_connect(
-    getenv("MARIADB_HOST"),
-    getenv("MARIADB_USER"),
-    getenv("MARIADB_PASSWORD"),
-    getenv("MARIADB_DATABASE"),
-);
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
 if (isset($_GET["delete"])) {
-    $query = $conn->prepare("DELETE FROM project_comments WHERE id = ?");
-    $query->bind_param("i", $_GET["delete"]);
-    $query->execute();
-    $query->close();
+    pg_query_params($conn, "DELETE FROM project_comments WHERE id = $1", [$_GET["delete"]]);
 
     header("Location: /admin/projectComments.php");
     exit();
 }
 
 if (isset($_GET["approve"])) {
-    $query = $conn->prepare(
-        "UPDATE project_comments SET approved = 1 WHERE id = ?",
-    );
-    $query->bind_param("i", $_GET["approve"]);
-    $query->execute();
-    $query->close();
+    pg_query_params($conn, "UPDATE project_comments SET approved = 1 WHERE id = $1", [$_GET["approve"]]);
 
     header("Location: /admin/projectComments.php");
     exit();
@@ -59,25 +51,20 @@ if (isset($_GET["approve"])) {
         <tbody>
 
             <?php
-            $query = $conn->prepare(
-                "SELECT id, ip, project, name, comment FROM project_comments WHERE approved = 0",
-            );
-            $query->execute();
-            $query->bind_result($id, $ip, $project, $name, $comment);
-            while ($query->fetch()): ?>
+            $res = pg_query($conn, "SELECT id, ip, project, name, comment FROM project_comments WHERE approved = 0");
+            while ($row = pg_fetch_assoc($res)): ?>
             <tr>
-                <td><?= $id ?></td>
-                <td><?= $ip ?></td>
-                <td><?= $project ?></td>
-                <td><?= $name ?></td>
-                <td><?= $comment ?></td>
+                <td><?= $row["id"] ?></td>
+                <td><?= $row["ip"] ?></td>
+                <td><?= $row["project"] ?></td>
+                <td><?= $row["name"] ?></td>
+                <td><?= $row["comment"] ?></td>
                 <td>
-                    <a href="?approve=<?= $id ?>">Approve</a>
-                    <a href="?delete=<?= $id ?>">Delete</a>
+                    <a href="?approve=<?= $row["id"] ?>">Approve</a>
+                    <a href="?delete=<?= $row["id"] ?>">Delete</a>
                 </td>
             </tr>
             <?php endwhile;
-            $query->close();
             ?>
         </tbody>
     </table>
@@ -98,24 +85,19 @@ if (isset($_GET["approve"])) {
         <tbody>
 
             <?php
-            $query = $conn->prepare(
-                "SELECT id, ip, project, name, comment FROM project_comments WHERE approved = 1",
-            );
-            $query->execute();
-            $query->bind_result($id, $ip, $project, $name, $comment);
-            while ($query->fetch()): ?>
+            $res = pg_query($conn, "SELECT id, ip, project, \"name\", comment FROM project_comments WHERE approved = 1");
+            while ($row = pg_fetch_assoc($res)): ?>
             <tr>
-                <td><?= $id ?></td>
-                <td><?= $ip ?></td>
-                <td><?= $project ?></td>
-                <td><?= $name ?></td>
-                <td><?= $comment ?></td>
+                <td><?= $row["id"] ?></td>
+                <td><?= $row["ip"] ?></td>
+                <td><?= $row["project"] ?></td>
+                <td><?= $row["name"] ?></td>
+                <td><?= $row["comment"] ?></td>
                 <td>
-                    <a href="?delete=<?= $id ?>">Delete</a>
+                    <a href="?delete=<?= $row["id"] ?>">Delete</a>
                 </td>
             </tr>
             <?php endwhile;
-            $query->close();
             ?>
         </tbody>
     </table>

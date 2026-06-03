@@ -27,7 +27,7 @@ guestbook = Table(
 videos = Table(
     "videos",
     md,
-    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("id", VARCHAR, primary_key=True),
     Column("ord", Integer, nullable=False),
     Column("title", VARCHAR, nullable=False),
     Column("url", VARCHAR, nullable=False)

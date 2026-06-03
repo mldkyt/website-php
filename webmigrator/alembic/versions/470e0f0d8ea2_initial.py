@@ -67,7 +67,7 @@ def upgrade() -> None:
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('videos',
-    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
+    sa.Column('id', sa.VARCHAR(), nullable=False),
     sa.Column('ord', sa.Integer(), nullable=False),
     sa.Column('title', sa.VARCHAR(), nullable=False),
     sa.Column('url', sa.VARCHAR(), nullable=False),

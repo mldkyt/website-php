@@ -64,6 +64,9 @@ function project_comments(string $project)
     $showForm = !pg_fetch_assoc($res);
 
     $res = pg_query_params("SELECT \"name\", comment FROM project_comments WHERE approved = 1 AND project = $1", [$project]);
+    while ($row = pg_fetch_assoc($res)) {
+        $comments[] = ["name" => $row["name"], "comment" => $row["comment"]];
+    }
 
     if ($showForm): ?>
 

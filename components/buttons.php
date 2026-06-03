@@ -12,8 +12,8 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
 $res = pg_query("SELECT filename, alt, url FROM buttons");
 
 while ($row = pg_fetch_assoc($res)) {
-    if (isset($url)) { ?>
-        <a href="<?= $url ?>">
+    if (isset($row["url"])) { ?>
+        <a href="<?= $row["url"] ?>">
             <img src="/buttons/<?= $row["filename"]; ?>" alt="<?= $row["alt"]; ?>" style="width: 88px; height: 31px;">
         </a>
     <?php } else { ?>

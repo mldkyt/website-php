@@ -66,7 +66,7 @@ if (isset($_POST["reply"]) && isset($_POST["id"])) {
             <p><small><?= $row["ip"]; ?></small></p>
             <form method="post" action="/admin/guestbook.php">
                 <input type="hidden" name="id" value="<?= $row["id"]; ?>">
-                <textarea name="reply" placeholder="Reply..."><?= isset($reply) ? $reply : ""; ?></textarea>
+                <textarea name="reply" placeholder="Reply..."><?= isset($row["reply"]) ? $row["reply"] : ""; ?></textarea>
                 <button type="submit">Reply</button>
             </form>
             <a href="?delete=<?= $row["id"]; ?>">Delete</a>

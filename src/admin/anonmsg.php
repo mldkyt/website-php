@@ -5,15 +5,6 @@ use PgSql\Connection;
 function handle_post(Connection $conn): bool|string {
     if (isset($_POST["id"]) && isset($_POST["text"])) {
         // fetch item
-        // $query = $conn->prepare("SELECT text FROM anonymous_messages WHERE id = ?");
-        // $query->bind_param("i", $_POST["id"]);
-        // $query->execute();
-        // $query->bind_result($text);
-        // if (!$query->fetch()) {
-        //     $query->close();
-        //     return "Unable to find this specific anonymous message";
-        // }
-        // $query->close();
         $res = pg_query_params($conn, "SELECT \"text\" FROM anonymous_messages WHERE id = $1", [$_POST["id"]]);
         $row = pg_fetch_assoc($res);
         if (!$row) {
@@ -39,11 +30,6 @@ function handle_post(Connection $conn): bool|string {
         }
 
         // delete record
-        // $query = $conn->prepare("DELETE FROM anonymous_messages WHERE id = ?");
-        // $query->bind_param("i", $_POST["id"]);
-        // $query->execute();
-        // $query->close();
-
         pg_query_params(
             $conn,
             "DELETE FROM anonymous_messages WHERE id = $1",
@@ -59,10 +45,6 @@ function handle_post(Connection $conn): bool|string {
 
 function handle_delete(Connection $conn): bool|string {
     if (isset($_GET["delete"])) {
-        // $query = $conn->prepare("DELETE FROM anonymous_messages WHERE id = ?");
-        // $query->bind_param("i", $_GET["delete"]);
-        // $query->execute();
-        // $query->close();
         pg_query_params("DELETE FROM anonymous_messages WHERE id = $1", [$_GET["delete"]]);
 
         return true;
@@ -88,12 +70,6 @@ $handleDeleteResult = handle_delete($conn);
 if (!is_bool($handleDeleteResult)) {
     $deleteError = $handleDeleteResult;
 }
-
-// $query = $conn->prepare("SELECT id, text FROM anonymous_messages LIMIT 1");
-// $query->execute();
-// $query->bind_result($id, $text);
-// $isAnonymousMessage = $query->fetch();
-// $query->close();
 
 $res = pg_query($conn, "SELECT id, \"text\" FROM anonymous_messages LIMIT 1");
 $anonymousMessage = pg_fetch_assoc($res);

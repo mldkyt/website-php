@@ -117,9 +117,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php }
 
     // Show all posts all time
-    // $query = $conn->prepare("SELECT name, text, created_at, reply, reply_at FROM guestbook WHERE approved = 1 ORDER BY created_at DESC");
-    // $query->execute();
-    // $query->bind_result($name, $text, $createdAt, $reply, $replyAt);
     $res = pg_query($conn, "SELECT \"name\", \"text\", created_at, reply, reply_at FROM guestbook WHERE approved = 1 ORDER BY created_at DESC");
     while ($row = pg_fetch_assoc($res)) { ?>
         <div style="border: 1px solid white; padding: 2px; margin: 2px;">

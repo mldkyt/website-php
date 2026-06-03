@@ -2,8 +2,13 @@
 
 require '../components/util.php';
 
-$conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
+$host = getenv('DB_POSTGRES_HOST');
+$user = getenv('DB_POSTGRES_USER');
+$pass = getenv('DB_POSTGRES_PASSWORD');
+$name = getenv('DB_POSTGRES_NAME');
+$port = getenv('DB_POSTGRES_PORT') ?: '5432';
 
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
 if (isset($_POST["question"]) && isset($_POST["bot"])) {
     echo "Post body";
@@ -18,22 +23,16 @@ if (isset($_POST["question"]) && isset($_POST["bot"])) {
     }
 
     // Check unpost for current IP
-    $query = $conn->prepare("SELECT id FROM qna WHERE ip = ? AND answer IS NULL");
-    $query->bind_param("s", get_remote_addr());
-    $query->execute();
-    if ($query->fetch()) {
+    $res = pg_query_params($conn, "SELECT id FROM qna WHERE ip = $1 AND answer IS NULL", [get_remote_addr()]);
+    if (pg_fetch_assoc($res)) {
         $ok = false;
-        $postFail = "Please wait for your existing question to be answered before asking again.";
+        $postFail = "Please wait for your existing question to be answered before asking again";
     }
-    $query->close();
 
     if ($ok) {
         $question = htmlspecialchars($_POST["question"]);
 
-        $query = $conn->prepare("INSERT INTO qna(ip, question) VALUES (?, ?)");
-        $query->bind_param("ss", get_remote_addr(), $question);
-        $query->execute();
-        $query->close();
+        pg_query_params("INSERT INTO qna(ip, question) VALUES ($1, $2)", [get_remote_addr(), $question]);
 
         echo "Post success";
         $postSuccess = true;
@@ -66,16 +65,13 @@ if (isset($_POST["question"]) && isset($_POST["bot"])) {
     <?php } ?>
 
     <?php
-    $query = $conn->prepare("SELECT question, answer FROM qna WHERE answer IS NOT NULL");
-    $query->execute();
-    $query->bind_result($q, $a);
-    while ($query->fetch()) :
+    $res = pg_query("SELECT question, answer FROM qna WHERE answer IS NOT NULL");
+    while ($row = pg_fetch_assoc($res)) :
     ?>
-    <span><strong>Q: <?= htmlspecialchars($q); ?></strong></span> <br>
-    <span>A: <?= htmlspecialchars($a); ?></span> <br>
+    <span><strong>Q: <?= htmlspecialchars($row["question"]); ?></strong></span> <br>
+    <span>A: <?= htmlspecialchars($row["answer"]); ?></span> <br>
     <br>
     <?php endwhile;
-    $query->close();
     ?>
 
     <br>

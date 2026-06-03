@@ -2,6 +2,14 @@
 
 require "../components/util.php";
 
+$host = getenv('DB_POSTGRES_HOST');
+$user = getenv('DB_POSTGRES_USER');
+$pass = getenv('DB_POSTGRES_PASSWORD');
+$name = getenv('DB_POSTGRES_NAME');
+$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
+
 if (isset($_POST["text"]) && isset($_POST["bot"])) {
     $ok = true;
 
@@ -11,27 +19,17 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
         $postError = "Bot check failed";
     }
 
-    $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
-
-    // check existing post
-    $query = $conn->prepare("SELECT id FROM anonymous_messages WHERE ip = ?");
-    $query->bind_param("s", get_remote_addr());
-    $query->execute();
-    if ($query->fetch()) {
+    $res = pg_query_params("SELECT id FROM anonymous_messages WHERE ip = $1", [get_remote_addr()]);
+    if (pg_fetch_assoc($res)) {
         $ok = false;
         $postError = "You already have an unanswered message";
     }
-    $query->close();
 
-    if ($ok) {
-        $query = $conn->prepare("INSERT INTO anonymous_messages(ip, text) VALUES(?, ?)");
-        $query->bind_param("ss", get_remote_addr(), htmlspecialchars(stripslashes(trim($_POST["text"]))));
-        $query->execute();
-        $query->close();
-
+    if (pg_fetch_assoc($res)) {
+        pg_query_params($conn, "INSERT INTO anonymous_messages(ip, \"text\") VALUES ($1, $2)", [get_remote_addr(), htmlspecialchars(stripslashes(trim($_POST["text"])))]);
+        
         $postOk = true;
     }
-    $conn->close();
 }
 ?>
 
@@ -65,11 +63,8 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
 
         <?php
         // check existing post
-        $conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
-        $query = $conn->prepare("SELECT id FROM anonymous_messages WHERE ip = ?");
-        $query->bind_param("s", get_remote_addr());
-        $query->execute();
-        if ($query->fetch()) { ?>
+        $res = pg_query_params($conn, "SELECT id FROM anonymous_messages WHERE ip = $1", [get_remote_addr()]);
+        if (pg_fetch_assoc($res)) { ?>
         <p>You already sent a message and it is awaiting answering from Luna</p>
         <?php } else { ?>
         <form action="/contact.php" method="post">
@@ -94,8 +89,6 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
             <button type="submit">Send anonymous message</button>
         </form>
         <?php }
-        $query->close();
-        $conn->close();
         ?>
 
         <h2>Community</h2>
@@ -110,21 +103,22 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
         <h2>Personal/Direct</h2>
 
         <li>
-            <strong>Email</strong>: Send me an email at <a href="mailto:lunya@murena.io">lunya@murena.io</a>. <br />
+            <strong>Email</strong>: Send me an email at <a href="mailto:estrogen@tuta.io">estrogen@tuta.io</a>. <br />
             <details>
                 <summary>You can use my PGP key if you need privacy</summary>
                 <p>
-                    -----BEGIN PGP PUBLIC KEY BLOCK-----<br />
-                    <br />
-                    mDMEaIv3YhYJKwYBBAHaRw8BAQdAQS8uWs/46vyMjVRj+miO/W6Ebg/DElHNb5Ug<br />
-                    rbeL5Gu0D2x1bnlhQG11cmVuYS5pb4hyBBMWCAAaBAsJCAcCFQgCFgECGQAFgmiL<br />
-                    92ICngECmwMACgkQRYWRrUxMAjNnTAEAxLfJWpXr/iBJvNIRmO+25ZFtB5FOLzYS<br />
-                    efEpStH+zKIBAIOWk/3OPy1R1eU8om55TI6VSaf2PwSQbtzt1t5cE0gEuDgEaIv3<br />
-                    YhIKKwYBBAGXVQEFAQEHQAg2m1ZbwbnSmGwJZgk7aHOITQo4puABxDZLCqcbTekL<br />
-                    AwEIB4hhBBgWCAAJBYJoi/diApsMAAoJEEWFka1MTAIzUrYA/RQNpvoxspq80PGI<br />
-                    QKR4lrMDVkXows1b0mNeR/n59V5RAP9CDdYycsqwHgol6pMlp5cygu8B26Hzxgx9<br />
-                    6HPTNZOMCA==<br />
-                    =IsKm<br />
+                   -----BEGIN PGP PUBLIC KEY BLOCK-----<br />
+<br />
+                    mDMEaehmPhYJKwYBBAHaRw8BAQdAKSha0Lhin+WoRAu0v7c4W/MWR8O8QJRv3ejH<br />
+                    B5oYprC0I0NhdGdpcmwgRXN0cm9nZW4gPGVzdHJvZ2VuQHR1dGEuaW8+iHIEExYI<br />
+                    ABoECwkIBwIVCAIWAQIZAQWCaehmPgKeAQKbAwAKCRDxDzi14cg7pJjFAP93JFlD<br />
+                    EuPX0Yp3HyRxj+YkoUvHBAixi/V5qYbW8GozFQEA6zgZTD4HFjE8afPnpCksq+2i<br />
+                    NS/xOmUSGJOmMvWucQu4OARp6GY+EgorBgEEAZdVAQUBAQdATXECOlVGztCiP19h<br />
+                    0X4rYfgt+L1ZpZkQb2a6g7XUzBADAQgHiHgEGBYIAAkFgmnoZj4CmwwAIQkQ8Q84<br />
+                    teHIO6QWIQQCeuCJ7ONXjr2eKmHxDzi14cg7pOX6AQCQZQ5Nh1tKL9h76dI+5uQV<br />
+                    Rc9Go0W6mtPlTsf4be93+gD/eHS6tI7Hk01tWCtv5++5Jcwx6WB//cQa5AxSXgFs<br />
+                    lw8=<br />
+                    =9g2d<br />
                     -----END PGP PUBLIC KEY BLOCK-----<br />
                 </p>
             </details>

@@ -1,27 +1,37 @@
 
 services:
   php:
-    image: trafex/php-nginx:latest
+    # image: trafex/php-nginx:latest
+    build: .
     ports:
       - "8001:8080"
     volumes:
       - ./src:/var/www/html:z
       - ./components:/var/www/components:z
+      - ./02_pgsql.ini:/etc/php85/conf.d/02_pgsql.ini:ro
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
     restart: always
     pull_policy: always
     env_file: .env
+    depends_on:
+      migrations:
+        condition: service_completed_successfully
 
-  mysql:
-    ports:
-      - "3306:3306"
-    image: mariadb:12
+  migrations:
+    build: webmigrator/.
     env_file: .env
+    network_mode: host
+
+  postgres:
     pull_policy: always
+    restart: always
+    image: postgres:17-alpine
+    ports:
+     - "5432:5432"
     volumes:
-      - ./mariadb:/var/lib/mysql:Z
-  phpmyadmin:
-    image: phpmyadmin:5
-    ports:
-      - "9002:80"
-    pull_policy: always
-    env_file: .env
+      - ./db:/var/lib/postgresql/data:z
+    environment:
+      - POSTGRES_USER=luna
+      - POSTGRES_PASSWORD=luna
+      - POSTGRES_DB=luna
+

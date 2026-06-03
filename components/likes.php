@@ -5,51 +5,30 @@ function project_likes(string $project)
     $ip = get_remote_addr();
     global $conn;
     if (!isset($conn)) {
-        $conn = mysqli_connect(
-            getenv("MARIADB_HOST"),
-            getenv("MARIADB_USER"),
-            getenv("MARIADB_PASSWORD"),
-            getenv("MARIADB_DATABASE"),
-        );
+        $host = getenv('DB_POSTGRES_HOST');
+        $user = getenv('DB_POSTGRES_USER');
+        $pass = getenv('DB_POSTGRES_PASSWORD');
+        $name = getenv('DB_POSTGRES_NAME');
+        $port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+        $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
     }
 
     if ($_GET["like"] === "1") {
-        $query = $conn->prepare(
-            "SELECT COUNT(id) FROM project_likes WHERE ip = ? AND project = ?",
-        );
-        $query->bind_param("ss", $ip, $project);
-        $query->execute();
-        $query->bind_result($projectLikeCheck);
-        $query->fetch();
-        $query->close();
-
-        if ($projectLikeCheck == 0) {
-            $query = $conn->prepare(
-                "INSERT INTO project_likes(ip, project) VALUES (?, ?)",
-            );
-            $query->bind_param("ss", $ip, $project);
-            $query->execute();
-            $query->close();
+        $res = pg_query_params($conn, "SELECT COUNT(id) AS projectLikeCheck FROM project_likes WHERE ip = $1 AND project = $2", [$ip, $project]);
+        $row = pg_fetch_assoc($res);
+        if ($row["projectLikeCheck"] == 0) {
+            pg_query_params($conn, "INSERT INTO project_likes(ip, project) VALUES ($1, $2)", [$ip, $project]);
         }
     }
 
-    $query = $conn->prepare(
-        "SELECT COUNT(id) FROM project_likes WHERE project = ? AND ip = ?",
-    );
-    $query->bind_param("ss", $project, $ip);
-    $query->execute();
-    $query->bind_result($hasLikedHerOwnProject);
-    $query->fetch();
-    $query->close();
+    $res = pg_query_params($conn, "SELECT COUNT(id) AS hasLikedHerOwnProject FROM project_likes WHERE project = $1 AND ip = $2", [$project, $ip]);
+    $row = pg_fetch_assoc($res);
+    $hasLikedHerOwnProject = $row["hasLikedHerOwnProject"];
 
-    $query = $conn->prepare(
-        "SELECT COUNT(id) FROM project_likes WHERE project = ?",
-    );
-    $query->bind_param("s", $project);
-    $query->execute();
-    $query->bind_result($projectCountOfLikes);
-    $query->fetch();
-    $query->close();
+    $res = pg_query_params($conn, "SELECT COUNT(id) AS projectCountOfLikes FROM project_likes WHERE project = $1", [$project]);
+    $row = pg_fetch_assoc($res);
+    $projectCountOfLikes = $row["projectCountOfLikes"];
 
     if ($hasLikedHerOwnProject != 0) {
         echo "<button>$projectCountOfLikes likes</button>";

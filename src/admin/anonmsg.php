@@ -1,17 +1,15 @@
 <?php
 
-function handle_post(mysqli $conn): bool|string {
+use PgSql\Connection;
+
+function handle_post(Connection $conn): bool|string {
     if (isset($_POST["id"]) && isset($_POST["text"])) {
         // fetch item
-        $query = $conn->prepare("SELECT text FROM anonymous_messages WHERE id = ?");
-        $query->bind_param("i", $_POST["id"]);
-        $query->execute();
-        $query->bind_result($text);
-        if (!$query->fetch()) {
-            $query->close();
+        $res = pg_query_params($conn, "SELECT \"text\" FROM anonymous_messages WHERE id = $1", [$_POST["id"]]);
+        $row = pg_fetch_assoc($res);
+        if (!$row) {
             return "Unable to find this specific anonymous message";
         }
-        $query->close();
 
         // post
         $curl = curl_init("https://" . getenv("SHARKEY_URL") . "/api/notes/create");
@@ -23,7 +21,7 @@ function handle_post(mysqli $conn): bool|string {
         ));
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode([
-            "text" => "> ". $text . "\n" . $_POST["text"]
+            "text" => "> ". $row["text"] . "\n" . $_POST["text"]
         ]));
 
         $response = curl_exec($curl);
@@ -32,10 +30,11 @@ function handle_post(mysqli $conn): bool|string {
         }
 
         // delete record
-        $query = $conn->prepare("DELETE FROM anonymous_messages WHERE id = ?");
-        $query->bind_param("i", $_POST["id"]);
-        $query->execute();
-        $query->close();
+        pg_query_params(
+            $conn,
+            "DELETE FROM anonymous_messages WHERE id = $1",
+            [$_POST["id"]]
+        );
 
         return true;
     }
@@ -44,12 +43,9 @@ function handle_post(mysqli $conn): bool|string {
     }
 }
 
-function handle_delete(mysqli $conn): bool|string {
+function handle_delete(Connection $conn): bool|string {
     if (isset($_GET["delete"])) {
-        $query = $conn->prepare("DELETE FROM anonymous_messages WHERE id = ?");
-        $query->bind_param("i", $_GET["delete"]);
-        $query->execute();
-        $query->close();
+        pg_query_params("DELETE FROM anonymous_messages WHERE id = $1", [$_GET["delete"]]);
 
         return true;
     } else {
@@ -57,7 +53,13 @@ function handle_delete(mysqli $conn): bool|string {
     }
 }
 
-$conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
+$host = getenv('DB_POSTGRES_HOST');
+$user = getenv('DB_POSTGRES_USER');
+$pass = getenv('DB_POSTGRES_PASSWORD');
+$name = getenv('DB_POSTGRES_NAME');
+$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
 $handlePostResult = handle_post($conn);
 if (!is_bool($handlePostResult)) {
@@ -69,11 +71,8 @@ if (!is_bool($handleDeleteResult)) {
     $deleteError = $handleDeleteResult;
 }
 
-$query = $conn->prepare("SELECT id, text FROM anonymous_messages LIMIT 1");
-$query->execute();
-$query->bind_result($id, $text);
-$isAnonymousMessage = $query->fetch();
-$query->close();
+$res = pg_query($conn, "SELECT id, \"text\" FROM anonymous_messages LIMIT 1");
+$anonymousMessage = pg_fetch_assoc($res);
 
 ?>
 
@@ -102,12 +101,12 @@ $query->close();
         </div>
     <?php endif; ?>
 
-    <?php if ($isAnonymousMessage) : ?>
+    <?php if ($anonymousMessage) : ?>
 
         <div style="padding: 4px; border: 1px solid white;">
-            <p><?= $text; ?></p>
+            <p><?= $anonymousMessage["text"]; ?></p>
             <form action="/admin/anonmsg.php" method="post">
-                <input type="hidden" name="id" value="<?= htmlspecialchars($id); ?>">
+                <input type="hidden" name="id" value="<?= htmlspecialchars($anonymousMessage["id"]); ?>">
 
                 <label for="answer">Answer:</label>
                 <br>
@@ -120,7 +119,7 @@ $query->close();
 
             <br>
 
-            <a href="?delete=<?= htmlspecialchars($id); ?>">Delete this message</a>
+            <a href="?delete=<?= htmlspecialchars($anonymousMessage["id"]); ?>">Delete this message</a>
         </div>
 
     <?php else : ?>

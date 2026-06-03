@@ -2,7 +2,13 @@
 
 require '../components/util.php';
 
-$conn = mysqli_connect(getenv("MARIADB_HOST"), getenv("MARIADB_USER"), getenv("MARIADB_PASSWORD"), getenv("MARIADB_DATABASE"));
+$host = getenv('DB_POSTGRES_HOST');
+$user = getenv('DB_POSTGRES_USER');
+$pass = getenv('DB_POSTGRES_PASSWORD');
+$name = getenv('DB_POSTGRES_NAME');
+$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
 $postSuccess = false;
 
@@ -21,23 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Check unpost for current IP
-    $query = $conn->prepare("SELECT id FROM guestbook WHERE ip = ? AND approved = 0");
-    $query->bind_param("s", get_remote_addr());
-    $query->execute();
-    if ($query->fetch()) {
+    $res = pg_query_params($conn, "SELECT id FROM guestbook WHERE ip = $1 AND approved = 0", [get_remote_addr()]);
+    if (pg_fetch_assoc($res)) {
         $ok = false;
-        $postFail = "Please wait for your existing post to get approved before posting another one.";
+        $postFail = "Please wait for your existing post to get approved before posting another one";
     }
-    $query->close();
 
     if ($ok) {
         $username = htmlspecialchars($_POST["username"]);
         $message = htmlspecialchars($_POST["message"]);
 
-        $query = $conn->prepare("INSERT INTO guestbook(ip, name, text) VALUES (?, ?, ?)");
-        $query->bind_param("sss", get_remote_addr(), $username, $message);
-        $query->execute();
-        $query->close();
+        pg_query_params($conn, "INSERT INTO guestbook(ip, \"name\", \"text\") VALUES ($1, $2, $3)", [get_remote_addr(), $username, $message]);
 
         $postSuccess = true;
     }
@@ -105,39 +105,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php
     // Show unapproved post by us if there's one
-    $query = $conn->prepare("SELECT name, text, created_at FROM guestbook WHERE ip = ? AND approved = 0");
-    $query->bind_param("s", get_remote_addr());
-    $query->execute();
-    $query->bind_result($name, $text, $createdAt);
-    if ($query->fetch()) { ?>
+    $res = pg_query_params($conn, "SELECT \"name\", \"text\", created_at FROM guestbook WHERE ip = $1 AND approved = 0", [get_remote_addr()]);
+    $row = pg_fetch_assoc($res);
+    if ($row) { ?>
         <div style="border: 1px dashed white; padding: 2px; margin: 2px;">
-            <h3><?= $name; ?></h3>
-            <p style="margin: 0; margin-left: 4px;"><?= $text; ?></p>
-            <p style="margin: 0; margin-left: 4px;"><small><?= date("r", strtotime($createdAt)) ?></small></p>
+            <h3><?= $row["name"]; ?></h3>
+            <p style="margin: 0; margin-left: 4px;"><?= $row["text"]; ?></p>
+            <p style="margin: 0; margin-left: 4px;"><small><?= date("r", strtotime($row["created_at"])) ?></small></p>
             <small>This post is pending approval and visible only for you</small>
         </div>
     <?php }
-    $query->close();
 
     // Show all posts all time
-    $query = $conn->prepare("SELECT name, text, created_at, reply, reply_at FROM guestbook WHERE approved = 1 ORDER BY created_at DESC");
-    $query->execute();
-    $query->bind_result($name, $text, $createdAt, $reply, $replyAt);
-    while ($query->fetch()) { ?>
+    $res = pg_query($conn, "SELECT \"name\", \"text\", created_at, reply, reply_at FROM guestbook WHERE approved = 1 ORDER BY created_at DESC");
+    while ($row = pg_fetch_assoc($res)) { ?>
         <div style="border: 1px solid white; padding: 2px; margin: 2px;">
-            <h3><?= $name; ?></h3>
-            <p style="margin: 0; margin-left: 4px;"><?= $text; ?></p>
-            <p style="margin: 0; margin-left: 4px;"><small><?= date("r", strtotime($createdAt)); ?></small></p>
-            <?php if (isset($reply) && isset($replyAt)) { ?>
+            <h3><?= $row["name"]; ?></h3>
+            <p style="margin: 0; margin-left: 4px;"><?= $row["text"]; ?></p>
+            <p style="margin: 0; margin-left: 4px;"><small><?= date("r", strtotime($row["created_at"])); ?></small></p>
+            <?php if (isset($row["reply"]) && isset($row["reply_at"])) { ?>
             <div style="border: 1px solid white; padding: 2px; margin: 2px;">
-                <p style="margin: 0; margin-left: 4px;"><strong>On <?= date("r", strtotime($replyAt)); ?>, reply by Luna:</strong></p>
-                <p style="margin: 0; margin-left: 4px;"><?= $reply; ?></p>
+                <p style="margin: 0; margin-left: 4px;"><strong>On <?= date("r", strtotime($row["reply_at"])); ?>, reply by Luna:</strong></p>
+                <p style="margin: 0; margin-left: 4px;"><?= $row["reply"]; ?></p>
             </div>
             <?php } ?>
         </div>
     <?php }
-    $query->close();
-    $conn->close();
     ?>
 
     <?php require '../components/footer.php'; ?>

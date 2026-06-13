@@ -103,7 +103,6 @@
             <li><a href="/social">Socials</a></li>
             <li><a href="/services">Services</a></li>
             <li><a href="https://mc.lunya.pet">Minecraft</a></li>
-            <li><a href="/blog">Blog</a></li>
             <li><a href="/contact">Contact</a></li>
             <li><a href="https://ko-fi.com/c4tgirl">Donate</a></li>
         </ul>

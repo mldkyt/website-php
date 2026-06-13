@@ -145,29 +145,7 @@
         </a>
     </div>
     <br />
-
-    <h2>My Summer Car Mods</h2>
-    <div class="projectContainer">
-        <a href="/project/lunyas-mini-mods">
-            <div class="project" style="background-image: url(/project/lunyas-mini-mods/lunyas-mini-mods.webp);">
-                <h3>Luna's Mini Mods</h3>
-                <p>A bunch of mini mods for My Summer Car and My Winter Car</p>
-            </div>
-        </a>
-        <a href="/project/legacymsc">
-            <div class="project" style="background-image: url(/project/legacymsc/legacymsc.webp);">
-                <h3>Legacy MSC</h3>
-                <p>Brings current My Summer Car into older versions.</p>
-            </div>
-        </a>
-        <a href="/project/pridemod">
-            <div class="project" style="background-image: url(/project/pridemod/pridemod.webp);">
-                <h3>Pride Mod</h3>
-                <p>Adds pride to My Summer Car and My Winter Car</p>
-            </div>
-        </a>
-    </div>
-
+    
     <h2>Archived Projects</h2>
     <p>A list of projects that are deprecated, archived or deleted. Downloads are available for certain projects.</p>
     <div class="projectContainer">

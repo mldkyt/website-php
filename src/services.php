@@ -39,7 +39,22 @@
 
     <p><a href="https://akkoma.fediverse.observer/list">Find yourself an Akkoma instance</a></p>
 
-    <p>I host a few bots on this account. All posts are unlisted and the accounts can be followed from any instance</p>
+    <h2>Fedi Bots: A bunch of various fedi bots</h2>
+    <p>I run a few fedi bots on my server, some being really popular. Here's what is running:</p>
+    <ul>
+        <li><a href="https://fedi.mldchan.dev/users/collabmarkov">Collabmarkov</a>: Collaborative Markov Bot - This bot takes the posts of all followers and generates markov posts from those posts combined.</li>
+        <li><a href="https://fedi.mldchan.dev/users/meowbot">Meowbot</a>: A bot that simply meows. Cat version of wafbot</li>
+        <li><a href="https://fedi.mldchan.dev/users/wafbot">Wafbot</a>: A bot that simply wafs. Fox version of meowbot</li>
+    </ul>
+    <p>These bots have no websites. The user profiles above are the "websites" essentially but you'll likely access them through your instance anyway.</p>
+
+    <h2>Uptime-Kuma: Service status tracking</h2>
+    <p>Uptime-Kuma tracks the status of services and sends me notifications to know when a service isn't working. </p>
+    <ul>
+        <li>
+            <a href="https://status.mldchan.dev">View service status</a>
+        </li>
+    </ul>
 
     <?php require "../components/footer.php"; ?>
 </body>

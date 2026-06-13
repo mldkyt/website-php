@@ -26,7 +26,7 @@ require "../../../components/likes.php";
             <button>Download from crates.io</button>
         </a>
         <a href="https://git.mldchan.dev/luna/uwurandom-rs">
-            <button>Download from git.lunya.pet</button>
+            <button>Download from git.mldchan.dev</button>
         </a>
         <a href="/discord">
             <button>Discuss the project (Discord)</button>

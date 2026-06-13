@@ -43,7 +43,7 @@
     <img src="/button.gif" alt="Button" />
     <p>
         Make sure to wrap it with an <code>&lt;a&gt;</code> tag to make it a link and set the <code>href</code> to
-        <code>lunya.pet</code>
+        <code>mldchan.dev</code>
     </p>
 
     <a href="/discord">

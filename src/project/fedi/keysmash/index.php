@@ -24,7 +24,7 @@ require "../../../../components/likes.php";
         <p>Additionally, the bot replies to posts it gets mentioned in, if they contain a password. Note this will NOT quote your note</p>
 
         <p>
-            <a href="https://sk.lunya.pet/@keysmash">
+            <a href="https://fedi.mldchan.dev/users/keysmash">
                 <button>Main instance</button>
             </a>
             <a href="https://git.mldchan.dev/luna/fedikeysmashbot">

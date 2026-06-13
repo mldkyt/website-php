@@ -124,7 +124,7 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
             </details>
         </li>
         <li>
-            <strong>Fedi</strong>: Send a DM on fedi to <code>@lunya@sk.lunya.pet</code>.
+            <strong>Fedi</strong>: Send a DM on fedi to <code>@luna@fedi.mldchan.dev</code>.
         </li>
         <br>
     <?php else: ?>

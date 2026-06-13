@@ -254,10 +254,10 @@
     <meta property="og:title" content="<?= $title; ?> | Luna's website" />
     <meta property="og:description" content="<?= $description; ?>" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lunya.pet" />
+    <meta property="og:url" content="https://mldchan.dev" />
     <meta property="og:site_name" content="Luna's website" />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:title" content="<?= $title; ?> | Luna's website" />
     <meta name="twitter:description" content="<?= $description; ?>" />
-    <meta name="fediverse:creator" content="lunya@sk.lunya.pet" />
+    <meta name="fediverse:creator" content="luna@fedi.mldchan.dev" />
 <?php } ?>

@@ -34,7 +34,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     <p>
         Hi, I'm Luna (<a href="/pronouns">she/her</a>), and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.mldchan.dev/luna" target="_blank">code in production</a>, make <a
             href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw"
-            target="_blank">YouTube videos</a> and <a href="https://sk.lunya.pet/@lunya" target="_blank">shitpost on fedi</a>! I have a <a href="/discord" target="_blank">Discord</a> server :3
+            target="_blank">YouTube videos</a> and <a href="https://fedi.mldchan.dev/users/luna" target="_blank">shitpost on fedi</a>! I have a <a href="/discord" target="_blank">Discord</a> server :3
     </p>
 
     <p>
@@ -84,7 +84,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
         ?>
     </ul>
 
-    <p>Videos that perform well get mirrored to <a href="https://pt.lunya.pet/c/lunyavids" target="_blank">PeerTube</a>.</p>
+    <p>Videos get mirrored to <a href="https://pt.mldchan.dev/c/lunyavids" target="_blank">PeerTube</a> as well. Sometimes.</p>
 
     <br />
     <details>

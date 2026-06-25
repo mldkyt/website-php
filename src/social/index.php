@@ -105,11 +105,11 @@
     <p>A brief list of accounts:</p>
 
     <ul>
-        <li><a href="https://github.com/c4tgrl">GitHub (Unused)</a></li>
+        <li><a href="https://github.com/c4tgrl">GitHub (c4tgrl; Unused)</a></li>
         <li><a href="https://gitlab.com/estradiol">GitLab.com (estradiol)</a></li>
         <li><a href="https://git.gay/catgirl">git.gay (catgirl)</a></li>
         <li><a href="https://codeberg.org/estradiol">Codeberg (estradiol)</a></li>
-        <li><a href="https://namemc.com/profile/gothcatgrl.1">NameMC (gothcatgrl)</a></li>
+        <li><a href="https://namemc.com/profile/catgirl_ceo.1">NameMC (Catgirl_CEO)</a></li>
     </ul>
 
     <?php require "../../components/footer.php"; ?>

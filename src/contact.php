@@ -126,6 +126,18 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
         <li>
             <strong>Fedi</strong>: Send a DM on fedi to <code>@luna@fedi.mldchan.dev</code>.
         </li>
+        <li>
+            <strong>Matrix</strong>: <code>@luna:matrix.mldchan.dev</code>.
+        </li>
+        <li>
+            <strong>Signal</strong>: I have a signal, the username is <code>lunya.69</code> but due to my phone being really bad it doesn't send me notifications and Signal generally doesn't work so expect me to not respond. You can also ping me on another social network to check it.
+        </li>
+        <li>
+            <strong>Discord</strong>: <a href="/discord">Join my Discord server</a>. I do not accept friend requests and don't check DMs unless someone tells me to.
+        </li>
+        <li>
+            <strong>Fluxer</strong>: <code>catgirl#3164</code> but please use another contact method, I don't check this one.
+        </li>
         <br>
     <?php else: ?>
 
@@ -135,7 +147,7 @@ if (isset($_POST["text"]) && isset($_POST["bot"])) {
         </div>
         <?php endif; ?>
 
-        <p>In order to see this page, please type the title above into the field below:</p>
+        <p>In order to see this page, please type the title above (THE HEADING!!!) into the field below:</p>
 
         <form action="/contact.php" method="post">
             <label for="title">Title:</label>

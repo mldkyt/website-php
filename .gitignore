@@ -1,3 +1,4 @@
 .env
 mariadb/
 src/buttons
+db/

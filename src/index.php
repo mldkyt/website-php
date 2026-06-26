@@ -90,9 +90,9 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     <details>
         <summary>Webrings</summary>
         <p>
-            <a href="https://fediring.net/previous?host=lunya.pet"><button>←</button></a>
+            <a href="https://fediring.net/previous?host=mldchan.dev"><button>←</button></a>
             <a href="https://fediring.net/"><button>Fediring</button></a>
-            <a href="https://fediring.net/next?host=lunya.pet"><button>→</button></a>
+            <a href="https://fediring.net/next?host=mldchan.dev"><button>→</button></a>
         </p>
 
         <div style="text-align:center">

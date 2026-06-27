@@ -72,7 +72,7 @@
     <h2>Social Networks</h2>
     <div class="socCont">
         <a href="https://fedi.mldchan.dev/users/luna">
-            <div class="social" style="background-image: url(sharkey.png)">
+            <div class="social" style="background-image: url(fedi.png)">
                 <h3>The Fediverse (@luna@fedi.mldchan.dev)</h3>
             </div>
         </a>

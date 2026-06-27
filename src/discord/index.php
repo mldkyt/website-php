@@ -25,8 +25,8 @@
     <h2>Updates directly from Luna</h2>
     <p>This server is where you'll find the latest Luna news. It's where we post new projects, YouTube videos, and when Luna goes live.</p>
 
-    <h2>Nekona Support</h2>
-    <p>The Luna server also is a support server for Nekona. Get help with commands, report bugs, and suggest improvements for the bot.</p>
+    <h2>Akabot Support</h2>
+    <p>The Luna server also is a support server for Akabot. Get help with commands, report bugs, and suggest improvements for the bot.</p>
     <p>The bot has an updates channel for news and to announce when it's offline.</p>
 
     <h2>Custom bot: Ai</h2>

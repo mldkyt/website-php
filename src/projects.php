@@ -71,9 +71,9 @@
     <h1>Luna's projects</h1>
     <p>This is a list of Luna's projects.</p>
     <div class="projectContainer">
-        <a href="/project/nekona">
-            <div class="project" style="background-image: url(/project/nekona/nekona.jpg);">
-                <h3>Nekona</h3>
+        <a href="/project/akabot">
+            <div class="project" style="background-image: url(/project/akabot/akabot.jpg);">
+                <h3>Akabot</h3>
                 <p>A fully featured general purpose discord bot with over 30 features.</p>
             </div>
         </a>

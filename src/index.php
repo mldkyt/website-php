@@ -57,7 +57,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     <h3><a href="/projects">Programming Projects</a></h3>
     <ul>
         <li>
-            <a href="/project/nekona"><strong>Nekona</strong></a> is a fully featured general purpose discord bot with over 30 features.
+            <a href="/project/akabot"><strong>Akabot</strong></a> is a fully featured general purpose discord bot with over 30 features.
         </li>
         <li>
             Wanna be invaded by Astolfo? <a href="/project/astolfoiscomingforyou"><strong>Astolfo is coming for you</strong></a> is a Windows program that recreates the meme.

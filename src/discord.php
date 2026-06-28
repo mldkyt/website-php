@@ -1,2 +1,2 @@
 <?php
-header("Location: https://discord.gg/uTWjgy2E4v");
+header("Location: https://discord.gg/aE2MXH5Qp6");

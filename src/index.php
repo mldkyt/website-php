@@ -81,7 +81,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
         <p>
             Hi, I'm Luna (<a href="https://en.pronouns.page/u/catgirl_ceo">she/her</a>), 20F 🏳️‍⚧️ catgirl <a href="https://git.mldchan.dev/luna" target="_blank">develper</a>, <a
                 href="https://www.youtube.com/@catgirl_ceo"
-                target="_blank">YouTuber</a>. Join my community on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>! :3
+                target="_blank">YouTuber</a>. Join my community on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>! Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on the site! :3
         </p>
 
         <p>On YouTube I post pretty much everything from gameplays to showing off my projects. I am to upload every Friday but most of the time it doesn't work out because I have no ideas on what to upload.</p>

@@ -14,38 +14,37 @@
     <?php require '../../components/header.php'; ?>
 
     <h1>Luna's Discord Server</h1>
-    <p>Here you can join the Discord server that is owned by Luna.</p>
-    <p>Here you can get help with any of her mods, chat with the community or ask her questions.</p>
-    <p>You will get video announcements, new project announcements and ability to get involved in developing of some projects.</p>
+    
+    <p>Join Luna's Discord server and Luna's commmunity!</p>
+
     <p>
         <a href="https://discord.gg/uTWjgy2E4v">
             <button>Join</button>
         </a>
     </p>
+
+    <h2>The center of Luna's community</h2>
+    <p>The place for everything about Luna. All of my stuff is located in this server, everything from updates on the latest content, all my projects to an active community.</p>
+
     <h2>Updates directly from Luna</h2>
     <p>This server is where you'll find the latest Luna news. It's where we post new projects, YouTube videos, and when Luna goes live.</p>
 
     <h2>Akabot Support</h2>
-    <p>The Luna server also is a support server for Akabot. Get help with commands, report bugs, and suggest improvements for the bot.</p>
-    <p>The bot has an updates channel for news and to announce when it's offline.</p>
-
-    <h2>Custom bot: Ai</h2>
-    <p>There's a custom bot called Luna's Ai. It's a bot that helps with everything in the server.</p>
+    <p>Akabot is a free and open source Discord bot maintained by Luna and here you can get support for it!</p>
 
     <h2>Friendly and safe community</h2>
-    <p>With our rules, you can expect to not be uncomfortable chatting in this Discord server.</p>
-    <p>We have strict rules to protect our members from getting attacked or from getting uncomfortable.</p>
+    <p>
+        With my rules, you can expect to never be uncomfortable chatting in my Discord server. My rules are loose
+        but not too loose. 
+    </p>
 
     <h2>All of my projects, in one place</h2>
     <p>On this Discord server, you can find all of my projects' discussions in one place.</p>
-    <p>We have a channel for each project where we discuss the project, share updates, and more.</p>
+    <p>I have a channel for each project where I discuss the project, share updates, and more.</p>
     <p>You can find the list of all projects by clicking <a href="/projects">here</a>.</p>
 
     <h2>LGBTQ+ friendly</h2>
-    <p>This server is LGBTQ+ friendly. We have a safe and friendly community.</p>
-    <p>Any jokes against you all LGBTQ+ members will be removed and their respective authors will be punished accordingly.</p>
-    <p>We believe that LGBTQ+ members are vulnerable and that they should be treated with respect.</p>
-    <p>Everyone else is also treated with respect as well.</p>
+    <p>This server is LGBTQ+ friendly. I have a safe and friendly community. Harassement is fully banned and is very highly punishable :3</p>
 
     <?php require '../../components/footer.php'; ?>
 </body>

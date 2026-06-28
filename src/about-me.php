@@ -28,16 +28,7 @@
         My name is Luna. Refrain from using any of my older usernames, pronouns or similar. Tell me when I'm <i>too silly</i> for your comfort.
     </p>
 
-    <p>
-        I&apos;m okay with flirting whenever you ask if it&apos;s okay and I answer yes. I&apos;m completely fine to flirt as friends, however I won&apos;t enter any relationships. I may feel safer to flirt with some people more
-        than with other people. I&apos;m pansexual, so I&apos;ll flirt regardless of what gender you are. I&apos;m also fine with using slurs when I know you for a while.
-    </p>
-
-    <p>
-        If you get me to know you enough, you can ask me and sign up on my <a href="/services">services</a>. I am fine with letting a few people sign up on my services.
-    </p>
-
-    <h2>What I like</h2>
+    <h2>The likes</h2>
 
     <ul>
         <li>Women, fem-adjacent creatures and critters and other genders but a bit less</li>
@@ -47,20 +38,14 @@
         <li>Linux (Arch Linux, my beloved)</li>
     </ul>
 
-    <h2>What I dislike</h2>
-
-    <ul>
-        <li>Corporates</li>
-    </ul>
-
     <h2>My username history</h2>
 
-    <p>You might know me under another username. I used to have the following usernames in the past:</p>
+    <p>You may know me under another username. I used to have the following usernames in the past:</p>
     <ul>
-        <li>(2024-2025) mldchan</li>
+        <li>(2024-2026) mldchan</li>
         <li>(2024) Akatsuki, Akatsuki2555, Akatsuki35, Akatsuki230</li>
         <li>(2023) Programmer Astolfo</li>
-        <li>(2020-2023) mldkyt, MLDKYT</li>
+        <li>(2019-2023) mldkyt, MLDKYT</li>
     </ul>
     <p>If you know any of these usernames, my username online is Luna. Please do not refer to me as mldkyt to avoid confusion, because people won&apos;t be able to find me.</p>
 

@@ -31,7 +31,7 @@
             </li>
         </ul>
 
-        <p>Collaborativ Markov Bot can be followed by anyone, in order for the bot to have the best quality!</p>
+        <p>Collaborative Markov Bot can be followed by anyone, in order for the bot to have the best quality!</p>
 
         <p>
             <i>Collaborative Markov Bot doesn&apos;t and will NEVER USE any post for any other use other than the bot&apos;s functionality.</i>

@@ -99,11 +99,8 @@
             <li><a href="/">Home</a></li>
             <li><a href="/pronouns">Pronouns</a></li>
             <li><a href="/guestbook.php">Guestbook</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/social">Socials</a></li>
             <li><a href="/services">Services</a></li>
             <li><a href="https://mc.mldchan.dev">Minecraft</a></li>
-            <li><a href="/contact">Contact</a></li>
             <li><a href="https://ko-fi.com/c4tgirl">Donate</a></li>
         </ul>
     </nav>

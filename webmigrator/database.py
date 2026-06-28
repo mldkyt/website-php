@@ -42,14 +42,6 @@ buttons = Table(
     Column("url", VARCHAR)
 )
 
-qna = Table(
-    "qna",
-    md,
-    Column("id", Integer, primary_key=True, autoincrement=True),
-    Column("ip", VARCHAR, server_default="NULL"),
-    Column("question", VARCHAR, nullable=False)
-)
-
 views = Table(
     "views",
     md,
@@ -65,21 +57,27 @@ views_expire = Table(
     Column("expire", DateTime(), nullable=False, server_default="now()"),
 )
 
-project_comments = Table(
-    "project_comments",
+socials = Table(
+    "socials",
     md,
     Column("id", Integer, primary_key=True, autoincrement=True),
-    Column("ip", VARCHAR, nullable=False),
-    Column("project", VARCHAR, nullable=False),
     Column("name", VARCHAR, nullable=False),
-    Column("comment", VARCHAR, nullable=False),
-    Column("approved", Integer, nullable=False, server_default="0"),
+    Column("url", VARCHAR, nullable=False)
 )
 
-project_likes = Table(
-    "project_likes",
+contacts = Table(
+    "contacts",
     md,
     Column("id", Integer, primary_key=True, autoincrement=True),
-    Column("project", VARCHAR, nullable=False),
-    Column("ip", VARCHAR, nullable=False)
+    Column("name", VARCHAR, nullable=False),
+    Column("url", VARCHAR, nullable=True)
+)
+
+projects = Table(
+    "projects",
+    md,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("name", VARCHAR, nullable=False),
+    Column("description", VARCHAR, nullable=False),
+    Column("url", VARCHAR, nullable=False)
 )

@@ -2,7 +2,7 @@ FROM python:3.12-alpine
 
 WORKDIR /app
 
-RUN apk add --no-cache postgresql17 postgresql17-dev
+RUN apk add --no-cache postgresql17 postgresql17-dev gcc
 
 RUN pip3 install --upgrade uv
 

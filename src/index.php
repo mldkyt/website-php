@@ -63,7 +63,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
             <p>idk what to put here but suggestions are welcome :3</p>
 
             <p>
-                <a href="/https://git.mldchan.dev/luna/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3 
+                <a href="https://git.mldchan.dev/luna/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3 
             </p>
         </div>
         <div style="float: right; border: 1px solid white; width: 600px;">

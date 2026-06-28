@@ -1,2 +1,2 @@
 <?php
-header("Location: https://fedi.mldchan.dev/users/keysmash");
+header("Location: https://sk.lunya.pet/@keysmash");

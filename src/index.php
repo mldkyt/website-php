@@ -46,27 +46,9 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     <?php require "../components/header.php"; ?>
     <h1>Welcome to Luna's website!</h1>
 
-    <div style="display: flex; flex-direction: row;">
-        <div style="float: left;">
-            <h2>About me</h2>
-            <p>
-                Hi, I'm Luna (<a href="https://en.pronouns.page/u/catgirl_ceo">she/her</a>), 20F 🏳️‍⚧️ catgirl <a href="https://git.mldchan.dev/luna" target="_blank">develper</a>, <a
-                    href="https://www.youtube.com/@catgirl_ceo"
-                    target="_blank">YouTuber</a> and <a href="https://fedi.mldchan.dev/users/luna" target="_blank">shitposter</a>. Join my community on <a href="/discord" target="_blank">Discord</a>! :3
-            </p>
+    <section>
 
-            <p>
-                I can code in many programming languages such as C, C++, Java, Kotlin, JavaScript, TypeScript, Go, Rust, HTML,
-                CSS, Python, Astro and many others
-            </p>
-
-            <p>idk what to put here but suggestions are welcome :3</p>
-
-            <p>
-                <a href="https://git.mldchan.dev/luna/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3 
-            </p>
-        </div>
-        <div style="float: right; border: 1px solid white; width: 600px;">
+        <div style="float: right; border: 1px solid white; min-width: 300px;">
             <strong style="margin: 8px;">Socials</strong><br>
             <ul>
                 <?php 
@@ -94,9 +76,29 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
                 <?php endwhile; ?>
             </ul>
         </div>
-    </div>
 
-    <h2 style="clear: both;">Projects</h2>
+        <h2>About me</h2>
+        <p>
+            Hi, I'm Luna (<a href="https://en.pronouns.page/u/catgirl_ceo">she/her</a>), 20F 🏳️‍⚧️ catgirl <a href="https://git.mldchan.dev/luna" target="_blank">develper</a>, <a
+                href="https://www.youtube.com/@catgirl_ceo"
+                target="_blank">YouTuber</a>. Join my community on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>! :3
+        </p>
+
+        <p>On YouTube I post pretty much everything from gameplays to showing off my projects. I am to upload every Friday but most of the time it doesn't work out because I have no ideas on what to upload.</p>
+
+        <p>
+            I can code in many programming languages such as C, C++, Java, Kotlin, JavaScript, TypeScript, Go, Rust, HTML,
+            CSS, Python, Astro and many others. I wrote many cool things which you can check out by scrolling down.
+        </p>
+
+        <p>I run my own services for myself and some of my friends. I have an <a href="https://fedi.mldchan.dev/">Akkoma</a> fedi instance, <a href="https://git.mldchan.dev">Forgejo</a> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldchan.dev">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
+
+        <p>
+            <a href="https://git.mldchan.dev/luna/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3 
+        </p>
+    </section>
+
+    <h2>Projects</h2>
 
     <div class="projects">
         <?php 
@@ -112,7 +114,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     </div>
 
     <br  />
-    <p style="clear: both;">
+    <p>
         <a href="https://fediring.net/previous?host=mldchan.dev"><button>←</button></a>
         <a href="https://fediring.net/"><button>Fediring</button></a>
         <a href="https://fediring.net/next?host=mldchan.dev"><button>→</button></a>

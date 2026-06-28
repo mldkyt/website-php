@@ -97,7 +97,6 @@
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/pronouns">Pronouns</a></li>
             <li><a href="/guestbook.php">Guestbook</a></li>
             <li><a href="/services">Services</a></li>
             <li><a href="https://mc.mldchan.dev">Minecraft</a></li>

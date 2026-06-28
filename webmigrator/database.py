@@ -24,15 +24,6 @@ guestbook = Table(
     Column("reply_at", DateTime())
 )
 
-videos = Table(
-    "videos",
-    md,
-    Column("id", VARCHAR, primary_key=True),
-    Column("ord", Integer, nullable=False),
-    Column("title", VARCHAR, nullable=False),
-    Column("url", VARCHAR, nullable=False)
-)
-
 buttons = Table(
     "buttons",
     md,

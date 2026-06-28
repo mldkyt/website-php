@@ -17,8 +17,9 @@
         <li><a href="/admin/anonmsg.php">Anonymous Messages</a></li>
         <li><a href="/admin/guestbook.php">Guestbook Admin Page</a></li>
         <li><a href="/admin/buttons.php">Manage Buttons</a></li>
-        <li><a href="/admin/qna.php">QnA</a></li>
-        <li><a href="/admin/projectComments.php">Project Comments</a></li>
+        <li><a href="/admin/projects.php">Manage Projects</a></li>
+        <li><a href="/admin/socials.php">Manage Socials</a></li>
+        <li><a href="/admin/contacts.php">Manage Contacts</a></li>
     </ul>
 
     <?php require "../../components/footer.php"; ?>

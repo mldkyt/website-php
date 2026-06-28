@@ -11,7 +11,7 @@
     </style>
     <p>Copyright (C) <?= date("Y"); ?> Luna</p>
     <div id="footerLinks">
-        <p><a href="/discord">Discord</a></p>
+        <p><a href="https://discord.gg/aE2MXH5Qp6">Discord</a></p>
         <p id="views"></p>
     </div>
     <p>

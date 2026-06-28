@@ -24,93 +24,104 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
 <head>
     <?php require "../components/global.php"; ?>
     <?php seo("Home page", "Welcome to Luna's website!"); ?>
+
+    <style>
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .projects > div {
+            margin: 4px;
+            padding: 4px;
+            border: 1px solid white;
+            display: grid;
+            grid-template-rows: 22px 1fr 22px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <?php require "../components/header.php"; ?>
     <h1>Welcome to Luna's website!</h1>
 
-    <h2>About me</h2>
-    <p>
-        Hi, I'm Luna (<a href="/pronouns">she/her</a>), and I'm a silly transgender lesbian catgirl (yes that's a spell), and I <a href="https://git.mldchan.dev/luna" target="_blank">code in production</a>, make <a
-            href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw"
-            target="_blank">YouTube videos</a> and <a href="https://fedi.mldchan.dev/users/luna" target="_blank">shitpost on fedi</a>! I have a <a href="/discord" target="_blank">Discord</a> server :3
-    </p>
+    <section>
 
-    <p>
-        I write my code in a lot of programming languages, the choice of course based on which programming language I know best for the task. I've written projects in C, C++, Java, Kotlin, JavaScript, TypeScript, Go, Rust, HTML,
-        CSS, Python, Astro and others in the past.
-    </p>
+        <div style="float: right; border: 1px solid white; min-width: 300px;">
+            <strong style="margin: 8px;">Socials</strong><br>
+            <ul>
+                <?php 
+                $res = pg_query($conn, "SELECT \"name\", \"url\" from socials");
+                while (($row = pg_fetch_assoc($res))) :
+                ?>
+                <li>
+                    <a href="<?= htmlspecialchars($row["url"]) ?>"><?= htmlspecialchars($row["name"]); ?></a>
+                </li>
+                <?php endwhile; ?>
+            </ul>
+            <strong style="margin: 8px;">Contacts</strong><br>
+            <ul>
+                <?php 
+                $res = pg_query($conn, "SELECT \"name\", \"url\" from contacts");
+                while (($row = pg_fetch_assoc($res))) :
+                ?>
+                <li>
+                    <?php if (strlen($row["url"]) > 0) : ?>
+                    <a href="<?= htmlspecialchars($row["url"]) ?>"><?= htmlspecialchars($row["name"]); ?></a>
+                    <?php else : ?>
+                    <span><?= htmlspecialchars($row["name"]) ?></span>
+                    <?php endif; ?>
+                </li>
+                <?php endwhile; ?>
+            </ul>
+        </div>
 
-    <p>
-        On YouTube, I've published mostly <a href="https://www.youtube.com/watch?v=7RT3EZiDEeE&list=PLBuV8_rRvRfDdSWKlJBUNhzGo-Qgzi_nk&pp=gAQB" target="_blank">videos about My Summer Car</a>, <a
-            href="https://www.youtube.com/watch?v=kebvJDNGDr0&list=PLBuV8_rRvRfDXeLbrypTB88hhOCZzLMcw&pp=gAQB"
-            target="_blank">Mon Bazou</a>, <a href="https://www.youtube.com/watch?v=Rk5XmItKA1w&list=PLBuV8_rRvRfDDmQTZZ_F-L-PQkVAeMYBo&pp=gAQB" target="_blank">Minecraft</a>, <a
-            href="https://www.youtube.com/watch?v=9-O8-Y6f818&list=PLBuV8_rRvRfD36HvpMg6BnfeLVzBVS5sq&pp=gAQB"
-            target="_blank">Celeste</a> and other games. Some of these videos are tutorials, some have a vTuber like appearance, some document my own projects, others are just shitposts. <a href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw" target="_blank">You're welcome to check out my YouTube channel</a>. <a href="/qna">I also have a QnA on this website.</a>
-    </p>
-
-    <p>
-        Wanna read a more personal "about me"? <a href="/about-me">Read about me~</a> :3 Otherwise, check out the things I've done:
-    </p>
-
-    <h3><a href="/projects">Programming Projects</a></h3>
-    <ul>
-        <li>
-            <a href="/project/akabot"><strong>Akabot</strong></a> is a fully featured general purpose discord bot with over 30 features.
-        </li>
-        <li>
-            Wanna be invaded by Astolfo? <a href="/project/astolfoiscomingforyou"><strong>Astolfo is coming for you</strong></a> is a Windows program that recreates the meme.
-        </li>
-        <li>
-            Ever felt like a catgirl? <a href="/project/pawsense">PawSense</a> is for you.
-        </li>
-        <li>
-            <a href="/project/astolfomod"><strong>Astolfo Mod</strong></a> adds a bunch of femboys and transgirls into minecraft :3
-        </li>
-        <li>
-            <a href="/project/catgirlnonsense"><strong>catgirls dreams mmwrmwamrwamrmwa &gt;/////////&lt; wrwageiogjaa uwu :3 *pats you*</strong></a>
-        </li>
-    </ul>
-
-    <h3><a href="https://www.youtube.com/channel/UC7JMha1kjOS7gsJXwNtosNw">Latest YouTube videos</a></h3>
-
-    <ul>
-        <?php
-        $res = pg_query("SELECT title, url FROM videos ORDER BY ord DESC LIMIT 5");
-        while ($row = pg_fetch_assoc($res)): ?>
-        <li><a href="<?= htmlspecialchars($row["url"]) ?>"><strong><?= htmlspecialchars($row["title"]) ?></strong></a></li>
-        <?php endwhile;
-        ?>
-    </ul>
-
-    <p>Videos get mirrored to <a href="https://pt.mldchan.dev/c/lunyavids" target="_blank">PeerTube</a> as well. Sometimes.</p>
-
-    <br />
-    <details>
-        <summary>Webrings</summary>
+        <h2>About me</h2>
         <p>
-            <a href="https://fediring.net/previous?host=mldchan.dev"><button>←</button></a>
-            <a href="https://fediring.net/"><button>Fediring</button></a>
-            <a href="https://fediring.net/next?host=mldchan.dev"><button>→</button></a>
+            Hi, I'm Luna (<a href="https://en.pronouns.page/u/catgirl_ceo">she/her</a>), 20F 🏳️‍⚧️ catgirl <a href="https://git.mldchan.dev/luna" target="_blank">develper</a>, <a
+                href="https://www.youtube.com/@catgirl_ceo"
+                target="_blank">YouTuber</a>. Join my community on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>! Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on the site! :3
         </p>
 
-        <div style="text-align:center">
-            <a href="https://baccyflap.com/noai/?prv&s=aka" target="_top">« prev</a> |
-            <a href="https://baccyflap.com/noai" target="_blank">no ai webring</a>
-            <a style="font-size:60%" href="https://baccyflap.com/noai/?rnd" target="_top">(random)</a> |
-            <a href="https://baccyflap.com/noai/?nxt&s=aka" target="_top">next »</a>
+        <p>On YouTube I post pretty much everything from gameplays to showing off my projects. I am to upload every Friday but most of the time it doesn't work out because I have no ideas on what to upload.</p>
+
+        <p>
+            I can code in many programming languages such as C, C++, Java, Kotlin, JavaScript, TypeScript, Go, Rust, HTML,
+            CSS, Python, Astro and many others. I wrote many cool things which you can check out by scrolling down.
+        </p>
+
+        <p>I run my own services for myself and some of my friends. I have an <a href="https://fedi.mldchan.dev/">Akkoma</a> fedi instance, <a href="https://git.mldchan.dev">Forgejo</a> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldchan.dev">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
+
+        <p>
+            <a href="https://git.mldchan.dev/luna/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3 
+        </p>
+    </section>
+
+    <h2>Projects</h2>
+
+    <div class="projects">
+        <?php 
+        $projects = pg_query($conn, "SELECT \"name\", \"description\", \"url\" FROM projects");
+        while ($project = pg_fetch_assoc($projects)) { ?>
+        <div>
+            <strong><?= $project["name"]; ?></strong>
+            <p><?= $project["description"]; ?></p>
+            <a href="<?= $project["url"]; ?>">Read more about <?= $project["name"]; ?></a>
         </div>
-    </details>
+        <?php }
+        ?>
+    </div>
+
+    <br  />
+    <p>
+        <a href="https://fediring.net/previous?host=mldchan.dev"><button>←</button></a>
+        <a href="https://fediring.net/"><button>Fediring</button></a>
+        <a href="https://fediring.net/next?host=mldchan.dev"><button>→</button></a>
+    </p>
     <br />
 
-    <h2>Buttons</h2>
-
-    <h3>My button :3</h3>
-    <p>I have my own button that <a href="/button.php">you can add to your website today. :3</a></p>
-
     <img src="/button.gif" alt="88x31 button for Luna">
-
     <?php require "../components/buttons.php"; ?>
 
     <br />

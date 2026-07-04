@@ -23,7 +23,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
 
 <head>
     <?php require "../components/global.php"; ?>
-    <?php seo("Home page", "Welcome to Luna's website!"); ?>
+    <?php seo("Home page", "Welcome to mldchan's website!"); ?>
 
     <style>
         .projects {
@@ -44,14 +44,14 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
 
 <body>
     <?php require "../components/header.php"; ?>
-    <h1>Welcome to Luna's website!</h1>
+    <h1>Welcome to Luna (mldchan)'s website!</h1>
 
     <section>
 
         <div style="float: right; border: 1px solid white; min-width: 300px;">
             <strong style="margin: 8px;">Socials</strong><br>
             <ul>
-                <?php 
+                <?php
                 $res = pg_query($conn, "SELECT \"name\", \"url\" from socials");
                 while (($row = pg_fetch_assoc($res))) :
                 ?>
@@ -62,7 +62,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
             </ul>
             <strong style="margin: 8px;">Contacts</strong><br>
             <ul>
-                <?php 
+                <?php
                 $res = pg_query($conn, "SELECT \"name\", \"url\" from contacts");
                 while (($row = pg_fetch_assoc($res))) :
                 ?>
@@ -79,7 +79,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
 
         <h2>About me</h2>
         <p>
-            Hi, I'm Luna (<a href="https://en.pronouns.page/u/catgirl_ceo">she/her</a>), 20F 🏳️‍⚧️ catgirl <a href="https://git.mldchan.dev/luna" target="_blank">develper</a>, <a
+            Hi, I'm Luna (also mldchan), a <a href="https://git.mldchan.dev/luna" target="_blank">developer</a> and a <a
                 href="https://www.youtube.com/@catgirl_ceo"
                 target="_blank">YouTuber</a>. Join my community on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>! Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on the site! :3
         </p>
@@ -94,14 +94,14 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
         <p>I run my own services for myself and some of my friends. I have an <a href="https://fedi.mldchan.dev/">Akkoma</a> fedi instance, <a href="https://git.mldchan.dev">Forgejo</a> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldchan.dev">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
 
         <p>
-            <a href="https://git.mldchan.dev/luna/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3 
+            <a href="https://git.mldchan.dev/luna/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3
         </p>
     </section>
 
     <h2>Projects</h2>
 
     <div class="projects">
-        <?php 
+        <?php
         $projects = pg_query($conn, "SELECT \"name\", \"description\", \"url\" FROM projects");
         while ($project = pg_fetch_assoc($projects)) { ?>
         <div>
@@ -121,7 +121,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     </p>
     <br />
 
-    <img src="/button.gif" alt="88x31 button for Luna">
+    <img src="/button.gif" alt="88x31 button for mldchan">
     <?php require "../components/buttons.php"; ?>
 
     <br />

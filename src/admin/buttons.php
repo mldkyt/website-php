@@ -75,7 +75,7 @@ while ($row = pg_fetch_assoc($res)) {
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("Buttons", "Management of buttons for Luna's website."); ?>
+    <?php seo("Buttons", "Management of buttons for mldchan's website."); ?>
 </head>
 
 <body>

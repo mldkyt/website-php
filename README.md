@@ -4,9 +4,9 @@
 [![Gitea Issues](https://img.shields.io/gitea/issues/open/luna/website?gitea_url=https%3A%2F%2Fgit.mldchan.dev&style=plastic)](https://git.mldchan.dev/luna/website/pulls)
 [![Gitea Pull Requests](https://img.shields.io/gitea/pull-requests/open/luna/website?gitea_url=https%3A%2F%2Fgit.mldchan.dev&style=plastic)](https://git.mldchan.dev/luna/website/issues)
 
-# Luna's website
+# mldchan's website
 
-Luna's latest website, written in PHP. Looks exactly the same as [website-2026-02-28](https://git.mldchan.dev/luna/website-2026-02-28) but it's written in PHP.
+mldchan's latest website, written in PHP. Looks exactly the same as [website-2026-02-28](https://git.mldchan.dev/luna/website-2026-02-28) but it's written in PHP.
 
 ## features
 

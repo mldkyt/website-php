@@ -247,12 +247,12 @@
 
 <?php function seo($title, $description) { ?>
     <meta charset="UTF-8" />
-    <title><?= $title; ?> | Luna's website</title>
+    <title><?= $title; ?> | mldchan's website</title>
     <meta name="description" content="<?= $description; ?>" />
-    <meta name="author" content="Luna" />
+    <meta name="author" content="mldchan" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-language" content="en" />
-    <meta property="og:title" content="<?= $title; ?> | Luna's website" />
+    <meta property="og:title" content="<?= $title; ?> | mldchan's website" />
     <meta property="og:description" content="<?= $description; ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mldchan.dev" />

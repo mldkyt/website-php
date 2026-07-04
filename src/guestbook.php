@@ -50,13 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <?php require '../components/global.php'; ?>
-    <?php seo("Luna's guestbook", "Luna's guestbook for visitors to sign."); ?>
+    <?php seo("mldchan's guestbook", "mldchan's guestbook for visitors to sign."); ?>
 </head>
 
 <body>
     <?php require '../components/header.php'; ?>
 
-    <h1>Luna's Guestbook</h1>
+    <h1>mldchan's Guestbook</h1>
 
     <br />
 
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php } ?>
         <?php if ($postSuccess) { ?>
         <div class="success">
-            <span>Your post was sent successfully, please wait for approval by Luna for it to show up</span>
+            <span>Your post was sent successfully, please wait for approval by mldchan for it to show up</span>
         </div>
         <?php } ?>
 
@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p style="margin: 0; margin-left: 4px;"><small><?= date("r", strtotime($row["created_at"])); ?></small></p>
             <?php if (isset($row["reply"]) && isset($row["reply_at"])) { ?>
             <div style="border: 1px solid white; padding: 2px; margin: 2px;">
-                <p style="margin: 0; margin-left: 4px;"><strong>On <?= date("r", strtotime($row["reply_at"])); ?>, reply by Luna:</strong></p>
+                <p style="margin: 0; margin-left: 4px;"><strong>On <?= date("r", strtotime($row["reply_at"])); ?>, reply by mldchan:</strong></p>
                 <p style="margin: 0; margin-left: 4px;"><?= $row["reply"]; ?></p>
             </div>
             <?php } ?>

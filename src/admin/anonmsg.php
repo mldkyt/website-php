@@ -81,7 +81,7 @@ $anonymousMessage = pg_fetch_assoc($res);
 
 <head>
     <?php require '../../components/global.php'; ?>
-    <?php seo("Anonymous Messages", "Management of anonymous messages for Luna's website."); ?>
+    <?php seo("Anonymous Messages", "Management of anonymous messages for mldchan's website."); ?>
 </head>
 
 <body>

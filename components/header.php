@@ -89,8 +89,8 @@
     ?>
     <div>
         <div>
-            <h2>Luna's website!</h2>
-            <p>Welcome to Luna's website!</p>
+            <h2>mldchan's website!</h2>
+            <p>Welcome to mldchan's website!</p>
             <br />
         </div>
     </div>

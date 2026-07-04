@@ -177,6 +177,7 @@
 <script src="/scripts/pako.js"></script>
 <script src="/scripts/purify.js"></script>
 <script src="/scripts/seedrandom.js"></script>
+<script defer src="https://a.mldchan.dev/script.js" data-website-id="43bc27a1-8bfc-45a2-baf2-dbb4b4c9ef02"></script>
 
 <script defer>
     window.addEventListener("load", (event) => {

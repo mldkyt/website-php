@@ -36,7 +36,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
             padding: 4px;
             border: 1px solid white;
             display: grid;
-            grid-template-rows: 22px 1fr 22px;
+            grid-template-rows: min-content 1fr min-content;
             text-align: center;
         }
     </style>

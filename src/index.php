@@ -81,7 +81,11 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
         <p>
             Hi, I'm Luna (also mldchan), a <a href="https://git.mldchan.dev/luna" target="_blank">developer</a> and a <a
                 href="https://www.youtube.com/@catgirl_ceo"
-                target="_blank">YouTuber</a>. Join my community on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>! Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on the site! :3
+                target="_blank">YouTuber</a>. Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on the site! :3
+        </p>
+
+        <p>
+            My community has its center on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>, however if you can't access the Discord due to not having an account, <a href="/discord/explore">you can explore the Discord server publicly</a>.
         </p>
 
         <p>On YouTube I post pretty much everything from gameplays to showing off my projects. I am to upload every Friday but most of the time it doesn't work out because I have no ideas on what to upload.</p>

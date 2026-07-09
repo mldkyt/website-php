@@ -15,7 +15,7 @@ if (isset($_GET["approve"])) {
 
 // Decline/Delete post
 if (isset($_GET["delete"])) {
-    pg_query_params($conn, "DELETE FROM guestbook WHERE id = $1", [$_GET["approve"]]);
+    pg_query_params($conn, "DELETE FROM guestbook WHERE id = $1", [$_GET["delete"]]);
 }
 
 // Reply

@@ -39,6 +39,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         pg_query_params($conn, "INSERT INTO guestbook(ip, \"name\", \"text\") VALUES ($1, $2, $3)", [get_remote_addr(), $username, $message]);
 
+        // send notif (everything is fine if it doesn't succeed)
+        if (getenv("NTFY_URL") && getenv("NTFY_TOKEN")) {
+            file_get_contents('https://' . getenv("NTFY_URL"), false, stream_context_create([
+                'http' => [
+                    'method' => 'POST',
+                    'header' =>
+                        "Content-Type: text/plain\r\n" .
+                        "Title: New Guestbook Post\r\n" .
+                        "Actions: view, Admin Panel, https://mldchan.dev/admin/guestbook.php\r\n" .
+                        "Authorization: Bearer " . getenv("NTFY_TOKEN"),
+                    'content' => 'New guestbook item submitted by ' . $username
+                ]
+            ]));
+        }
+
         $postSuccess = true;
     }
 }

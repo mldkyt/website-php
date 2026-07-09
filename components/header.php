@@ -124,6 +124,26 @@
         <p id="tenminutespassed">You have spent 10 minutes looking at this page. Shouldn't you be working? :3</p>
         <button onclick="hide10Minutes()">Hide</button>
     </div>
+    <?php
+    require "kv.php";
+
+    $host = getenv('DB_POSTGRES_HOST');
+    $user = getenv('DB_POSTGRES_USER');
+    $pass = getenv('DB_POSTGRES_PASSWORD');
+    $name = getenv('DB_POSTGRES_NAME');
+    $port = getenv('DB_POSTGRES_PORT') ?: '5432';
+
+    $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
+
+    $message = db_key_get($conn, "announcement_message");
+
+    if (strlen($message) > 0) :
+    ?>
+    <div class="error">
+        <p><?= $message; ?></p>
+    </div>
+
+    <?php endif; ?>
 </header>
 
 <canvas id="background"></canvas>

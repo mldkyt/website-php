@@ -72,3 +72,10 @@ projects = Table(
     Column("description", VARCHAR, nullable=False),
     Column("url", VARCHAR, nullable=False)
 )
+
+kv = Table(
+    "kv",
+    md,
+    Column("key", VARCHAR, primary_key=True),
+    Column("value", VARCHAR)
+)

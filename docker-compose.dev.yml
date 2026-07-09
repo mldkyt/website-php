@@ -16,11 +16,14 @@ services:
     depends_on:
       migrations:
         condition: service_completed_successfully
+    networks:
+      - website
 
   migrations:
     build: webmigrator/.
     env_file: .env
-    network_mode: host
+    networks:
+      - website
 
   postgres:
     pull_policy: always
@@ -34,4 +37,8 @@ services:
       - POSTGRES_USER=luna
       - POSTGRES_PASSWORD=luna
       - POSTGRES_DB=luna
+    networks:
+      - website
 
+networks:
+  website:

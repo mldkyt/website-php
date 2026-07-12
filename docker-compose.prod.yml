@@ -21,7 +21,7 @@ services:
       BIND: ":8080"
       DIFFICULTY: "5"
       # SERVE_ROBOTS_TXT: "true"
-      TARGET: "http://website:8080"
+      TARGET: "http://php:8080"
       OG_PASSTHROUGH: "true"
       OG_EXPIRY_TIME: "24h"
     healthcheck:

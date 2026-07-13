@@ -1,7 +1,10 @@
+
 services:
   php:
     # image: trafex/php-nginx:latest
     build: .
+    ports:
+      - "8001:8080"
     volumes:
       - ./src:/var/www/html:z
       - ./components:/var/www/components:z
@@ -15,26 +18,10 @@ services:
         condition: service_completed_successfully
     extra_hosts:
       - "host.docker.internal:host-gateway"
-  anubis:
-    image: ghcr.io/techarohq/anubis:latest
-    environment:
-      BIND: ":8080"
-      DIFFICULTY: "5"
-      # SERVE_ROBOTS_TXT: "true"
-      TARGET: "http://website:8080"
-      OG_PASSTHROUGH: "true"
-      OG_EXPIRY_TIME: "24h"
-    healthcheck:
-      test: ["CMD", "anubis", "--healthcheck"]
-      interval: 5s
-      timeout: 30s
-      retries: 5
-      start_period: 500ms
-    ports:
-      - 8001:8080
-    restart: always
-    pull_policy: always
+
   migrations:
     build: webmigrator/.
     env_file: .env
     network_mode: host
+
+

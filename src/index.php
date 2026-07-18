@@ -9,13 +9,15 @@ if ($_SERVER["REQUEST_URI"] != "/") {
     }
 }
 
-$host = getenv('DB_POSTGRES_HOST');
-$user = getenv('DB_POSTGRES_USER');
-$pass = getenv('DB_POSTGRES_PASSWORD');
-$name = getenv('DB_POSTGRES_NAME');
-$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+$host = getenv("DB_POSTGRES_HOST");
+$user = getenv("DB_POSTGRES_USER");
+$pass = getenv("DB_POSTGRES_PASSWORD");
+$name = getenv("DB_POSTGRES_NAME");
+$port = getenv("DB_POSTGRES_PORT") ?: "5432";
 
-$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
+$conn = pg_connect(
+    "host=$host port=$port dbname=$name user=$user password=$pass",
+);
 ?>
 
 <!DOCTYPE html>
@@ -53,39 +55,46 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
             <ul>
                 <?php
                 $res = pg_query($conn, "SELECT \"name\", \"url\" from socials");
-                while (($row = pg_fetch_assoc($res))) :
-                ?>
+                while ($row = pg_fetch_assoc($res)): ?>
                 <li>
-                    <a href="<?= htmlspecialchars($row["url"]) ?>"><?= htmlspecialchars($row["name"]); ?></a>
+                    <a href="<?= htmlspecialchars(
+                        $row["url"],
+                    ) ?>"><?= htmlspecialchars($row["name"]) ?></a>
                 </li>
-                <?php endwhile; ?>
+                <?php endwhile;
+                ?>
             </ul>
             <strong style="margin: 8px;">Contacts</strong><br>
             <ul>
                 <?php
-                $res = pg_query($conn, "SELECT \"name\", \"url\" from contacts");
-                while (($row = pg_fetch_assoc($res))) :
-                ?>
+                $res = pg_query(
+                    $conn,
+                    "SELECT \"name\", \"url\" from contacts",
+                );
+                while ($row = pg_fetch_assoc($res)): ?>
                 <li>
-                    <?php if (strlen($row["url"]) > 0) : ?>
-                    <a href="<?= htmlspecialchars($row["url"]) ?>"><?= htmlspecialchars($row["name"]); ?></a>
-                    <?php else : ?>
+                    <?php if (strlen($row["url"]) > 0): ?>
+                    <a href="<?= htmlspecialchars(
+                        $row["url"],
+                    ) ?>"><?= htmlspecialchars($row["name"]) ?></a>
+                    <?php else: ?>
                     <span><?= htmlspecialchars($row["name"]) ?></span>
                     <?php endif; ?>
                 </li>
-                <?php endwhile; ?>
+                <?php endwhile;
+                ?>
             </ul>
         </div>
 
         <h2>About me</h2>
         <p>
-            Hi, I'm Luna (also mldchan), a <a href="https://git.mldchan.dev/luna" target="_blank">developer</a> and a <a
+            Hi, I'm Luna (also mldchan), a Czech <a href="https://git.mldchan.dev/luna" target="_blank">developer</a> and a <a
                 href="https://www.youtube.com/@catgirl_ceo"
-                target="_blank">YouTuber</a>. Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on the site! :3
+                target="_blank">YouTuber</a>. I am agender, aromantic and asexual. Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on my site! :3
         </p>
 
         <p>
-            My community has its center on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>, however if you can't access the Discord due to not having an account, <a href="/discord/explore">you can explore the Discord server publicly</a>.
+            My community has its center on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>, however if you can't access the Discord due to not having an account, <a href="/discord/explore">you can explore the Discord server publicly</a> :3
         </p>
 
         <p>On YouTube I post pretty much everything from gameplays to showing off my projects. I am to upload every Friday but most of the time it doesn't work out because I have no ideas on what to upload.</p>
@@ -102,16 +111,39 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
         </p>
     </section>
 
+    <h2>Recent updates</h2>
+
+    <?php
+    $res = pg_query(
+        $conn,
+        "SELECT \"title\", \"body\", \"url\" from updates order by created_at desc limit 3",
+    );
+    while ($row = pg_fetch_assoc($res)): ?>
+    <div>
+        <p><strong><?= $row["title"] ?></strong></p>
+        <p><?= $row["body"] ?></p>
+        <?php if (isset($row["url"]) && strlen($row["url"]) > 0) { ?>
+        <p><a href="<?= $row["url"] ?>">Learn more...</a></p>
+        <?php } ?>
+    </div>
+    <?php endwhile;
+    ?>
+
     <h2>Projects</h2>
 
     <div class="projects">
         <?php
-        $projects = pg_query($conn, "SELECT \"name\", \"description\", \"url\" FROM projects");
+        $projects = pg_query(
+            $conn,
+            "SELECT \"name\", \"description\", \"url\" FROM projects",
+        );
         while ($project = pg_fetch_assoc($projects)) { ?>
         <div>
-            <strong><?= $project["name"]; ?></strong>
-            <p><?= $project["description"]; ?></p>
-            <a href="<?= $project["url"]; ?>">Read more about <?= $project["name"]; ?></a>
+            <strong><?= $project["name"] ?></strong>
+            <p><?= $project["description"] ?></p>
+            <a href="<?= $project["url"] ?>">Read more about <?= $project[
+    "name"
+] ?></a>
         </div>
         <?php }
         ?>

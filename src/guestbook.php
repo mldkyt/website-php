@@ -1,12 +1,12 @@
 <?php
 
-require '../components/util.php';
+require "../components/util.php";
 
-$host = getenv('DB_POSTGRES_HOST');
-$user = getenv('DB_POSTGRES_USER');
-$pass = getenv('DB_POSTGRES_PASSWORD');
-$name = getenv('DB_POSTGRES_NAME');
-$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+$host = getenv("DB_POSTGRES_HOST");
+$user = getenv("DB_POSTGRES_USER");
+$pass = getenv("DB_POSTGRES_PASSWORD");
+$name = getenv("DB_POSTGRES_NAME");
+$port = getenv("DB_POSTGRES_PORT") ?: "5432";
 
 $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
@@ -26,6 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $postFail = "Bot check failed";
     }
 
+    // Check if IP is banned
+    $res = pg_query_params($conn, "SELECT id FROM guestbook_blocks WHERE ip = $1", [get_remote_addr()]);
+    if (pg_fetch_assoc($res)) {
+        $ok = false;
+        $postFail = "You are banned from posting on this guestbook.";
+    }
+
     // Check unpost for current IP
     $res = pg_query_params($conn, "SELECT id FROM guestbook WHERE ip = $1 AND approved = 0", [get_remote_addr()]);
     if (pg_fetch_assoc($res)) {
@@ -41,37 +48,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // send notif (everything is fine if it doesn't succeed)
         if (getenv("NTFY_URL") && getenv("NTFY_TOKEN")) {
-            file_get_contents('https://' . getenv("NTFY_URL"), false, stream_context_create([
-                'http' => [
-                    'method' => 'POST',
-                    'header' =>
-                        "Content-Type: text/plain\r\n" .
-                        "Title: New Guestbook Post\r\n" .
-                        "Actions: view, Admin Panel, https://mldchan.dev/admin/guestbook.php\r\n" .
-                        "Authorization: Bearer " . getenv("NTFY_TOKEN"),
-                    'content' => 'New guestbook item submitted by ' . $username
-                ]
-            ]));
+            file_get_contents(
+                "https://" . getenv("NTFY_URL"),
+                false,
+                stream_context_create([
+                    "http" => [
+                        "method" => "POST",
+                        "header" =>
+                            "Content-Type: text/plain\r\n" .
+                            "Title: New Guestbook Post\r\n" .
+                            "Actions: view, Admin Panel, https://mldchan.dev/admin/guestbook.php\r\n" .
+                            "Authorization: Bearer " .
+                            getenv("NTFY_TOKEN"),
+                        "content" => "New guestbook item submitted by " . $username,
+                    ],
+                ]),
+            );
         }
 
         $postSuccess = true;
     }
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require '../components/global.php'; ?>
+    <?php require "../components/global.php"; ?>
     <?php seo("mldchan's guestbook", "mldchan's guestbook for visitors to sign."); ?>
 </head>
 
 <body>
-    <?php require '../components/header.php'; ?>
+    <?php require "../components/header.php"; ?>
 
     <h1>mldchan's Guestbook</h1>
+
+    <h2>Posting rules</h2>
+    <ol>
+        <li>No hate speech, bigotry, transphobia, homophobia etc.</li>
+        <li>Don't spam on here</li>
+        <li>mldchan reserves the right to ban you off of here</li>
+    </ol>
 
     <br />
 
@@ -79,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Create a post</h2>
         <?php if (isset($postFail)) { ?>
         <div class="error">
-            <span><?= $postFail; ?></span>
+            <span><?= $postFail ?></span>
         </div>
         <?php } ?>
         <?php if ($postSuccess) { ?>
@@ -124,8 +142,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = pg_fetch_assoc($res);
     if ($row) { ?>
         <div style="border: 1px dashed white; padding: 2px; margin: 2px;">
-            <h3><?= $row["name"]; ?></h3>
-            <p style="margin: 0; margin-left: 4px;"><?= $row["text"]; ?></p>
+            <h3><?= $row["name"] ?></h3>
+            <p style="margin: 0; margin-left: 4px;"><?= $row["text"] ?></p>
             <p style="margin: 0; margin-left: 4px;"><small><?= date("r", strtotime($row["created_at"])) ?></small></p>
             <small>This post is pending approval and visible only for you</small>
         </div>
@@ -135,20 +153,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $res = pg_query($conn, "SELECT \"name\", \"text\", created_at, reply, reply_at FROM guestbook WHERE approved = 1 ORDER BY created_at DESC");
     while ($row = pg_fetch_assoc($res)) { ?>
         <div style="border: 1px solid white; padding: 2px; margin: 2px;">
-            <h3><?= $row["name"]; ?></h3>
-            <p style="margin: 0; margin-left: 4px;"><?= $row["text"]; ?></p>
-            <p style="margin: 0; margin-left: 4px;"><small><?= date("r", strtotime($row["created_at"])); ?></small></p>
+            <h3><?= $row["name"] ?></h3>
+            <p style="margin: 0; margin-left: 4px;"><?= $row["text"] ?></p>
+            <p style="margin: 0; margin-left: 4px;"><small><?= date("r", strtotime($row["created_at"])) ?></small></p>
             <?php if (isset($row["reply"]) && isset($row["reply_at"])) { ?>
             <div style="border: 1px solid white; padding: 2px; margin: 2px;">
-                <p style="margin: 0; margin-left: 4px;"><strong>On <?= date("r", strtotime($row["reply_at"])); ?>, reply by mldchan:</strong></p>
-                <p style="margin: 0; margin-left: 4px;"><?= $row["reply"]; ?></p>
+                <p style="margin: 0; margin-left: 4px;"><strong>On <?= date("r", strtotime($row["reply_at"])) ?>, reply by mldchan:</strong></p>
+                <p style="margin: 0; margin-left: 4px;"><?= $row["reply"] ?></p>
             </div>
             <?php } ?>
         </div>
     <?php }
     ?>
 
-    <?php require '../components/footer.php'; ?>
+    <?php require "../components/footer.php"; ?>
 </body>
 
 </html>

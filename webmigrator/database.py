@@ -24,6 +24,14 @@ guestbook = Table(
     Column("reply_at", DateTime()),
 )
 
+guestbook_blocks = Table(
+    "guestbook_blocks",
+    md,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("ip", VARCHAR, nullable=False),
+    Column("blocked_at", DateTime(), server_default=now()),
+)
+
 buttons = Table(
     "buttons",
     md,

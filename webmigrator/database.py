@@ -3,14 +3,6 @@ from sqlalchemy.sql.functions import now
 
 md = MetaData()
 
-anonymous_messages = Table(
-    "anonymous_messages",
-    md,
-    Column("id", Integer, primary_key=True, autoincrement=True),
-    Column("ip", VARCHAR, nullable=False),
-    Column("text", VARCHAR, nullable=False),
-)
-
 guestbook = Table(
     "guestbook",
     md,

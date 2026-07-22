@@ -16,14 +16,10 @@
     $name = getenv("DB_POSTGRES_NAME");
     $port = getenv("DB_POSTGRES_PORT") ?: "5432";
 
-    $conn = pg_connect(
-        "host=$host port=$port dbname=$name user=$user password=$pass",
-    );
+    $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
     if ($_SERVER["REQUEST_METHOD"] && isset($_POST["announcement_message"])) {
-        $message = htmlspecialchars(
-            stripslashes(trim($_POST["announcement_message"])),
-        );
+        $message = htmlspecialchars(stripslashes(trim($_POST["announcement_message"])));
         db_key_set($conn, "announcement_message", $message);
     }
     ?>
@@ -31,7 +27,6 @@
     <h1>Administration</h1>
 
     <ul>
-        <li><a href="/admin/anonmsg.php">Anonymous Messages</a></li>
         <li><a href="/admin/guestbook.php">Guestbook Admin Page</a></li>
         <li><a href="/admin/buttons.php">Manage Buttons</a></li>
         <li><a href="/admin/projects.php">Manage Projects</a></li>
@@ -43,10 +38,7 @@
     <h2>Announcement message</h2>
     <form method="post" action="/admin/index.php">
         <label for="announcement_message">Message</label><br>
-        <textarea name="announcement_message" id="announcement_message"><?= db_key_get(
-            $conn,
-            "announcement_message",
-        ) ?></textarea>
+        <textarea name="announcement_message" id="announcement_message"><?= db_key_get($conn, "announcement_message") ?></textarea>
         <br>
         <br>
         <button type="submit">Set announcement</button>

@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <?php require "../components/global.php"; ?>
-        <?php seo("mldkyt's Button", "mldkyt finally made an 88x31 button for her website! Add it to your website and link back when you do so!"); ?>
+        <?php seo("mldkyt's Button", "mldkyt finally made an 88x31 button for their website! Add it to your website and link back when you do so!"); ?>
     </head>
 
     <body>

@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         "header" =>
                             "Content-Type: text/plain\r\n" .
                             "Title: New Guestbook Post\r\n" .
-                            "Actions: view, Admin Panel, https://mldchan.dev/admin/guestbook.php\r\n" .
+                            "Actions: view, Admin Panel, https://mldkyt.com/admin/guestbook.php\r\n" .
                             "Authorization: Bearer " .
                             getenv("NTFY_TOKEN"),
                         "content" => "New guestbook item submitted by " . $username,
@@ -76,19 +76,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <?php require "../components/global.php"; ?>
-    <?php seo("mldchan's guestbook", "mldchan's guestbook for visitors to sign."); ?>
+    <?php seo("mldkyt's guestbook", "mldkyt's guestbook for visitors to sign."); ?>
 </head>
 
 <body>
     <?php require "../components/header.php"; ?>
 
-    <h1>mldchan's Guestbook</h1>
+    <h1>mldkyt's Guestbook</h1>
 
     <h2>Posting rules</h2>
     <ol>
         <li>No hate speech, bigotry, transphobia, homophobia etc.</li>
         <li>Don't spam on here</li>
-        <li>mldchan reserves the right to ban you off of here</li>
+        <li>mldkyt reserves the right to ban you off of here</li>
     </ol>
 
     <br />
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php } ?>
         <?php if ($postSuccess) { ?>
         <div class="success">
-            <span>Your post was sent successfully, please wait for approval by mldchan for it to show up</span>
+            <span>Your post was sent successfully, please wait for approval by mldkyt for it to show up</span>
         </div>
         <?php } ?>
 
@@ -158,7 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p style="margin: 0; margin-left: 4px;"><small><?= date("r", strtotime($row["created_at"])) ?></small></p>
             <?php if (isset($row["reply"]) && isset($row["reply_at"])) { ?>
             <div style="border: 1px solid white; padding: 2px; margin: 2px;">
-                <p style="margin: 0; margin-left: 4px;"><strong>On <?= date("r", strtotime($row["reply_at"])) ?>, reply by mldchan:</strong></p>
+                <p style="margin: 0; margin-left: 4px;"><strong>On <?= date("r", strtotime($row["reply_at"])) ?>, reply by mldkyt:</strong></p>
                 <p style="margin: 0; margin-left: 4px;"><?= $row["reply"] ?></p>
             </div>
             <?php } ?>

@@ -1,2 +1,2 @@
 <?php
-header("Location: https://git.mldchan.dev/luna/Birthday");
+header("Location: https://git.mldkyt.com/mldkyt/Birthday");

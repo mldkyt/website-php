@@ -9,7 +9,7 @@
             margin-right: 1em;
         }
     </style>
-    <p>Copyright (C) <?= date("Y"); ?> mldchan</p>
+    <p>Copyright (C) <?= date("Y") ?> mldkyt</p>
     <div id="footerLinks">
         <p><a href="https://discord.gg/aE2MXH5Qp6">Discord</a></p>
         <p id="views"></p>

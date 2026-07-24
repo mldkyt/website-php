@@ -1,3 +1,3 @@
 <?php
-header("Location: https://git.mldchan.dev/luna/AstolfoIsComingForYou");
+header("Location: https://git.mldkyt.com/mldkyt/AstolfoIsComingForYou");
 ?>

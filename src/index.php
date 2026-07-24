@@ -15,9 +15,7 @@ $pass = getenv("DB_POSTGRES_PASSWORD");
 $name = getenv("DB_POSTGRES_NAME");
 $port = getenv("DB_POSTGRES_PORT") ?: "5432";
 
-$conn = pg_connect(
-    "host=$host port=$port dbname=$name user=$user password=$pass",
-);
+$conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +23,7 @@ $conn = pg_connect(
 
 <head>
     <?php require "../components/global.php"; ?>
-    <?php seo("Home page", "Welcome to mldchan's website!"); ?>
+    <?php seo("Home page", "Welcome to mldkyt's website!"); ?>
 
     <style>
         .projects {
@@ -46,7 +44,7 @@ $conn = pg_connect(
 
 <body>
     <?php require "../components/header.php"; ?>
-    <h1>Welcome to Luna (mldchan)'s website!</h1>
+    <h1>Welcome to mldkyt's website!</h1>
 
     <section>
 
@@ -57,9 +55,7 @@ $conn = pg_connect(
                 $res = pg_query($conn, "SELECT \"name\", \"url\" from socials");
                 while ($row = pg_fetch_assoc($res)): ?>
                 <li>
-                    <a href="<?= htmlspecialchars(
-                        $row["url"],
-                    ) ?>"><?= htmlspecialchars($row["name"]) ?></a>
+                    <a href="<?= htmlspecialchars($row["url"]) ?>"><?= htmlspecialchars($row["name"]) ?></a>
                 </li>
                 <?php endwhile;
                 ?>
@@ -67,16 +63,11 @@ $conn = pg_connect(
             <strong style="margin: 8px;">Contacts</strong><br>
             <ul>
                 <?php
-                $res = pg_query(
-                    $conn,
-                    "SELECT \"name\", \"url\" from contacts",
-                );
+                $res = pg_query($conn, "SELECT \"name\", \"url\" from contacts");
                 while ($row = pg_fetch_assoc($res)): ?>
                 <li>
                     <?php if (strlen($row["url"]) > 0): ?>
-                    <a href="<?= htmlspecialchars(
-                        $row["url"],
-                    ) ?>"><?= htmlspecialchars($row["name"]) ?></a>
+                    <a href="<?= htmlspecialchars($row["url"]) ?>"><?= htmlspecialchars($row["name"]) ?></a>
                     <?php else: ?>
                     <span><?= htmlspecialchars($row["name"]) ?></span>
                     <?php endif; ?>
@@ -88,9 +79,9 @@ $conn = pg_connect(
 
         <h2>About me</h2>
         <p>
-            Hi, I'm Luna (also mldchan), a Czech <a href="https://git.mldchan.dev/luna" target="_blank">developer</a> and a <a
+            Hi, I'm mldkyt, a Czech <a href="https://git.mldkyt.com/mldkyt" target="_blank">developer</a> and a <a
                 href="https://www.youtube.com/@catgirl_ceo"
-                target="_blank">YouTuber</a>. I am agender, aromantic and asexual. Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on my site! :3
+                target="_blank">YouTuber</a>. Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on my site! :3
         </p>
 
         <p>
@@ -104,20 +95,17 @@ $conn = pg_connect(
             CSS, Python, Astro and many others. I wrote many cool things which you can check out by scrolling down.
         </p>
 
-        <p>I run my own services for myself and some of my friends. I have an <a href="https://fedi.mldchan.dev/">Akkoma</a> fedi instance, <a href="https://git.mldchan.dev">Forgejo</a> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldchan.dev">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
+        <p>I run my own services for myself and some of my friends. I have a <a href="https://soc.mldkyt.com/">Mastodon</a> fedi instance, <a href="https://git.mldkyt.com/mldkyt">Forgejo</a> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldchan.dev">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
 
         <p>
-            <a href="https://git.mldchan.dev/luna/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3
+            <a href="https://git.mldkyt.com/mldkyt/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3
         </p>
     </section>
 
     <h2>Recent updates</h2>
 
     <?php
-    $res = pg_query(
-        $conn,
-        "SELECT \"title\", \"body\", \"url\" from updates order by created_at desc limit 3",
-    );
+    $res = pg_query($conn, "SELECT \"title\", \"body\", \"url\" from updates order by created_at desc limit 3");
     while ($row = pg_fetch_assoc($res)): ?>
     <div>
         <p><strong><?= $row["title"] ?></strong></p>
@@ -133,17 +121,12 @@ $conn = pg_connect(
 
     <div class="projects">
         <?php
-        $projects = pg_query(
-            $conn,
-            "SELECT \"name\", \"description\", \"url\" FROM projects",
-        );
+        $projects = pg_query($conn, "SELECT \"name\", \"description\", \"url\" FROM projects");
         while ($project = pg_fetch_assoc($projects)) { ?>
         <div>
             <strong><?= $project["name"] ?></strong>
             <p><?= $project["description"] ?></p>
-            <a href="<?= $project["url"] ?>">Read more about <?= $project[
-    "name"
-] ?></a>
+            <a href="<?= $project["url"] ?>">Read more about <?= $project["name"] ?></a>
         </div>
         <?php }
         ?>
@@ -151,13 +134,13 @@ $conn = pg_connect(
 
     <br  />
     <p>
-        <a href="https://fediring.net/previous?host=mldchan.dev"><button>←</button></a>
+        <a href="https://fediring.net/previous?host=mldkyt.com"><button>←</button></a>
         <a href="https://fediring.net/"><button>Fediring</button></a>
-        <a href="https://fediring.net/next?host=mldchan.dev"><button>→</button></a>
+        <a href="https://fediring.net/next?host=mldkyt.com"><button>→</button></a>
     </p>
     <br />
 
-    <img src="/button.gif" alt="88x31 button for mldchan">
+    <img src="/button.gif" alt="88x31 button for mldkyt">
     <?php require "../components/buttons.php"; ?>
 
     <br />

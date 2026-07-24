@@ -1,11 +1,10 @@
 <?php
 
-
-$host = getenv('DB_POSTGRES_HOST');
-$user = getenv('DB_POSTGRES_USER');
-$pass = getenv('DB_POSTGRES_PASSWORD');
-$name = getenv('DB_POSTGRES_NAME');
-$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+$host = getenv("DB_POSTGRES_HOST");
+$user = getenv("DB_POSTGRES_USER");
+$pass = getenv("DB_POSTGRES_PASSWORD");
+$name = getenv("DB_POSTGRES_NAME");
+$port = getenv("DB_POSTGRES_PORT") ?: "5432";
 
 $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
@@ -23,7 +22,6 @@ if (isset($_POST["id"]) && isset($_POST["alt"]) && isset($_POST["url"])) {
 // Add
 
 if (isset($_POST["filename"]) && isset($_POST["alt"])) {
-
     if (isset($_POST["url"]) && strlen($_POST["url"]) > 0) {
         pg_query_params($conn, "INSERT INTO buttons(\"filename\", alt, \"url\") VALUES ($1, $2, $3)", [$_POST["filename"], $_POST["alt"], $_POST["url"]]);
     } else {
@@ -52,9 +50,8 @@ if (isset($_FILES["button"])) {
 }
 
 if (isset($_GET["delete"])) {
-
     if (file_exists("/var/www/html/buttons/" . basename($_GET["delete"]))) {
-        unlink("/var/www/html/buttons/". basename($_GET["delete"]));
+        unlink("/var/www/html/buttons/" . basename($_GET["delete"]));
     } else {
         $deleteError = "Unable to find file";
     }
@@ -67,45 +64,44 @@ $res = pg_query($conn, "SELECT \"filename\" FROM buttons");
 while ($row = pg_fetch_assoc($res)) {
     $buttonList[] = $row["filename"];
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php require '../../components/global.php'; ?>
-    <?php seo("Buttons", "Management of buttons for mldchan's website."); ?>
+    <?php require "../../components/global.php"; ?>
+    <?php seo("Buttons", "Management of buttons for mldkyt's website."); ?>
 </head>
 
 <body>
-    <?php require '../../components/header.php'; ?>
+    <?php require "../../components/header.php"; ?>
 
     <h1>Buttons Management</h1>
     <a href="/admin/">back</a>
     <br>
 
-    <?php if (isset($editOk)) : ?>
+    <?php if (isset($editOk)): ?>
         <div class="success">
             Edit was OK
         </div>
     <?php endif; ?>
-    <?php if (isset($addOk)) : ?>
+    <?php if (isset($addOk)): ?>
         <div class="success">
             Add was OK
         </div>
     <?php endif; ?>
-    <?php if (isset($uploadOk)) : ?>
+    <?php if (isset($uploadOk)): ?>
         <div class="success">
             Upload was OK
         </div>
     <?php endif; ?>
-    <?php if (isset($uploadError)) : ?>
+    <?php if (isset($uploadError)): ?>
         <div class="error">
             <?= $uploadError ?>
         </div>
     <?php endif; ?>
-    <?php if (isset($deleteError)) : ?>
+    <?php if (isset($deleteError)): ?>
         <div class="error">
             <?= $deleteError ?>
         </div>
@@ -127,18 +123,18 @@ while ($row = pg_fetch_assoc($res)) {
             $res = pg_query("SELECT id, \"filename\", alt, \"url\" FROM buttons");
             while ($row = pg_fetch_assoc($res)) { ?>
                 <form action="/admin/buttons.php" method="post">
-                    <input type="hidden" name="id" value="<?= htmlspecialchars($row["id"]); ?>">
+                    <input type="hidden" name="id" value="<?= htmlspecialchars($row["id"]) ?>">
                     <tr>
-                        <td><?= $row["filename"]; ?></td>
+                        <td><?= $row["filename"] ?></td>
                         <td>
-                            <input type="text" name="alt" value="<?= htmlspecialchars($row["alt"]); ?>">
+                            <input type="text" name="alt" value="<?= htmlspecialchars($row["alt"]) ?>">
                         </td>
                         <td>
-                            <input type="text" name="url" value="<?= isset($row["url"]) ? htmlspecialchars($row["url"]) : ""; ?>">
+                            <input type="text" name="url" value="<?= isset($row["url"]) ? htmlspecialchars($row["url"]) : "" ?>">
                         </td>
                         <td>
                             <button type="submit">Update</button>
-                            <a href="?delete=<?= htmlspecialchars($row["filename"]); ?>">Delete</a>
+                            <a href="?delete=<?= htmlspecialchars($row["filename"]) ?>">Delete</a>
                         </td>
                     </tr>
                 </form>
@@ -161,14 +157,14 @@ while ($row = pg_fetch_assoc($res)) {
         <tbody>
             <?php
             $buttons = scandir("/var/www/html/buttons");
-            $buttons = array_filter($buttons, fn($x) => $x != '.' && $x != '..');
+            $buttons = array_filter($buttons, fn($x) => $x != "." && $x != "..");
 
             $buttonsToAdd = array_filter($buttons, fn($x) => !in_array($x, $buttonList));
-            foreach ($buttonsToAdd as $btn) :?>
+            foreach ($buttonsToAdd as $btn): ?>
                 <tr>
                     <form action="/admin/buttons.php" method="post">
                         <td>
-                            <input type="text" name="filename" value="<?= htmlspecialchars($btn); ?>" readonly>
+                            <input type="text" name="filename" value="<?= htmlspecialchars($btn) ?>" readonly>
                         </td>
                         <td>
                             <input type="text" name="alt" placeholder="88x31 button">
@@ -178,11 +174,12 @@ while ($row = pg_fetch_assoc($res)) {
                         </td>
                         <td>
                             <button type="submit">Add</button>
-                            <a href="?delete=<?= htmlspecialchars($btn); ?>">Delete</a>
+                            <a href="?delete=<?= htmlspecialchars($btn) ?>">Delete</a>
                         </td>
                     </form>
                 </tr>
-            <?php endforeach; ?>
+            <?php endforeach;
+            ?>
 
         </tbody>
     </table>
@@ -199,7 +196,7 @@ while ($row = pg_fetch_assoc($res)) {
     </form>
 
 
-    <?php require '../../components/footer.php'; ?>
+    <?php require "../../components/footer.php"; ?>
 </body>
 
 </html>

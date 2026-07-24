@@ -3,7 +3,7 @@
 
 <head>
     <?php require "../../components/global.php"; ?>
-    <?php seo("Administration", "mldchan's website administration"); ?>
+    <?php seo("Administration", "mldkyt's website administration"); ?>
 </head>
 
 <body>

@@ -177,7 +177,7 @@
 <script src="/scripts/pako.js"></script>
 <script src="/scripts/purify.js"></script>
 <script src="/scripts/seedrandom.js"></script>
-<script defer src="https://a.mldchan.dev/script.js" data-website-id="43bc27a1-8bfc-45a2-baf2-dbb4b4c9ef02"></script>
+<script defer src="https://a.mldkyt.com/script.js" data-website-id="43bc27a1-8bfc-45a2-baf2-dbb4b4c9ef02"></script>
 
 <script defer>
     window.addEventListener("load", (event) => {
@@ -245,20 +245,23 @@
     };
 </script>
 
-<?php function seo($title, $description) { ?>
+<?php function seo($title, $description)
+{
+    ?>
     <meta charset="UTF-8" />
-    <title><?= $title; ?> | mldchan's website</title>
-    <meta name="description" content="<?= $description; ?>" />
-    <meta name="author" content="mldchan" />
+    <title><?= $title ?> | mldkyt's website</title>
+    <meta name="description" content="<?= $description ?>" />
+    <meta name="author" content="mldkyt" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-language" content="en" />
-    <meta property="og:title" content="<?= $title; ?> | mldchan's website" />
-    <meta property="og:description" content="<?= $description; ?>" />
+    <meta property="og:title" content="<?= $title ?> | mldkyt's website" />
+    <meta property="og:description" content="<?= $description ?>" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mldchan.dev" />
-    <meta property="og:site_name" content="Luna's website" />
+    <meta property="og:url" content="https://mldkyt.com" />
+    <meta property="og:site_name" content="mldkyt's website" />
     <meta property="og:locale" content="en_US" />
-    <meta name="twitter:title" content="<?= $title; ?> | Luna's website" />
-    <meta name="twitter:description" content="<?= $description; ?>" />
-    <meta name="fediverse:creator" content="luna@fedi.mldchan.dev" />
-<?php } ?>
+    <meta name="twitter:title" content="<?= $title ?> | mldkyt's website" />
+    <meta name="twitter:description" content="<?= $description ?>" />
+    <meta name="fediverse:creator" content="mldkyt@soc.mldkyt.com" />
+<?php
+} ?>

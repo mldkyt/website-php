@@ -89,8 +89,8 @@
     ?>
     <div>
         <div>
-            <h2>mldchan's website!</h2>
-            <p>Welcome to mldchan's website!</p>
+            <h2>mldkyt's website!</h2>
+            <p>Welcome to mldkyt's website!</p>
             <br />
         </div>
     </div>
@@ -98,8 +98,8 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/guestbook.php">Guestbook</a></li>
-            <li><a href="https://mc.mldchan.dev">Minecraft</a></li>
-            <li><a href="https://ko-fi.com/c4tgirl">Donate</a></li>
+            <li><a href="https://mc.mldkyt.com">Minecraft</a></li>
+            <li><a href="https://donate.mldkyt.com">Donate</a></li>
         </ul>
     </nav>
     <div class="error" id="tenminutes" style="display: none;">
@@ -127,23 +127,23 @@
     <?php
     require "kv.php";
 
-    $host = getenv('DB_POSTGRES_HOST');
-    $user = getenv('DB_POSTGRES_USER');
-    $pass = getenv('DB_POSTGRES_PASSWORD');
-    $name = getenv('DB_POSTGRES_NAME');
-    $port = getenv('DB_POSTGRES_PORT') ?: '5432';
+    $host = getenv("DB_POSTGRES_HOST");
+    $user = getenv("DB_POSTGRES_USER");
+    $pass = getenv("DB_POSTGRES_PASSWORD");
+    $name = getenv("DB_POSTGRES_NAME");
+    $port = getenv("DB_POSTGRES_PORT") ?: "5432";
 
     $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 
     $message = db_key_get($conn, "announcement_message");
 
-    if (strlen($message) > 0) :
-    ?>
+    if (strlen($message) > 0): ?>
     <div class="error">
-        <p><?= $message; ?></p>
+        <p><?= $message ?></p>
     </div>
 
-    <?php endif; ?>
+    <?php endif;
+    ?>
 </header>
 
 <canvas id="background"></canvas>

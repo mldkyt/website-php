@@ -16,6 +16,47 @@ $name = getenv("DB_POSTGRES_NAME");
 $port = getenv("DB_POSTGRES_PORT") ?: "5432";
 
 $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
+
+function validate_captcha()
+{
+    if (!isset($_POST["mcaptcha__token"])) {
+        return false;
+    }
+
+    $mcaptchaToken = $_POST["mcaptcha__token"];
+
+    $payload = [
+        "token" => $mcaptchaToken,
+        "key" => getenv("MCAPTCHA_SITE_KEY"),
+        "secret" => getenv("MCAPTCHA_SECRET_KEY"),
+    ];
+
+    $ch = curl_init(getenv("MCAPTCHA_DOMAIN") . "/api/v1/pow/siteverify");
+
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => ["Content-Type: application/json"],
+        CURLOPT_POSTFIELDS => json_encode($payload),
+    ]);
+
+    $response = curl_exec($ch);
+
+    if ($response === false) {
+        return false;
+    }
+
+    $result = json_decode($response, true);
+
+    if ($result && !empty($result["valid"])) {
+        // CAPTCHA passed
+        return true;
+    }
+
+    return false;
+}
+
+$captcha = validate_captcha();
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +90,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     <section>
 
         <div style="float: right; border: 1px solid white; min-width: 300px;">
+            <?php if ($captcha): ?>
             <strong style="margin: 8px;">Socials</strong><br>
             <ul>
                 <?php
@@ -75,9 +117,35 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
                 <?php endwhile;
                 ?>
             </ul>
+
+            <?php endif; ?>
         </div>
 
+        <?php if (!$captcha): ?>
+        <h2>Please verify</h2>
+        <p>All socials and contact information is hidden to deter bad actors from abusing the information. Please verify this captcha to see this information</p>
+        <form method="post">
+            <label
+              data-mcaptcha_url="<?= getenv("MCAPTCHA_DOMAIN") . "/widget/?sitekey=" . getenv("MCAPTCHA_SITE_KEY") ?>"
+              for="mcaptcha__token"
+              id="mcaptcha__token-label"
+            >
+              mCaptcha authorization token.
+              <a
+                href="https://mcaptcha.org/docs/user-manual/how-to-mcaptcha-without-js/"
+                >Instructions</a
+              >.
+              <input type="text" name="mcaptcha__token" id="mcaptcha__token" />
+            </label>
+            <div id="mcaptcha__widget-container"></div>
+            <script src="https://unpkg.com/@mcaptcha/vanilla-glue@0.1.0-rc2/dist/index.js"></script>
+
+            <button type="submit">Verify</button>
+        </form>
+        <?php endif; ?>
+
         <h2>About me</h2>
+
         <p>
             Hi, I'm mldkyt, a Czech <a href="https://git.mldkyt.com/mldkyt" target="_blank">developer</a> and a <a
                 href="https://www.youtube.com/@catgirl_ceo"
@@ -85,7 +153,10 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
         </p>
 
         <p>
-            My community has its center on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>, however if you can't access the Discord due to not having an account, <a href="/discord/explore">you can explore the Discord server publicly</a> :3
+            My community has its center on <?php if (
+                $captcha
+            ): ?><a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a><?php else: ?>Discord<?php endif; ?>, however if you can't access the Discord due to not having an account, <a href="/discord/explore">you can explore the Discord server publicly</a> :3
+            <?php if (!$captcha): ?>(The Discord text becomes a link when captcha is verified.)<?php endif; ?>
         </p>
 
         <p>On YouTube I post pretty much everything from gameplays to showing off my projects. I am to upload every Friday but most of the time it doesn't work out because I have no ideas on what to upload.</p>
@@ -95,7 +166,11 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
             CSS, Python, Astro and many others. I wrote many cool things which you can check out by scrolling down.
         </p>
 
-        <p>I run my own services for myself and some of my friends. I have a <a href="https://soc.mldkyt.com/">Mastodon</a> fedi instance, <a href="https://gitlab.mldkyt.com/mldkyt">Gitlab</a> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldchan.dev">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
+        <p>I run my own services for myself and some of my friends. I have a <?php if (
+            $captcha
+        ): ?><a href="https://soc.mldkyt.com/">Mastodon</a><?php else: ?>Mastodon<?php endif; ?> fedi instance, <?php if (
+     $captcha
+ ): ?><a href="https://gitlab.mldkyt.com/mldkyt">Gitlab</a><?php else: ?>Gitlab<?php endif; ?> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldchan.dev">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
 
         <p>
             <a href="https://git.mldkyt.com/mldkyt/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3

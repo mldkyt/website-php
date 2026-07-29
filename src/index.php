@@ -42,15 +42,11 @@ function validate_captcha()
 
     $response = curl_exec($ch);
 
-    var_dump($response);
-
     if ($response === false) {
         return false;
     }
 
     $result = json_decode($response, true);
-
-    var_dump($result);
 
     if ($result && !empty($result["valid"])) {
         // CAPTCHA passed

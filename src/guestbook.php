@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ok = true;
 
     // Check params
-    if (!isset($_POST["username"]) || !isset($_POST["message"]) || !isset($_POST["bot"])) {
+    if (!isset($_POST["username"]) || !isset($_POST["message"]) || !isset($_POST["mcaptcha__token"])) {
         $ok = false;
         $postFail = "Missing username or message";
     }
@@ -38,6 +38,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (pg_fetch_assoc($res)) {
         $ok = false;
         $postFail = "Please wait for your existing post to get approved before posting another one";
+    }
+
+    // Check mcaptcha
+    $mcaptchaToken = $_POST["mcaptcha__token"];
+
+    $payload = [
+        "token" => $mcaptchaToken,
+        "key" => getenv("MCAPTCHA_SITE_KEY"),
+        "secret" => getenv("MCAPTCHA_SECRET_KEY"),
+    ];
+
+    $ch = curl_init(getenv("MCAPTCHA_DOMAIN") . "/api/v1/pow/siteverify");
+
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => ["Content-Type: application/json"],
+        CURLOPT_POSTFIELDS => json_encode($payload),
+    ]);
+
+    $response = curl_exec($ch);
+
+    if ($response === false) {
+        $ok = false;
+        $postFail = "The captcha verification server is unavailable, please try again later";
+    }
+
+    $result = json_decode($response, true);
+
+    if (!$result || empty($result["valid"])) {
+        $ok = false;
+        $postFail = "Captcha failed";
     }
 
     if ($ok) {
@@ -117,16 +149,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br />
             <textarea name="message" id="message" cols="60" rows="5"></textarea>
 
-            <br />
-            <label for="bot">Please verify you are not a bot</label>
-            <br>
-            <select name="bot" id="bot">
-                <option value="automated">I'm an automated bot</option>
-                <option value="bot">I'm a bot</option>
-                <option value="critter">I'm a <i>critter</i></option>
-                <option value="human">I'm not an automated bot, not a bot and not a critter</option>
-            </select>
-            <br />
+            <label
+              data-mcaptcha_url="<?= getenv("MCAPTCHA_DOMAIN") . "/widget/?sitekey=" . getenv("MCAPTCHA_SITE_KEY") ?>"
+              for="mcaptcha__token"
+              id="mcaptcha__token-label"
+            >
+              mCaptcha authorization token.
+              <a
+                href="https://mcaptcha.org/docs/user-manual/how-to-mcaptcha-without-js/"
+                >Instructions</a
+              >.
+              <input type="text" name="mcaptcha__token" id="mcaptcha__token" />
+            </label>
+            <div id="mcaptcha__widget-container"></div>
+            <script src="https://unpkg.com/@mcaptcha/vanilla-glue@0.1.0-rc2/dist/index.js"></script>
 
             <button type="submit">Send</button>
         </form>

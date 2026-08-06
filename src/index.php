@@ -95,11 +95,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
             CSS, Python, Astro and many others. I wrote many cool things which you can check out by scrolling down.
         </p>
 
-        <p>I run my own services for myself and some of my friends. I have a <?php if (
-            $captcha
-        ): ?><a href="https://soc.mldkyt.com/">Mastodon</a><?php else: ?>Mastodon<?php endif; ?> fedi instance, <?php if (
-     $captcha
- ): ?><a href="https://gitlab.mldkyt.com/mldkyt">Gitlab</a><?php else: ?>Gitlab<?php endif; ?> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldchan.dev">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
+        <p>I run my own services for myself and some of my friends. I have a <a href="https://soc.mldkyt.com/">Mastodon</a> fedi instance, <a href="https://gitlab.mldkyt.com/mldkyt">Gitlab</a> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldchan.dev">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
 
         <p>
             <a href="https://git.mldkyt.com/mldkyt/.profile/src/branch/main/AboutMe.md">Read more about me</a> :3

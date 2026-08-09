@@ -1,3 +1,3 @@
 <?php
 
-header("Location: https://catgirllunya.itch.io/soobscrib");
+header("Location: https://mldkyt.itch.io/soobscrib");

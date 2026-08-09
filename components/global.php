@@ -1,9 +1,12 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "MS UI Gothic", nec_apc3, Verdana, sans-serif;
+        font-family: "JetBrains Mono", monospace;
         image-rendering: -moz-crisp-edges;
         image-rendering: -webkit-crisp-edges;
         image-rendering: pixelated;
@@ -84,7 +87,7 @@
     }
 
     details>summary {
-        color: #f991df;
+        color: #2ed102;
         cursor: pointer;
         font-size: larger;
         font-weight: bold;
@@ -93,15 +96,15 @@
     /* Links */
 
     a {
-        color: #f991df;
+        color: #2ed102;
     }
 
     a:hover {
-        color: #8482f7;
+        color: #2d9610;
     }
 
     a:active {
-        color: #4c4af1;
+        color: #065e1f;
     }
 
     /* Footer */
@@ -172,78 +175,10 @@
     }
 </style>
 
-<script src="/scripts/cursoreffects.js"></script>
 <script src="/scripts/jquery.js"></script>
-<script src="/scripts/pako.js"></script>
-<script src="/scripts/purify.js"></script>
 <script src="/scripts/seedrandom.js"></script>
 <script defer src="https://a.mldkyt.com/script.js" data-website-id="43bc27a1-8bfc-45a2-baf2-dbb4b4c9ef02"></script>
-
-<script defer>
-    window.addEventListener("load", (event) => {
-        if (localStorage.getItem("cursorSetting") == "disable") {
-            return;
-        }
-
-    const date = new Date();
-
-        if ((date.getMonth() === 11 || (date.getMonth() === 0 && date.getDay() < 15)) && localStorage.getItem("christmasTheme") !== "disable") {
-            const colors = [
-                "#00f",
-                "#f00",
-                "#0f0",
-                "#ff0",
-                "#f7f",
-                "#0ff"
-            ];
-
-            let fairyDustElements = [];
-            let rainbowElements = [];
-
-            for(let i = 0; i < ~~(Math.random() * 10); i++) {
-                fairyDustElements.push(colors[~~(Math.random() * colors.length)]);
-            }
-
-            for(let i = 0; i < ~~(Math.random() * 10); i++) {
-                rainbowElements.push(colors[~~(Math.random() * colors.length)]);
-            }
-
-        cursoreffects.fairyDustCursor({
-                colors: fairyDustElements
-        });
-        cursoreffects.rainbowCursor({
-                colors: rainbowElements, length: ~~(Math.random() * 100), size: 5
-        });
-        }
-        else {
-            cursoreffects.fairyDustCursor({
-                colors: ["#5BCEFA", "#F5A9B8", "#FFFFFF"]
-            });
-            cursoreffects.rainbowCursor({
-                colors: ["lightblue", "pink", "white", "pink", "lightblue"], length: 50, size: 5
-            });
-        }
-
-    });
-
-    window.onload = function setUpEnableCursor() {
-        // Footer toggle cursor switch
-        /** @type {HTMLInputElement} */
-        let enableCursor = document.getElementById("enablecursor");
-        enableCursor.checked = localStorage.getItem("cursorSetting") != "disable";
-        enableCursor.onchange = function toggleCursor() {
-            if (enableCursor.checked) {
-                if (localStorage.getItem("cursorSetting") != null) {
-                    localStorage.removeItem("cursorSetting");
-                }
-            } else {
-                localStorage.setItem("cursorSetting", "disable");
-            }
-
-            location.reload();
-        };
-    };
-</script>
+<script defer src="https://a.mldkyt.com/recorder.js" data-website-id="43bc27a1-8bfc-45a2-baf2-dbb4b4c9ef02"></script>
 
 <?php function seo($title, $description)
 {

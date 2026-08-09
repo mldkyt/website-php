@@ -1,2 +1,2 @@
 <?php
-header("Location: https://fedi.mldchan.dev/users/meowbot");
+header("Location: https://soc.mldkyt.com/@meowbot");

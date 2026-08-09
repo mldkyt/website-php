@@ -1,2 +1,2 @@
 <?php
-header("Location: https://sk.lunya.pet/@keysmash");
+header("Location: https://soc.mldkyt.com/@keysmash");

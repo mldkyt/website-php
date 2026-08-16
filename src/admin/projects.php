@@ -80,7 +80,7 @@ if (isset($_GET["delete"])) {
         <br>
         <button type="submit">Update</button>
     </form>
-    <a href="?delete=<?= $row["delete"] ?>">Delete</a>
+    <a href="?delete=<?= $row["id"] ?>">Delete</a>
     <br>
     <br>
 

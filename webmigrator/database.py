@@ -1,4 +1,5 @@
 from sqlalchemy import VARCHAR, Column, DateTime, Integer, MetaData, Table
+from sqlalchemy.sql.expression import null
 from sqlalchemy.sql.functions import now
 
 md = MetaData()
@@ -83,4 +84,19 @@ updates = Table(
     Column("body", VARCHAR, nullable=False),
     Column("url", VARCHAR),
     Column("created_at", DateTime(), server_default=now(), nullable=False),
+)
+
+anonymous_messages = Table(
+    "anonymous_messages",
+    md,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("ip", VARCHAR, nullable=False),
+    Column("message", VARCHAR, nullable=False),
+    Column("public", Integer, nullable=False),
+    Column("contactType", VARCHAR, nullable=False),
+    Column("contact", VARCHAR, nullable=False),
+)
+
+anonymous_messages_bans = Table(
+    "anonymous_messages_bans", md, Column("ip", VARCHAR, primary_key=True)
 )

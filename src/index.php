@@ -62,6 +62,9 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
             </ul>
             <strong style="margin: 8px;">Contacts</strong><br>
             <ul>
+                <li>
+                    <a href="/anonymous-message">Send me an anonymous message</a>
+                </li>
                 <?php
                 $res = pg_query($conn, "SELECT \"name\", \"url\" from contacts");
                 while ($row = pg_fetch_assoc($res)): ?>

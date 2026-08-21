@@ -80,7 +80,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
         <h2>About me</h2>
         <p>
             Hi, I'm mldkyt, a Czech <a href="https://git.mldkyt.com/mldkyt" target="_blank">developer</a> and a <a
-                href="https://www.youtube.com/@catgirl_ceo"
+                href="https://www.youtube.com/@mldkyt"
                 target="_blank">YouTuber</a>. Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on my site! :3
         </p>
 

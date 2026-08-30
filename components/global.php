@@ -87,7 +87,7 @@
     }
 
     details>summary {
-        color: #2ed102;
+        color: #6C53A6;
         cursor: pointer;
         font-size: larger;
         font-weight: bold;
@@ -96,15 +96,15 @@
     /* Links */
 
     a {
-        color: #2ed102;
+        color: #6C53A6;
     }
 
     a:hover {
-        color: #2d9610;
+        color: #331f61;
     }
 
     a:active {
-        color: #065e1f;
+        color: #190d36;
     }
 
     /* Footer */

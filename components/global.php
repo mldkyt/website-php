@@ -147,7 +147,7 @@
 
     /* code tags */
     code {
-        color: rgb(231, 124, 245);
+        color: #331f61;
         font-family: monospace;
     }
 

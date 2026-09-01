@@ -1,6 +1,6 @@
 <?php
 
-require "../components/util.php";
+require "util.php";
 
 $host = getenv("DB_POSTGRES_HOST");
 $user = getenv("DB_POSTGRES_USER");
@@ -127,12 +127,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-    <?php require "../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("Anonymous Messages", "Send an anonymous message to mldkyt!"); ?>
 </head>
 
 <body>
-    <?php require "../components/header.php"; ?>
+    <?php require "header.php"; ?>
 
     <h1>Anonymous Messages</h1>
 
@@ -203,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php endif;
     ?>
 
-    <?php require "../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

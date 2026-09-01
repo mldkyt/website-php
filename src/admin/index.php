@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <?php require "../../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("Administration", "mldkyt's website administration"); ?>
 </head>
 
 <body>
-    <?php require "../../components/header.php"; ?>
+    <?php require "header.php"; ?>
 
     <?php
     $host = getenv("DB_POSTGRES_HOST");
@@ -35,6 +35,7 @@
     <ul>
         <li><a href="/admin/anonymous-messages.php">(<?= $unreadAnonymousMessage ?>) Anonymous Messages</a></li>
         <li><a href="/admin/guestbook.php">(<?= $guestbookUnread ?>) Guestbook Admin Page</a></li>
+        <li><a href="/admin/projectComments.php">Manage project comments</a></li>
         <li><a href="/admin/buttons.php">Manage Buttons</a></li>
         <li><a href="/admin/projects.php">Manage Projects</a></li>
         <li><a href="/admin/socials.php">Manage Socials</a></li>
@@ -51,7 +52,7 @@
         <button type="submit">Set announcement</button>
     </form>
 
-    <?php require "../../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

@@ -100,3 +100,22 @@ anonymous_messages = Table(
 anonymous_messages_bans = Table(
     "anonymous_messages_bans", md, Column("ip", VARCHAR, primary_key=True)
 )
+
+project_likes = Table(
+    "project_likes",
+    md,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("project", VARCHAR, nullable=False),
+    Column("ip", VARCHAR, nullable=False),
+)
+
+project_comments = Table(
+    "project_comments",
+    md,
+    Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("ip", VARCHAR, nullable=False),
+    Column("project", VARCHAR, nullable=False),
+    Column("name", VARCHAR, nullable=False),
+    Column("comment", VARCHAR, nullable=False),
+    Column("approved", Integer, nullable=False, server_default="0"),
+)

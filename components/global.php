@@ -3,14 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
         font-family: "JetBrains Mono", monospace;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -webkit-crisp-edges;
-        image-rendering: pixelated;
-        image-rendering: crisp-edges;
     }
 
     :root {
@@ -26,9 +19,6 @@
 
     li {
         color: #eee;
-        margin-left: 1.2em;
-        margin-top: 4px;
-        margin-bottom: 4px;
     }
 
     /* Header */
@@ -39,7 +29,9 @@
     }
 
     header nav {
-        padding: 5px 15px;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%,rgba(21, 21, 21, 1) 28.000000000000004%,rgba(72, 72, 72, 1) 56.00000000000001%,rgba(29, 29, 29, 1) 76%,rgba(0, 0, 0, 1) 100%);
+        /*padding: 5px 15px;*/
     }
 
     nav ul {
@@ -50,8 +42,12 @@
 
     nav li {
         display: inline;
-        margin-right: 10px;
-        margin-left: 0;
+        padding: 5px 10px;
+    }
+
+    nav li:hover {
+        color: #6C53A6;
+        background: linear-gradient(to bottom, rgba(16, 16, 16, 1) 0%,rgba(72, 72, 72, 1) 56.00000000000001%,rgba(29, 29, 29, 1) 83%,rgba(0, 0, 0, 1) 100%);
     }
 
     nav a {
@@ -100,11 +96,11 @@
     }
 
     a:hover {
-        color: #331f61;
+        color: #61479e;
     }
 
     a:active {
-        color: #190d36;
+        color: #4b3187;
     }
 
     /* Footer */

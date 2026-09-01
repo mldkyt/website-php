@@ -57,6 +57,20 @@
             border: 2px solid red;
             padding: 10px;
         }
+
+        main > div {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .main {
+            width: 100%;
+        }
+
+        .socials {
+            min-width: 250px;
+            max-width: 250px;
+        }
     </style>
     <?php
     $month = date("n");
@@ -87,17 +101,13 @@
     </div>
     <?php endif;
     ?>
-    <div>
-        <div>
-            <h2>mldkyt's website!</h2>
-            <p>Welcome to mldkyt's website!</p>
-            <br />
-        </div>
-    </div>
+    <img src="/static/banner.jpg" alt="mldkyt written on a black background, white border and a bunch of stars drawn in the background. Under mldkyt is written programmer, youtuber.">
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/guestbook.php">Guestbook</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/services">Services</a></li>
             <li><a href="https://mc.mldkyt.com">Minecraft</a></li>
             <li><a href="https://donate.mldkyt.com">Donate</a></li>
         </ul>
@@ -148,3 +158,5 @@
 
 <canvas id="background"></canvas>
 <main>
+    <div>
+    <div class="main">

@@ -1,6 +1,6 @@
 <?php
 
-require "../components/util.php";
+require "util.php";
 
 $host = getenv("DB_POSTGRES_HOST");
 $user = getenv("DB_POSTGRES_USER");
@@ -107,12 +107,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-    <?php require "../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("mldkyt's guestbook", "mldkyt's guestbook for visitors to sign."); ?>
 </head>
 
 <body>
-    <?php require "../components/header.php"; ?>
+    <?php require "header.php"; ?>
 
     <h1>mldkyt's Guestbook</h1>
 
@@ -147,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label for="message" style="width: 400px;">Message</label>
             <br />
-            <textarea name="message" id="message" cols="60" rows="5"></textarea>
+            <textarea name="message" id="message" cols="50" rows="5"></textarea>
 
             <label
               data-mcaptcha_url="<?= getenv("MCAPTCHA_DOMAIN") . "/widget/?sitekey=" . getenv("MCAPTCHA_SITE_KEY") ?>"
@@ -161,7 +161,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               >.
               <input type="text" name="mcaptcha__token" id="mcaptcha__token" />
             </label>
-            <div id="mcaptcha__widget-container"></div>
+            <div id="mcaptcha__widget-container"
+                style="width: 300px; height: 75px;"></div>
             <script src="https://unpkg.com/@mcaptcha/vanilla-glue@0.1.0-rc2/dist/index.js"></script>
 
             <button type="submit">Send</button>
@@ -202,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php }
     ?>
 
-    <?php require "../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

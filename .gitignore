@@ -2,3 +2,5 @@
 mariadb/
 src/buttons
 db/
+
+*.kra~

@@ -1,5 +1,8 @@
 <?php
-require "util.php"; ?>
+require "util.php";
+require "comments.php";
+require "likes.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +29,9 @@ require "util.php"; ?>
     </ul>
 
     <p>I would love to attach some videos or pictures of the game here but unfortunately the original video contains information that I want to keep private (namely my dead name) so there's basically no media. The upload dates back to November 28, 2021.</p>
+
+    <?php project_likes("trash-looter"); ?>
+    <?php project_comments("trash-looter"); ?>
 
     <?php require "footer.php"; ?>
 </body>

@@ -35,6 +35,7 @@
     <ul>
         <li><a href="/admin/anonymous-messages.php">(<?= $unreadAnonymousMessage ?>) Anonymous Messages</a></li>
         <li><a href="/admin/guestbook.php">(<?= $guestbookUnread ?>) Guestbook Admin Page</a></li>
+        <li><a href="/admin/projectComments.php">Manage project comments</a></li>
         <li><a href="/admin/buttons.php">Manage Buttons</a></li>
         <li><a href="/admin/projects.php">Manage Projects</a></li>
         <li><a href="/admin/socials.php">Manage Socials</a></li>

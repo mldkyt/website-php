@@ -106,6 +106,8 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/guestbook.php">Guestbook</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/services">Services</a></li>
             <li><a href="https://mc.mldkyt.com">Minecraft</a></li>
             <li><a href="https://donate.mldkyt.com">Donate</a></li>
         </ul>

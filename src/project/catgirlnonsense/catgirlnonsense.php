@@ -1,5 +1,7 @@
 <?php
 require "util.php";
+require "comments.php";
+require "likes.php";
 
 function uwu_nonsense($length)
 {
@@ -286,6 +288,9 @@ function generate($maxlen, $softlimit = false)
                 <button>Discuss the project (Discord)</button>
             </a>
         </div>
+
+        <?php project_likes("catgirlnonsense"); ?>
+	    <?php project_comments("catgirlnonsense"); ?>
 
         <?php require "footer.php"; ?>
 

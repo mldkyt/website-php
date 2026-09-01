@@ -1,5 +1,5 @@
 <?php
-require "../../components/util.php";
+require "util.php";
 
 function uwu_nonsense($length)
 {
@@ -207,12 +207,12 @@ function generate($maxlen, $softlimit = false)
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require "../../components/global.php"; ?>
+        <?php require "global.php"; ?>
         <?php seo("Catgirl Nonsense", "Catgirl nonsense generator"); ?>
     </head>
 
     <body>
-        <?php require "../../components/header.php"; ?>
+        <?php require "header.php"; ?>
 
         <h1>CatGirl nonsense generator</h1>
         <form id="catgirlForm" style="margin-left: 1em;" method="post" action="/project/catgirlnonsense.php">
@@ -287,7 +287,7 @@ function generate($maxlen, $softlimit = false)
             </a>
         </div>
 
-        <?php require "../../components/footer.php"; ?>
+        <?php require "footer.php"; ?>
 
     </body>
 </html>

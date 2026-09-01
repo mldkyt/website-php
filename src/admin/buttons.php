@@ -70,12 +70,12 @@ while ($row = pg_fetch_assoc($res)) {
 <html lang="en">
 
 <head>
-    <?php require "../../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("Buttons", "Management of buttons for mldkyt's website."); ?>
 </head>
 
 <body>
-    <?php require "../../components/header.php"; ?>
+    <?php require "header.php"; ?>
 
     <h1>Buttons Management</h1>
     <a href="/admin/">back</a>
@@ -196,7 +196,7 @@ while ($row = pg_fetch_assoc($res)) {
     </form>
 
 
-    <?php require "../../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

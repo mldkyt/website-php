@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <?php require "../../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("Administration", "mldkyt's website administration"); ?>
 </head>
 
 <body>
-    <?php require "../../components/header.php"; ?>
+    <?php require "header.php"; ?>
 
     <?php
     $host = getenv("DB_POSTGRES_HOST");
@@ -51,7 +51,7 @@
         <button type="submit">Set announcement</button>
     </form>
 
-    <?php require "../../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

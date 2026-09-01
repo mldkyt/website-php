@@ -63,6 +63,10 @@
             flex-direction: row;
         }
 
+        .main {
+            width: 100%;
+        }
+
         .socials {
             min-width: 250px;
             max-width: 250px;

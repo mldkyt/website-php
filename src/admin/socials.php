@@ -32,12 +32,12 @@ if (isset($_GET["delete"])) {
 <html lang="en">
 
 <head>
-    <?php require "../../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("Socials Administration", "This is the socials admin page"); ?>
 </head>
 
 <body>
-    <?php require "../../components/header.php"; ?>
+    <?php require "header.php"; ?>
 
     <h1>Socials manager</h1>
     <a href="/admin/">back</a>
@@ -78,7 +78,7 @@ if (isset($_GET["delete"])) {
     <?php }
     ?>
 
-    <?php require "../../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

@@ -1,13 +1,13 @@
 <?php
 
 header("Content-Type: application/json");
-require '../../components/util.php';
+require "util.php";
 
-$host = getenv('DB_POSTGRES_HOST');
-$user = getenv('DB_POSTGRES_USER');
-$pass = getenv('DB_POSTGRES_PASSWORD');
-$name = getenv('DB_POSTGRES_NAME');
-$port = getenv('DB_POSTGRES_PORT') ?: '5432';
+$host = getenv("DB_POSTGRES_HOST");
+$user = getenv("DB_POSTGRES_USER");
+$pass = getenv("DB_POSTGRES_PASSWORD");
+$name = getenv("DB_POSTGRES_NAME");
+$port = getenv("DB_POSTGRES_PORT") ?: "5432";
 
 $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass");
 

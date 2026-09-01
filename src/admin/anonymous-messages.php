@@ -26,12 +26,12 @@ if (isset($_GET["ban"])) {
 <html lang="en">
 
 <head>
-    <?php require "../../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("Anonymous Messages Administration", "This is the anonymous messages admin page"); ?>
 </head>
 
 <body>
-    <?php require "../../components/header.php"; ?>
+    <?php require "header.php"; ?>
 
     <h1>Anonymous messages manager manager</h1>
     <a href="/admin/">back</a>
@@ -56,7 +56,7 @@ if (isset($_GET["ban"])) {
     <?php endwhile;
     ?>
 
-    <?php require "../../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

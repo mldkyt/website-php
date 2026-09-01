@@ -22,7 +22,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
 <html lang="en">
 
 <head>
-    <?php require "../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("Home page", "Welcome to mldkyt's website!"); ?>
 
     <style>
@@ -43,7 +43,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
 </head>
 
 <body>
-    <?php require "../components/header.php"; ?>
+    <?php require "header.php"; ?>
     <section>
         <p>
             Hi, I'm mldkyt, a Czech <a href="https://git.mldkyt.com/mldkyt" target="_blank">developer</a> and a <a
@@ -107,12 +107,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     </p>
     <br />
 
-    <img src="/button.gif" alt="88x31 button for mldkyt">
-    <?php require "../components/buttons.php"; ?>
-
-    <br />
-    <br />
-    <?php require "../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

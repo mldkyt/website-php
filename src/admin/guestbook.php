@@ -37,12 +37,12 @@ if (isset($_POST["reply"]) && isset($_POST["id"])) {
 <html lang="en">
 
 <head>
-    <?php require "../../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("Guestbook Administration", "This is the guestbook admin page"); ?>
 </head>
 
 <body>
-    <?php require "../../components/header.php"; ?>
+    <?php require "header.php"; ?>
 
     <h1>Guestbook manager</h1>
     <a href="/admin/">back</a>
@@ -82,7 +82,7 @@ if (isset($_POST["reply"]) && isset($_POST["id"])) {
     <?php endwhile;
     ?>
 
-    <?php require "../../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

@@ -61,11 +61,6 @@ for (var index = 0; index < 100; index++) {
   draw();
 }
 
-document.onscroll = function () {
-  const scrollPos = window.scrollY;
-  canvas.style.transform = `translateY(${scrollPos}px)`;
-};
-
 window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;

@@ -1,6 +1,6 @@
 <?php
 
-require "../components/util.php";
+require "util.php";
 
 $host = getenv("DB_POSTGRES_HOST");
 $user = getenv("DB_POSTGRES_USER");
@@ -107,12 +107,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-    <?php require "../components/global.php"; ?>
+    <?php require "global.php"; ?>
     <?php seo("mldkyt's guestbook", "mldkyt's guestbook for visitors to sign."); ?>
 </head>
 
 <body>
-    <?php require "../components/header.php"; ?>
+    <?php require "header.php"; ?>
 
     <h1>mldkyt's Guestbook</h1>
 
@@ -203,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php }
     ?>
 
-    <?php require "../components/footer.php"; ?>
+    <?php require "footer.php"; ?>
 </body>
 
 </html>

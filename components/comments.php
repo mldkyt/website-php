@@ -2,14 +2,9 @@
 
 function project_handle_post($conn, string $ip, string $project): bool
 {
-    if (isset($_POST["pc_name"]) && isset($_POST["pc_comment"]) && isset($_POST["pc_verify"])) {
+    if (isset($_POST["pc_name"]) && isset($_POST["pc_comment"]) && isset($_POST["mcaptcha__token"])) {
         $name = htmlspecialchars($_POST["pc_name"]);
         $comment = htmlspecialchars($_POST["pc_comment"]);
-        $verify = htmlspecialchars($_POST["pc_verify"]);
-
-        if ($verify === "bot") {
-            return false;
-        }
 
         if (strlen($name) < 1 || strlen($name) > 20) {
             return false;
@@ -21,6 +16,36 @@ function project_handle_post($conn, string $ip, string $project): bool
 
         $res = pg_query_params("SELECT id FROM project_comments WHERE project = $1 AND ip = $2 AND approved = 0", [$project, $ip]);
         if (pg_fetch_assoc($res)) {
+            return false;
+        }
+
+        // Check mcaptcha
+        $mcaptchaToken = $_POST["mcaptcha__token"];
+
+        $payload = [
+            "token" => $mcaptchaToken,
+            "key" => getenv("MCAPTCHA_SITE_KEY"),
+            "secret" => getenv("MCAPTCHA_SECRET_KEY"),
+        ];
+
+        $ch = curl_init(getenv("MCAPTCHA_DOMAIN") . "/api/v1/pow/siteverify");
+
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_HTTPHEADER => ["Content-Type: application/json"],
+            CURLOPT_POSTFIELDS => json_encode($payload),
+        ]);
+
+        $response = curl_exec($ch);
+
+        if ($response === false) {
+            return false;
+        }
+
+        $result = json_decode($response, true);
+
+        if (!$result || empty($result["valid"])) {
             return false;
         }
 
@@ -59,36 +84,41 @@ function project_comments(string $project)
     while ($row = pg_fetch_assoc($res)) {
         $comments[] = ["name" => $row["name"], "comment" => $row["comment"]];
     }
-
-    if ($showForm): ?>
+    ?>
 
     <br />
     <br />
+    <?php if ($showForm): ?>
     <h2>Post a comment</h2>
 
     <form method="post">
         <input type="text" name="pc_name" id="pc_name" placeholder="mldkyt" />
         <input type="text" name="pc_comment" id="pc_comment" placeholder="Cool project" />
-        <select name="pc_verify" id="pc_verify">
-            <option value="bot" selected>I am a bot</option>
-            <option value="human">I am not automated</option>
-        </select>
+        <br />
+        <label
+          data-mcaptcha_url="<?= getenv("MCAPTCHA_DOMAIN") . "/widget/?sitekey=" . getenv("MCAPTCHA_SITE_KEY") ?>"
+          for="mcaptcha__token"
+          id="mcaptcha__token-label"
+        >
+          mCaptcha authorization token.
+          <a
+            href="https://mcaptcha.org/docs/user-manual/how-to-mcaptcha-without-js/"
+            >Instructions</a
+          >.
+          <input type="text" name="mcaptcha__token" id="mcaptcha__token" />
+        </label>
+        <div id="mcaptcha__widget-container"
+            style="width: 300px; height: 75px;"></div>
+        <script src="https://unpkg.com/@mcaptcha/vanilla-glue@0.1.0-rc2/dist/index.js"></script>
         <br />
         <button type="submit">Post</button>
     </form>
-    <?php endif;
-    ?>
+    <?php endif; ?>
 
     <h2><?= sizeof($comments) ?> Comments</h2>
-
-    <?php if (sizeof($comments) > 0): ?>
 
     <?php foreach ($comments as $comment): ?>
         <h3><?= $comment["name"] ?></h3>
         <p><?= $comment["comment"] ?></p>
-    <?php endforeach; ?>
-    <br />
-    <br />
-    <br />
-    <?php endif;
+    <?php endforeach;
 }

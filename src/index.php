@@ -28,7 +28,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     <style>
         .projects {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
         }
 
         .projects > div {
@@ -44,43 +44,7 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
 
 <body>
     <?php require "../components/header.php"; ?>
-    <h1>Welcome to mldkyt's website!</h1>
-
     <section>
-
-        <div style="float: right; border: 1px solid white; min-width: 300px;">
-            <strong style="margin: 8px;">Socials</strong><br>
-            <ul>
-                <?php
-                $res = pg_query($conn, "SELECT \"name\", \"url\" from socials");
-                while ($row = pg_fetch_assoc($res)): ?>
-                <li>
-                    <a href="<?= htmlspecialchars($row["url"]) ?>"><?= htmlspecialchars($row["name"]) ?></a>
-                </li>
-                <?php endwhile;
-                ?>
-            </ul>
-            <strong style="margin: 8px;">Contacts</strong><br>
-            <ul>
-                <li>
-                    <a href="/anonymous-message">Send me an anonymous message</a>
-                </li>
-                <?php
-                $res = pg_query($conn, "SELECT \"name\", \"url\" from contacts");
-                while ($row = pg_fetch_assoc($res)): ?>
-                <li>
-                    <?php if (strlen($row["url"]) > 0): ?>
-                    <a href="<?= htmlspecialchars($row["url"]) ?>"><?= htmlspecialchars($row["name"]) ?></a>
-                    <?php else: ?>
-                    <span><?= htmlspecialchars($row["name"]) ?></span>
-                    <?php endif; ?>
-                </li>
-                <?php endwhile;
-                ?>
-            </ul>
-        </div>
-
-        <h2>About me</h2>
         <p>
             Hi, I'm mldkyt, a Czech <a href="https://git.mldkyt.com/mldkyt" target="_blank">developer</a> and a <a
                 href="https://www.youtube.com/@mldkyt"

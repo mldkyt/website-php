@@ -26,7 +26,7 @@ require "likes.php";
         <p>Please note that because of this app being old, there is a link pointing to mldkyt.com, which doesn't work.</p>
 
         <p>
-            <a href="https://git.mldchan.dev/luna/Birthday/releases">
+            <a href="https://git.mldkyt.com/mldkyt/Birthday/releases">
                 <button>Download latest release</button>
             </a>
             <a href="/discord">

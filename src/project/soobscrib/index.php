@@ -28,7 +28,7 @@ require "comments.php";
         <a href="https://youtu.be/zBQIIjk0t74">
             <button>A game where you have to subscribe to win | Soobscrib (YouTube video)</button>
         </a>
-        <a href="https://catgirllunya.itch.io/soobscrib">
+        <a href="https://mldkyt.itch.io/soobscrib">
             <button>Download this game (Itch.IO)</button>
         </a>
     </p>

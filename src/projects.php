@@ -27,22 +27,13 @@
             padding-left: 10px;
         }
 
-
         .project p {
             margin: 0;
             padding-left: 20px;
             color: #ffffff;
             text-shadow: 2px 2px 2px #000;
             background: #333333aa;
-            height: 70px;
-        }
-
-        .error {
-            background: rgb(94, 3, 3);
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 10px;
-            margin: 20px 0;
+            height: 60px;
         }
 
         .project a {
@@ -138,7 +129,7 @@
         <a href="/project/racing-game">
             <div class="project" style="background-image: url(/project/racing-game/img.webp);">
                 <h3>Racing Game</h3>
-                <p>An old game from 2017 about racing. Made without code!</p>
+                <p>An old game from 2017 about racing. Made without coding knowledge.</p>
             </div>
         </a>
         <a href="/project/soobscrib">

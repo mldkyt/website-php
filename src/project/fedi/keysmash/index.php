@@ -24,10 +24,10 @@ require "likes.php";
         <p>Additionally, the bot replies to posts it gets mentioned in, if they contain a password. Note this will NOT quote your note</p>
 
         <p>
-            <a href="https://fedi.mldchan.dev/users/keysmash">
+            <a href="https://soc.mldkyt.com/@keysmash">
                 <button>Main instance</button>
             </a>
-            <a href="https://git.mldchan.dev/luna/fedikeysmashbot">
+            <a href="https://git.mldkyt.com/mldkyt/fedikeysmashbot">
                 <button>Source code</button>
             </a>
         </p>

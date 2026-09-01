@@ -50,7 +50,7 @@ require "likes.php";
         <br />
 
         <div>
-            <a href="https://git.mldchan.dev/luna/AstolfoIsComingForYou/releases">
+            <a href="https://git.mldkyt.com/mldkyt/AstolfoIsComingForYou/releases">
                 <button>Download the unsafe variant</button>
             </a>
             <a href="/discord">

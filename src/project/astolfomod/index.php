@@ -68,13 +68,13 @@ require "likes.php";
         <h3>1. Suggestions</h3>
 
         <p>
-            The simplest you can do for now is to <b>create an idea suggestion</b> for the mod using a <a href="https://git.mldchan.dev/luna/AstolfoForge/issues">GitHub issue</a>.
+            The simplest you can do for now is to <b>create an idea suggestion</b> for the mod using a <a href="https://git.mldkyt.com/mldkyt/AstolfoForge/issues">GitHub issue</a>.
         </p>
 
         <h3>2. Reporting bugs</h3>
 
         <p>
-            If you find any bug in the mod, <b>you can report it</b> using <a href="https://git.mldchan.dev/luna/AstolfoForge/issues">GitHub issues</a> for it to be fixed. It will be fixed once I get some free time.
+            If you find any bug in the mod, <b>you can report it</b> using <a href="https://git.mldkyt.com/mldkyt/AstolfoForge/issues">GitHub issues</a> for it to be fixed. It will be fixed once I get some free time.
         </p>
 
         <h3>3. Financial support</h3>
@@ -124,7 +124,7 @@ require "likes.php";
             <a href="https://modrinth.com/mod/astolfo-mod">
                 <button>View Modrinth page!</button>
             </a>
-            <a href="https://git.mldchan.dev/luna/AstolfoForge/releases/latest">
+            <a href="https://git.mldkyt.com/mldkyt/AstolfoForge/releases/latest">
                 <button>Download the latest <strong>Forge 1.20.1</strong> release from GitHub</button>
             </a>
             <a href="/discord">

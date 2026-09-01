@@ -34,7 +34,7 @@
         </p>
 
         <p>
-            <a href="https://fedi.mldchan.dev/users/collabmarkov">
+            <a href="https://soc.mldkyt.com/@collabmarkov">
                 <button>Follow the bot</button>
             </a>
         </p>

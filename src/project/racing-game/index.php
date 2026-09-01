@@ -34,10 +34,10 @@ require "likes.php";
 
     <h2>Downloads</h2>
     <p>
-        <a href="https://git.mldchan.dev/luna/racing-game/releases">
+        <a href="https://git.mldkyt.com/mldkyt/racing-game/releases">
             <button>Download the game</button>
         </a>
-        <a href="https://git.mldchan.dev/luna/racing-game">
+        <a href="https://git.mldkyt.com/mldkyt/racing-game">
             <button>The "source code"</button>
         </a>
     </p>

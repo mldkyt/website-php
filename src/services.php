@@ -21,7 +21,7 @@
     <p>Here's where all my code (usually tested in production) is stored.</p>
     <ul>
         <li>
-            <a href="https://git.mldchan.dev/luna" target="_blank">My account on my Forgejo instance</a>
+            <a href="https://git.mldkyt.com/mldkyt" target="_blank">My account on my Forgejo instance</a>
         </li>
     </ul>
 
@@ -29,7 +29,7 @@
     <p>Akkoma is basically the cooler Pleroma. It is a social network that connects with the fediverse, a decentralized network similarly to how e-mail works.</p>
     <ul>
         <li>
-            <a href="https://fedi.mldchan.dev/users/luna" target="_blank">View my profile on Akkoma</a>
+            <a href="https://soc.mldkyt.com/@mldkyt" target="_blank">View my profile on Akkoma</a>
         </li>
     </ul>
 
@@ -38,9 +38,9 @@
     <h2>Fedi Bots: A bunch of various fedi bots</h2>
     <p>I run a few fedi bots on my server, some being really popular. Here's what is running:</p>
     <ul>
-        <li><a href="https://fedi.mldchan.dev/users/collabmarkov">Collabmarkov</a>: Collaborative Markov Bot - This bot takes the posts of all followers and generates markov posts from those posts combined.</li>
-        <li><a href="https://fedi.mldchan.dev/users/meowbot">Meowbot</a>: A bot that simply meows. Cat version of wafbot</li>
-        <li><a href="https://fedi.mldchan.dev/users/wafbot">Wafbot</a>: A bot that simply wafs. Fox version of meowbot</li>
+        <li><a href="https://soc.mldkyt.com/@collabmarkov">Collabmarkov</a>: Collaborative Markov Bot - This bot takes the posts of all followers and generates markov posts from those posts combined.</li>
+        <li><a href="https://soc.mldkyt.com/@meowbot">Meowbot</a>: A bot that simply meows. Cat version of wafbot</li>
+        <li><a href="https://soc.mldkyt.com/@wafbot">Wafbot</a>: A bot that simply wafs. Fox version of meowbot</li>
     </ul>
     <p>These bots have no websites. The user profiles above are the "websites" essentially but you'll likely access them through your instance anyway.</p>
 
@@ -48,7 +48,7 @@
     <p>Uptime-Kuma tracks the status of services and sends me notifications to know when a service isn't working. </p>
     <ul>
         <li>
-            <a href="https://status.mldchan.dev">View service status</a>
+            <a href="https://status.mldkyt.com">View service status</a>
         </li>
     </ul>
 

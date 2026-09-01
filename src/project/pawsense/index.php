@@ -25,10 +25,10 @@ require "likes.php";
         <p>For the user to discard this message, they either have to click the button in the middle or type "human" or "terminate" in the box below.</p>
 
         <p>
-            <a href="https://git.mldchan.dev/luna/PawSense/releases">
+            <a href="https://git.mldkyt.com/mldkyt/PawSense/releases">
                 <button>Download</button>
             </a>
-            <a href="https://git.mldchan.dev/luna/PawSense">
+            <a href="https://git.mldkyt.com/mldkyt/PawSense">
                 <button>View the source code</button>
             </a>
             <a href="/discord">

@@ -25,8 +25,8 @@ require "likes.php";
         <a href="https://crates.io/crates/mldkyt-uwurandom-rs">
             <button>Download from crates.io</button>
         </a>
-        <a href="https://git.mldchan.dev/luna/uwurandom-rs">
-            <button>Download from git.mldchan.dev</button>
+        <a href="https://git.mldkyt.com/mldkyt/uwurandom-rs">
+            <button>Download from git.mldkyt.com</button>
         </a>
         <a href="/discord">
             <button>Discuss the project (Discord)</button>

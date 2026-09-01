@@ -35,7 +35,7 @@
     <img src="/button.gif" alt="Button" />
     <p>
         Make sure to wrap it with an <code>&lt;a&gt;</code> tag to make it a link and set the <code>href</code> to
-        <code>mldchan.dev</code>
+        <code>mldkyt.com</code>
     </p>
 
     <a href="/discord">

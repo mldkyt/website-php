@@ -22,13 +22,19 @@
         $message = htmlspecialchars(stripslashes(trim($_POST["announcement_message"])));
         db_key_set($conn, "announcement_message", $message);
     }
+
+    $unreadAnonymousMessage = pg_query("SELECT COUNT(id) AS unread FROM anonymous_messages");
+    $unreadAnonymousMessage = pg_fetch_assoc($unreadAnonymousMessage)["unread"];
+
+    $guestbookUnread = pg_query("SELECT COUNT(id) AS unread FROM guestbook WHERE approved = 0");
+    $guestbookUnread = pg_fetch_assoc($guestbookUnread)["unread"];
     ?>
 
     <h1>Administration</h1>
 
     <ul>
-        <li><a href="/admin/anonymous-messages.php">Anonymous Messages</a></li>
-        <li><a href="/admin/guestbook.php">Guestbook Admin Page</a></li>
+        <li><a href="/admin/anonymous-messages.php">(<?= $unreadAnonymousMessage ?>) Anonymous Messages</a></li>
+        <li><a href="/admin/guestbook.php">(<?= $guestbookUnread ?>) Guestbook Admin Page</a></li>
         <li><a href="/admin/buttons.php">Manage Buttons</a></li>
         <li><a href="/admin/projects.php">Manage Projects</a></li>
         <li><a href="/admin/socials.php">Manage Socials</a></li>

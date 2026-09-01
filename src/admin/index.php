@@ -27,6 +27,7 @@
     <h1>Administration</h1>
 
     <ul>
+        <li><a href="/admin/anonymous-messages.php">Anonymous Messages</a></li>
         <li><a href="/admin/guestbook.php">Guestbook Admin Page</a></li>
         <li><a href="/admin/buttons.php">Manage Buttons</a></li>
         <li><a href="/admin/projects.php">Manage Projects</a></li>

@@ -28,6 +28,9 @@
 
     $guestbookUnread = pg_query("SELECT COUNT(id) AS unread FROM guestbook WHERE approved = 0");
     $guestbookUnread = pg_fetch_assoc($guestbookUnread)["unread"];
+
+    $unapprovedProjectComments = pg_query($conn, "SELECT COUNT(id) AS comments FROM project_comments WHERE approved = 0");
+    $unapprovedProjectComments = pg_fetch_assoc($unapprovedProjectComments)["comments"];
     ?>
 
     <h1>Administration</h1>
@@ -35,12 +38,10 @@
     <ul>
         <li><a href="/admin/anonymous-messages.php">(<?= $unreadAnonymousMessage ?>) Anonymous Messages</a></li>
         <li><a href="/admin/guestbook.php">(<?= $guestbookUnread ?>) Guestbook Admin Page</a></li>
-        <li><a href="/admin/projectComments.php">Manage project comments</a></li>
+        <li><a href="/admin/projectComments.php">(<?= $unapprovedProjectComments ?>) Manage project comments</a></li>
         <li><a href="/admin/buttons.php">Manage Buttons</a></li>
-        <li><a href="/admin/projects.php">Manage Projects</a></li>
         <li><a href="/admin/socials.php">Manage Socials</a></li>
         <li><a href="/admin/contacts.php">Manage Contacts</a></li>
-        <li><a href="/admin/updates.php">Manage updates</a></li>
     </ul>
 
     <h2>Announcement message</h2>

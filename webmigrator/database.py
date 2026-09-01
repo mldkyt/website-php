@@ -65,26 +65,7 @@ contacts = Table(
     Column("url", VARCHAR, nullable=True),
 )
 
-projects = Table(
-    "projects",
-    md,
-    Column("id", Integer, primary_key=True, autoincrement=True),
-    Column("name", VARCHAR, nullable=False),
-    Column("description", VARCHAR, nullable=False),
-    Column("url", VARCHAR, nullable=False),
-)
-
 kv = Table("kv", md, Column("key", VARCHAR, primary_key=True), Column("value", VARCHAR))
-
-updates = Table(
-    "updates",
-    md,
-    Column("id", Integer, primary_key=True, autoincrement=True),
-    Column("title", VARCHAR, nullable=False),
-    Column("body", VARCHAR, nullable=False),
-    Column("url", VARCHAR),
-    Column("created_at", DateTime(), server_default=now(), nullable=False),
-)
 
 anonymous_messages = Table(
     "anonymous_messages",

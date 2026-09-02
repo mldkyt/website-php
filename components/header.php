@@ -60,7 +60,13 @@
 
         main > div {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+        }
+
+        @media screen and (width > 720px) {
+            main > div {
+                flex-direction: row;
+            }
         }
 
         .main {

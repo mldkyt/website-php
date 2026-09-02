@@ -46,23 +46,27 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     <?php require "header.php"; ?>
     <section>
         <p>
-            Hi, I'm mldkyt, a Czech <a href="https://git.mldkyt.com/mldkyt" target="_blank">programmer</a> and a <a
-                href="https://www.youtube.com/@mldkyt"
-                target="_blank">YouTuber</a>. Also don't forget to <a href="/guestbook">sign my guestbook</a> while you're on my site! :3
+            hi, I'm mldkyt 🖤 you can refer to me as "mld" or Luna. I am a <a href="https://git.mldkyt.com">programmer</a> and <a href="https://youtube.com/c/mldkyt">youtuber</a> of sorts, more about that below.</p>
+
+        <p>
+            on youtube I post pretty much everything. every time I get bored, I just start recording and post it on YT. in addition to random posts, there's also tutorials, videos documenting my programming projects and many more types of videos.
         </p>
 
         <p>
-            My community has its center on <a href="https://discord.gg/aE2MXH5Qp6" target="_blank">Discord</a>, however if you can't access the Discord due to not having an account, <a href="/discord/explore">you can explore the Discord server publicly</a> :3
+            I write code in many programming languages, mainly in python, typescript, go, php and rust. some of my cool projects include <a href="/project/akabot">a discord bot</a> that can replace other popular bots, or the <a href="/project/website">website</a> you're looking at. I have way too many projects for one's good, and this is very visible because <a href="https://git.mldkyt.com/mldkyt?q=&tab=repositories&archived=1&sort=recentupdate">a lot of them aren't maintained actively</a>. I have made my summer car mods, but don't make or maintain them anymore. I have also made a mon bazou mod and some minecraft (joke) mods as well. my website can also be called a "project", there are many versions of it, in different frameworks and looks as well, but it mostly stayed the same. <a href="https://mldkyt.com/projects">you can view a full list of my projects here</a>. <a href="https://git.mldkyt.com/mldkyt?q=&tab=repositories">you can also view the repositories directly</a>.
         </p>
-
-        <p>On YouTube I post pretty much everything from gameplays to showing off my projects. I am to upload every Friday but most of the time it doesn't work out because I have no ideas on what to upload.</p>
 
         <p>
-            I can code in many programming languages such as C, C++, Java, Kotlin, JavaScript, TypeScript, Go, Rust, HTML,
-            CSS, Python, Astro and many others. I wrote many cool things which you can check out by scrolling down.
+            I am also <a href="https://soc.mldkyt.com/@mldkyt">active on the fediverse</a>, where I made my first account on the 1st of september 2024. Ever since then, I have ran many self hosted servers, to test out the different software on the fediverse. I also run many different fediverse bots, like the <a href="https://soc.mldkyt.com/@collabmarkov">fediverse markov bot</a>, that has gained so much popularity that it crashed my server multiple times.
         </p>
 
-        <p>I run my own services for myself and some of my friends. I have a <a href="https://soc.mldkyt.com/">Mastodon</a> fedi instance, a <a href="https://git.mldkyt.com/mldkyt">git</a> forge for all my coding needs and a bunch of other services. I track the status on <a href="https://status.mldkyt.com">Uptime-kuma</a>. Services that aren't listed here are primarily for personal use, or are not specifically used by/for me, such as my Discord and fedi bots.</p>
+        <p>
+            I am a linux user since 2025, and I use arch linux (btw). the choice of arch linux is that it's minimal, but has good repositories, and the aur if a package isn't in the repositories. the first time I tried out linux was in 2020, and the reason I didn't switch was probably the choice of ubuntu, and that I was gaming more back then. I would have probably switched earlier if I wasn't using windows 7 until the very last moments. in 2023 I tried out arch linux for the first time, and actually stayed on it for a good month, and since then, I've been using linux more and more frequently. the biggest change is when microslop introduced online accounts, that was the point I made the full switch. I also use kde plasma btw. I have tried using various de's and wm's, but my favorite was always kde plasma, and I didn't install linux for customization reasons, I installed it because I had enough of microslop's bullshit.
+        </p>
+
+        <p>
+            you might wanna tell me what to put on this website because I ran out of ideas
+        </p>
     </section>
 
     <br  />

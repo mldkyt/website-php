@@ -19,9 +19,9 @@ require "comments.php";
 
     <p>The game is about subscribing to "MLDKYT", which was my old username. <a href="https://youtu.be/pZjBxp02hr4">More on that is here (YouTube)</a>. After the game is won the player has 2 options, either to quit the game or restart as anyone they choose. The original video about this game shows "MLDKYT" and "Aceward" who wrote the suggestion back in 2021.</p>
 
-    <p>The itch release below is dated to 12th July 2025, the original game was released sometime before Jul 13, 2021. This was the second game I accidentally deleted off of my Itch.IO page, but I was able to recover it.</p>
+    <p>The itch release below is dated to 12th July 2025, the original game was released sometime before Jul 13, 2021. This was the second game i accidentally deleted off of my Itch.IO page, but i was able to recover it.</p>
 
-    <p>There is no source code available (again I do not have it archived like my other old projects), however it is really easy to recreate</p>
+    <p>There is no source code available (again i do not have it archived like my other old projects), however it is really easy to recreate</p>
 
     <h2>Downloads and other content</h2>
     <p>

@@ -11,7 +11,7 @@
     <h1>The Cursor Effects</h1>
     <a href="/project/website">&lt; Go back to full list</a>
 
-    <h2>How do I add cursor effects to my website?</h2>
+    <h2>How do i add cursor effects to my website?</h2>
     <ol start="1">
         <li>
             To add cursor effects to your website, <a href="https://github.com/tholman/cursor-effects?tab=readme-ov-file#how-to-use">follow this link</a>

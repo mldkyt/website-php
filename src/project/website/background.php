@@ -11,7 +11,7 @@
     <h1>The background stars effect</h1>
     <a href="/project/website">&lt; Go back to full list</a>
 
-    <h2>How do I add this effect?</h2>
+    <h2>How do i add this effect?</h2>
     <ol start="1">
         <li>
             To begin adding the background stars effect to your website, you need to add a script to your page. <a href="/scripts/background.js">Right click this link and save it in your project to start.</a>
@@ -30,7 +30,7 @@
 
     <br />
 
-    <h2>How do I add your button?</h2>
+    <h2>How do i add your button?</h2>
     <p>You can add the button from right below here:</p>
     <img src="/button.gif" alt="Button" />
     <p>

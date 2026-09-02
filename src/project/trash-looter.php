@@ -16,7 +16,7 @@ require "likes.php";
     <?php require "header.php"; ?>
     <h1>Trash Looter</h1>
 
-    <p>Trash Looter is a lost project by me that I made back in 2021. It was uploaded to a game jam named SEAJAM in 2021, and then later at an unknown time accidentally deleted it off of Itch. Unfortunately, unlike my other projects on Itch, I didn't find a backup of this one on my hard drive.</p>
+    <p>Trash Looter is a lost project by me that i made back in 2021. It was uploaded to a game jam named SEAJAM in 2021, and then later at an unknown time accidentally deleted it off of Itch. Unfortunately, unlike my other projects on Itch, i didn't find a backup of this one on my hard drive.</p>
 
     <p>The game was about a player who would spawn at the shore of a lake, with a bunch of trash spawning at said location. You pick trash, loot it in the case it's a box, and throw it in the trash. You have to also maintain hunger and thirst in order to not die. By looting the trash, you gain money for essential items like trash pickup, food, drink and other stuff.</p>
 
@@ -28,7 +28,7 @@ require "likes.php";
         <li>Possibily to die</li>
     </ul>
 
-    <p>I would love to attach some videos or pictures of the game here but unfortunately the original video contains information that I want to keep private (namely my dead name) so there's basically no media. The upload dates back to November 28, 2021.</p>
+    <p>i would love to attach some videos or pictures of the game here but unfortunately the original video contains information that i want to keep private (namely my dead name) so there's basically no media. The upload dates back to November 28, 2021.</p>
 
     <?php project_likes("trash-looter"); ?>
     <?php project_comments("trash-looter"); ?>

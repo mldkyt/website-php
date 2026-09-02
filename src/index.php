@@ -46,26 +46,26 @@ $conn = pg_connect("host=$host port=$port dbname=$name user=$user password=$pass
     <?php require "header.php"; ?>
     <section>
         <p>
-            hi, I'm mldkyt 🖤 you can refer to me as "mld" or Luna. I am a <a href="https://git.mldkyt.com">programmer</a> and <a href="https://youtube.com/c/mldkyt">youtuber</a> of sorts, more about that below.</p>
+            hi, i'm mldkyt 🖤 you can refer to me as "mld" or Luna. i am a <a href="https://git.mldkyt.com">programmer</a> and <a href="https://youtube.com/c/mldkyt">youtuber</a> of sorts, more about that below.</p>
 
         <p>
-            on youtube I post pretty much everything. every time I get bored, I just start recording and post it on YT. in addition to random posts, there's also tutorials, videos documenting my programming projects and many more types of videos.
+            on youtube i post pretty much everything. every time i get bored, i just start recording and post it on YT. in addition to random posts, there's also tutorials, videos documenting my programming projects and many more types of videos.
         </p>
 
         <p>
-            I write code in many programming languages, mainly in python, typescript, go, php and rust. some of my cool projects include <a href="/project/akabot">a discord bot</a> that can replace other popular bots, or the <a href="/project/website">website</a> you're looking at. I have way too many projects for one's good, and this is very visible because <a href="https://git.mldkyt.com/mldkyt?q=&tab=repositories&archived=1&sort=recentupdate">a lot of them aren't maintained actively</a>. I have made my summer car mods, but don't make or maintain them anymore. I have also made a mon bazou mod and some minecraft (joke) mods as well. my website can also be called a "project", there are many versions of it, in different frameworks and looks as well, but it mostly stayed the same. <a href="https://mldkyt.com/projects">you can view a full list of my projects here</a>. <a href="https://git.mldkyt.com/mldkyt?q=&tab=repositories">you can also view the repositories directly</a>.
+            i write code in many programming languages, mainly in python, typescript, go, php and rust. some of my cool projects include <a href="/project/akabot">a discord bot</a> that can replace other popular bots, or the <a href="/project/website">website</a> you're looking at. i have way too many projects for one's good, and this is very visible because <a href="https://git.mldkyt.com/mldkyt?q=&tab=repositories&archived=1&sort=recentupdate">a lot of them aren't maintained actively</a>. i have made my summer car mods, but don't make or maintain them anymore. i have also made a mon bazou mod and some minecraft (joke) mods as well. my website can also be called a "project", there are many versions of it, in different frameworks and looks as well, but it mostly stayed the same. <a href="https://mldkyt.com/projects">you can view a full list of my projects here</a>. <a href="https://git.mldkyt.com/mldkyt?q=&tab=repositories">you can also view the repositories directly</a>.
         </p>
 
         <p>
-            I am also <a href="https://soc.mldkyt.com/@mldkyt">active on the fediverse</a>, where I made my first account on the 1st of september 2024. Ever since then, I have ran many self hosted servers, to test out the different software on the fediverse. I also run many different fediverse bots, like the <a href="https://soc.mldkyt.com/@collabmarkov">fediverse markov bot</a>, that has gained so much popularity that it crashed my server multiple times.
+            i am also <a href="https://soc.mldkyt.com/@mldkyt">active on the fediverse</a>, where i made my first account on the 1st of september 2024. Ever since then, i have ran many self hosted servers, to test out the different software on the fediverse. i also run many different fediverse bots, like the <a href="https://soc.mldkyt.com/@collabmarkov">fediverse markov bot</a>, that has gained so much popularity that it crashed my server multiple times.
         </p>
 
         <p>
-            I am a linux user since 2025, and I use arch linux (btw). the choice of arch linux is that it's minimal, but has good repositories, and the aur if a package isn't in the repositories. the first time I tried out linux was in 2020, and the reason I didn't switch was probably the choice of ubuntu, and that I was gaming more back then. I would have probably switched earlier if I wasn't using windows 7 until the very last moments. in 2023 I tried out arch linux for the first time, and actually stayed on it for a good month, and since then, I've been using linux more and more frequently. the biggest change is when microslop introduced online accounts, that was the point I made the full switch. I also use kde plasma btw. I have tried using various de's and wm's, but my favorite was always kde plasma, and I didn't install linux for customization reasons, I installed it because I had enough of microslop's bullshit.
+            i am a linux user since 2025, and i use arch linux (btw). the choice of arch linux is that it's minimal, but has good repositories, and the aur if a package isn't in the repositories. the first time i tried out linux was in 2020, and the reason i didn't switch was probably the choice of ubuntu, and that i was gaming more back then. i would have probably switched earlier if i wasn't using windows 7 until the very last moments. in 2023 i tried out arch linux for the first time, and actually stayed on it for a good month, and since then, i've been using linux more and more frequently. the biggest change is when microslop introduced online accounts, that was the point i made the full switch. i also use kde plasma btw. i have tried using various de's and wm's, but my favorite was always kde plasma, and i didn't install linux for customization reasons, i installed it because i had enough of microslop's bullshit.
         </p>
 
         <p>
-            you might wanna tell me what to put on this website because I ran out of ideas
+            you might wanna tell me what to put on this website because i ran out of ideas
         </p>
     </section>
 

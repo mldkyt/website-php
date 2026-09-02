@@ -15,7 +15,7 @@ require "likes.php";
     <?php require "header.php"; ?>
 
     <h1>Luna's website</h1>
-    <p>On this page I (as part of a request) put some resources that you can use on your site. When using these resources, make sure to credit me and add my button!</p>
+    <p>On this page i (as part of a request) put some resources that you can use on your site. When using these resources, make sure to credit me and add my button!</p>
 
     <h2>Background stars effect</h2>
     <p>The background stars effect is a script that you can add into your website to add the stars effect from this website. The stars follow the mouse cursor, and increase count when moved quicker.</p>
@@ -24,7 +24,7 @@ require "likes.php";
     </a>
 
     <h2>Cursor effects</h2>
-    <p>The cursor effects is a library I originally found on the internet, so I'll link it on this website and provide a download link to it. I'll also provide some examples of the effects to copy and paste from here.</p>
+    <p>The cursor effects is a library i originally found on the internet, so i'll link it on this website and provide a download link to it. i'll also provide some examples of the effects to copy and paste from here.</p>
 
     <a href="/project/website/cursoreffects">
         <button>Set up your own cursor effects now!</button>

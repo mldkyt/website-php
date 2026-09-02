@@ -16,25 +16,55 @@ require "likes.php";
     <?php require "header.php"; ?>
 
     <h1 id="akabot">The Akabot Discord Bot</h1>
-    <p>Akabot is a featureful open-source Discord bot!</p>
-    <p>Features:</p>
+    <p>
+        the akabot discord bot is a free and open source discord bot, fully modular, with over 30+ features. it is a direct response to the increasing bots that require payment for basic features.
+        in the case that the main instance's somehow limited, the option of self hosting is possible. the bot is lightweight and easy to run on anything that supports python.
+    </p>
+    <p>as for the features, here's a list with short descriptions for each feature:</p>
     <ul>
-    <li>Counting: Counting channels add a bit of fun into your server with channels purely for counting.</li>
-    <li>Leveling: Adds levels, level-up rewards and more fun into your server.</li>
-    <li>Moderation Commands: The moderation commands, along with moderator roles, allow you to add an extra step for attackers to deal with when using bots to destroy your Discord server. Add your moderator role to moderator roles and remove the usual Discord permissions.</li>
-    <li>Chat Streaks: Chat Streaks allow you to see how chronically online are your members. It counts consecutive days of chatting. A chat streak is lost when the member skips a day.</li>
-    <li>Welcome &amp; Goodbye Messages: You can use Akabot to welcome new members and say goodbye to those who leave. There are two grace periods available, one for before the welcome message is sent, and one for when the welcome message gets deleted (when a member leaves too quickly). Both can be disabled</li>
-    <li>Logging: This module logs events into the logs channel of your choosing.</li>
-    <li>Automod Actions: Automod Actions allow you to perform extra actions when an AutoMod rule is triggered.</li>
-    <li>Chat Summary: Chat Summary shows a summary of who sent how many messages at the end of the day.</li>
-    <li>Server Settings: Server settings help you adjust the Akabot settings for your server. There are 2 types of settings: normal settings and list settings. Available settings for each module of Akabot can be read under the respective page. Use the sidebar.</li>
-    <li>User Settings: User settings help you adjust the Akabot settings for yourself. There are 2 types of settings: normal settings and list settings. Available settings for each module of Akabot can be read under the respective page. Use the sidebar.</li>
-    <li>Roles On Join: Add roles to members who join the server</li>
-    <li>Chat Revive: Dead channels? With the help of Chat Revive, you can revive them after a set amount of minutes.</li>
-    <li>Temporary VC: Temporary voice channels.</li>
-    <li>Statistic Channels: You can set up channels that periodically update with the statistics of your server on the top of your server channel list. Create a voice channel and put it on top of the list, and ensure the bot has channel edit permissions.</li>
-    <li>Verification: You can set up verification for your server using the verification module. Members have to solve a simple math problem to verify.</li>
+        <li><strong>anti raid</strong>: configurable minimum age of account, and profile picture check for member joins</li>
+        <li>
+            <strong>automod actions</strong>: configurable additional actions to perform when an automod action rule gets triggered within discord, including kicking a member, timing them out for
+            some time, or banning them outright
+        </li>
+        <li><strong>chat revive</strong>: keep your discord server active by pinging a role whenever there's extended inactivity on your discord server</li>
+        <li><strong>chat streaks</strong>:&nbsp;keep your discord server active by having members maintain a chat streak, which counts up by 1 every day, and gets reset when they miss a day</li>
+        <li><strong>chat summary</strong>: configurable leaderboard of chat members after every day, month and year</li>
+        <li><strong>counting</strong>: counting channels with number detection, and advanced/cursed methods of counting</li>
+        <li><strong></strong><strong>economy</strong>: members can maintain money in banks and wallets, work to get more money, rob other players, gamble, pay each other</li>
+        <li>
+            <strong>rp commands</strong>: post lurk, shrug, wave, poke, smile, wink, blush, smug, tickle, yeet, highfive, wag, bite, cuddle, kick, carry, hug, bonk, pat, kiss, slap, lap pillow,
+            handhold gifs, fully configurable and respecting consent of members
+        </li>
+        <li><strong>yaoi and yuri commands</strong>: because those are important</li>
+        <li><strong>giveaways</strong>: with re-rolls and multiple winner support</li>
+        <li><strong>leveling</strong>: fully configurable leveling with rewards, and configurable multipliers</li>
+        <li><strong>logs</strong>: with multiple channel support, configurable log types</li>
+        <li><strong>mail</strong>: no-annoyance way for delivery of important messages or announcements</li>
+        <li><strong>markov chain</strong>: fun module that attempts to generate mixups of chat messages once every while</li>
+        <li><strong>meow back</strong>: configurable meow, waf, bark, :3, owo, uwu, awawa back at members</li>
+        <li><strong>message counting</strong>: leaderboard of most active members in a discord server</li>
+        <li><strong>moderation commands</strong>: configurable moderation role and a way to /kick, /ban, /timeout members without appropriate permissions but with the moderation role</li>
+        <li><strong>periodic messages</strong>: send a message once every amount of days, hours, months or years in a channel</li>
+        <li><strong>reaction roles</strong>: normal reaction roles, add only, remove only, and single choice reaction roles</li>
+        <li><strong>roles on join</strong>: auto assign roles chosen by admins to new members</li>
+        <li><strong>saves</strong>: personal message bookmarks for members</li>
+        <li><strong>suggestions</strong>: create a suggestion channel with voting in your server, and optionally with comments</li>
+        <li><strong>tags</strong>: keyword-based messages</li>
+        <li><strong>temporary voice channels</strong>: public and private temporary voice channels, fully configurable</li>
+        <li>
+            <strong>top.gg integration</strong>: bonuses for voting, submitting of slash commands and server count to top.gg listing. 2x leveling bonus for 12 hours per vote. optional, by default
+            it's disabled unless configured
+        </li>
+        <li><strong>vc notifications</strong>: members can subscribe to per-member, per-channel or all vc notifications in a server</li>
+        <li><strong>voting</strong>: voting credits that users get for voting for the bot, which can be used to reset the chat streak if missed</li>
+        <li><strong>web</strong>: the bot is fully configurable from a web ui, currently no theme yet</li>
+        <li>
+            <strong>welcome and goodbye</strong>: welcome members who join your server and say goodbye to those who leave, fully configurable message content, and join grace periods (delay sending
+            the welcome message by a few seconds from the join, and delete the welcome message if the member leaves too quickly)
+        </li>
     </ul>
+    <p>as you can see, the bot has many features, and the list keeps expanding as i get new ideas or suggestions.</p>
 
     <p>
         <a href="https://discord.gg/applications/1172922944033411243">

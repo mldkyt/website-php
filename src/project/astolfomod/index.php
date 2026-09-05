@@ -27,7 +27,7 @@ require "likes.php";
             <li><b>Rimuru</b></li>
             <li><b>Nagisa Shiota</b></li>
             <li><b>Sieg</b> (Fate/Apocrypha)</li>
-            <li><b>Bridget</b> <i>(i know she's a transgender girl but i included her because why not)</i></li>
+            <li><b>Bridget</b> <i>(I know she's a transgender girl but I included her because why not)</i></li>
         </ul>
 
         <h2>Commands</h2>
@@ -57,7 +57,7 @@ require "likes.php";
 
         <h2>Video about the mod</h2>
 
-        <p>i've also made a video about the mod on my YouTube channel, so if you want to watch that, you can do so:</p>
+        <p>I've also made a video about the mod on my YouTube channel, so if you want to watch that, you can do so:</p>
 
         <div id="video">
             <button onclick="showVideo()">Show YouTube video describing the mod (This will share some data with YouTube) </button>
@@ -74,12 +74,12 @@ require "likes.php";
         <h3>2. Reporting bugs</h3>
 
         <p>
-            If you find any bug in the mod, <b>you can report it</b> using <a href="https://git.mldkyt.com/mldkyt/AstolfoForge/issues">GitHub issues</a> for it to be fixed. It will be fixed once i get some free time.
+            If you find any bug in the mod, <b>you can report it</b> using <a href="https://git.mldkyt.com/mldkyt/AstolfoForge/issues">GitHub issues</a> for it to be fixed. It will be fixed once I get some free time.
         </p>
 
         <h3>3. Financial support</h3>
 
-        <p><b>You can currently support me on <a href="https://ko-fi.com/c4tgirl">Ko-fi</a> right now.</b> This is currently the only way i accept donations; within a week i'll set up GitHub Sponsors as well.</p>
+        <p><b>You can currently support me on <a href="https://ko-fi.com/c4tgirl">Ko-fi</a> right now.</b> This is currently the only way I accept donations; within a week I'll set up GitHub Sponsors as well.</p>
 
         <details>
             <summary>Gallery</summary>

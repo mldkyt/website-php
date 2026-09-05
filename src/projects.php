@@ -141,7 +141,7 @@
     </div>
 
     <h2>Lost Projects</h2>
-    <p>A list of projects that i know of or have documentation of, but are otherwise lost.</p>
+    <p>A list of projects that I know of or have documentation of, but are otherwise lost.</p>
     <div class="projectContainer">
 
         <a href="/project/trash-looter.php">

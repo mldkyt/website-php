@@ -1,6 +1,6 @@
 # The Background Stars Effect
 
-## How do i add this effect?
+## How do I add this effect?
 
 1. To begin adding the background stars effect to your website, you need to add a script to your page. [Right click this link](https://mldkyt.com/scripts/background.js) and save it in your project to start.
 2. You'll need to modify your code to be according to mine for it to work. Here's an example of how a page should look like

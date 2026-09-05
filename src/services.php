@@ -11,7 +11,7 @@
 
     <h1>List of services</h1>
 
-    <p>i run services either for myself, shared with friends or even publicly! Here's a non-exhaustive list:</p>
+    <p>I run services either for myself, shared with friends or even publicly! Here's a non-exhaustive list:</p>
 
     <ul>
         <li><a href="https://a.mldkyt.com/">Umami</a>: Privacy friendly analytics. Deployed across my services</li>
@@ -50,14 +50,14 @@
 
     <p>Even if the services count is a lot, this all doesn't take any more than 16 gigabytes of RAM on the main server. And most of it is hosted for me.</p>
 
-    <p>If you just wanna know which services are interactable by the public, you have the website, Akabot (the Discord bot part), Minecraft and that's about it (if i don't count registering on these services). If you wanna count registration, then you can count in Forgejo.</p>
+    <p>If you just wanna know which services are interactable by the public, you have the website, Akabot (the Discord bot part), Minecraft and that's about it (if I don't count registering on these services). If you wanna count registration, then you can count in Forgejo.</p>
 
     <h2>Hardware</h2>
 
-    <p>The services are split into 3 devices, a VPS, a Raspberry Pi and a dedicated server. You may be wondering why, and it has to do with my internet bandwidth. i am working with 50mbps, so i have decided to place a VPS in front of everything for caching and handling all AI requests.</p>
+    <p>The services are split into 3 devices, a VPS, a Raspberry Pi and a dedicated server. You may be wondering why, and it has to do with my internet bandwidth. I am working with 50mbps, so I have decided to place a VPS in front of everything for caching and handling all AI requests.</p>
 
     <p>VPS: Cheapest VPS from OVH they offer. It costs around 80 dollars per year and it can handle caddy fine. In addition to caddy, it also runs the mail server, and the status website. 8GB RAM.</p>
-    <p>Home server: Almost everything runs here, apart from Discord bots. R9 5900XT, 32 GB of RAM. i was able to afford these specs right before the prices went downhill.</p>
+    <p>Home server: Almost everything runs here, apart from Discord bots. R9 5900XT, 32 GB of RAM. I was able to afford these specs right before the prices went downhill.</p>
     <p>RPi: The RPi runs everything that should NOT go over a VPN connection, which are the Discord bots: Akabot, Akabot for Fluxer, Akabot development and mldmon. RPi 5, 8GB RAM model, with a 250GB NVME.</p>
 
     <?php require "footer.php"; ?>

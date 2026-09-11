@@ -3,7 +3,7 @@
     <strong style="margin: 8px;">Socials</strong><br>
     <ul>
         <?php
-        $res = pg_query($conn, "SELECT \"name\", \"url\" from socials");
+        $res = pg_query($conn, "SELECT \"name\", \"url\" from socials ORDER BY position, id");
         while ($row = pg_fetch_assoc($res)): ?>
         <li>
             <a href="<?= htmlspecialchars($row["url"]) ?>"><?= htmlspecialchars($row["name"]) ?></a>
@@ -17,7 +17,7 @@
             <a href="/anonymous-message">Send me an anonymous message</a>
         </li>
         <?php
-        $res = pg_query($conn, "SELECT \"name\", \"url\" from contacts");
+        $res = pg_query($conn, "SELECT \"name\", \"url\" from contacts ORDER BY position, id");
         while ($row = pg_fetch_assoc($res)): ?>
         <li>
             <?php if (strlen($row["url"]) > 0): ?>

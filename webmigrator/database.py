@@ -55,6 +55,7 @@ socials = Table(
     Column("id", Integer, primary_key=True, autoincrement=True),
     Column("name", VARCHAR, nullable=False),
     Column("url", VARCHAR, nullable=False),
+    Column("position", Integer, nullable=False, server_default="0"),
 )
 
 contacts = Table(
@@ -63,6 +64,7 @@ contacts = Table(
     Column("id", Integer, primary_key=True, autoincrement=True),
     Column("name", VARCHAR, nullable=False),
     Column("url", VARCHAR, nullable=True),
+    Column("position", Integer, nullable=False, server_default="0"),
 )
 
 kv = Table("kv", md, Column("key", VARCHAR, primary_key=True), Column("value", VARCHAR))

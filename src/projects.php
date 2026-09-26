@@ -138,6 +138,12 @@
                 <p>A game where you have to subscribe to win.</p>
             </div>
         </a>
+        <a href="/project/racing-game">
+            <div class="project">
+                <h3>Akabot for Revolt/Stoat</h3>
+                <p>Akabot attempt to port to Revolt/Stoat. Cancelled.</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

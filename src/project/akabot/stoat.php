@@ -9,7 +9,7 @@ require "likes.php";
 
 <head>
     <?php require "global.php"; ?>
-    <?php seo("Akabot", "A fully featured general purpose discord bot with over 30 features"); ?>
+    <?php seo("Akabot for Stoat", "Cancelled version of Akabot for Stoat/Revolt."); ?>
 </head>
 
 <body>

@@ -138,10 +138,16 @@
                 <p>A game where you have to subscribe to win.</p>
             </div>
         </a>
-        <a href="/project/racing-game">
+        <a href="/project/akabot/stoat.php">
             <div class="project">
                 <h3>Akabot for Revolt/Stoat</h3>
                 <p>Akabot attempt to port to Revolt/Stoat. Cancelled.</p>
+            </div>
+        </a>
+        <a href="/project/akabot/fluxer.php">
+            <div class="project">
+                <h3>Akabot for Fluxer</h3>
+                <p>More complete port of Akabot to Fluxer. Cancelled.</p>
             </div>
         </a>
     </div>

@@ -150,6 +150,12 @@
                 <p>More complete port of Akabot to Fluxer. Cancelled.</p>
             </div>
         </a>
+        <a href="/project/ugs">
+            <div class="project">
+                <h3>Urban Grocery Store</h3>
+                <p>Unturned RP server shop</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

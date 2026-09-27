@@ -162,6 +162,12 @@
                 <p>Projects written inside the Tour de App Czech programmer competition</p>
             </div>
         </a>
+        <a href="/project/mcfuck" style="background-image: url(/project/mcfuck/main.png);">
+            <div class="project">
+                <h3>MCFuck</h3>
+                <p>Options.txt fucker for Minecraft</p>
+            </div>
+        </a>
         <a href="/project/fedi/meow" style="background-image: url(/project/fedi/meow/fedimeow.png);">
             <div class="project">
                 <h3>Fedi meow</h3>

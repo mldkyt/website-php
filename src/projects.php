@@ -174,6 +174,12 @@
                 <p>Akabot-like streaks for daily posting</p>
             </div>
         </a>
+        <a href="/project/fedi/summarizer" style="background-image: url(/project/fedi/summarizer/fedisummarizer.png);">
+            <div class="project">
+                <h3>Fedi Summarizer</h3>
+                <p>Akabot-like summaries every night</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

@@ -162,6 +162,12 @@
                 <p>Projects written inside the Tour de App Czech programmer competition</p>
             </div>
         </a>
+        <a href="/project/fedi/meow">
+            <div class="project">
+                <h3>Fedi meow</h3>
+                <p>A bot that would meow every hour on fedi</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

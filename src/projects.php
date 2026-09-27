@@ -156,6 +156,12 @@
                 <p>Unturned RP server shop</p>
             </div>
         </a>
+        <a href="/project/tda">
+            <div class="project">
+                <h3>Tour de App projects</h3>
+                <p>Projects written inside the Tour de App Czech programmer competition</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

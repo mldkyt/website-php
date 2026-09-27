@@ -162,10 +162,16 @@
                 <p>Projects written inside the Tour de App Czech programmer competition</p>
             </div>
         </a>
-        <a href="/project/fedi/meow">
+        <a href="/project/fedi/meow" style="background-image: url(/project/fedi/meow/fedimeow.png);">
             <div class="project">
                 <h3>Fedi meow</h3>
                 <p>A bot that would meow every hour on fedi</p>
+            </div>
+        </a>
+        <a href="/project/fedi/streaks" style="background-image: url(/project/fedi/streaks/fedistreaks.png);">
+            <div class="project">
+                <h3>Fedi Streaks</h3>
+                <p>Akabot-like streaks for daily posting</p>
             </div>
         </a>
     </div>

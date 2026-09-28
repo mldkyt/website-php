@@ -192,6 +192,12 @@
                 <p>Countdown website for an end-of-the-year 2024 stream</p>
             </div>
         </a>
+        <a href="/project/raldimod.php">
+            <div class="project">
+                <h3>Raldi Mod</h3>
+                <p>Cheat menu for Raldi's Crackhouse 1.6.2</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

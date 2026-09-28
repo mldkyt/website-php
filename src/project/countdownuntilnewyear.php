@@ -4,7 +4,10 @@
 <html lang="en">
 
 <head>
-    <?php require "global.php"; ?>
+    <?php require "global.php";
+    require "util.php";
+    require "comments.php";
+    require "likes.php"; ?>
     <?php seo("CountdownUntilNewYear", "Project used as a countdown until the end of the year for a stream."); ?>
 </head>
 
@@ -23,6 +26,9 @@
             <button>Repository</button>
         </a>
     </p>
+
+    <?php project_likes("countdownuntilnewyear"); ?>
+    <?php project_comments("countdownuntilnewyear"); ?>
 
     <?php require "footer.php"; ?>
 </body>

@@ -198,6 +198,12 @@
                 <p>Cheat menu for Raldi's Crackhouse 1.6.2</p>
             </div>
         </a>
+        <a href="/project/place">
+            <div class="project"  style="background-image: url(/project/place/place.png);">
+                <h3>place</h3>
+                <p>Small r/place clone.</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

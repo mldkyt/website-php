@@ -107,10 +107,11 @@ in
   packages = [pkgs.postgresql.pg_config];
 
   tasks."web:migrate" = {
+    before = ["devenv:processes:nginx"];
+    after = ["devenv:processes:postgres"];
     exec = ''
-      pushd webmigrator
       uv run alembic upgrade head
-      popd
     '';
+    cwd = "./webmigrator";
   };
 }

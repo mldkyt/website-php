@@ -162,28 +162,34 @@
                 <p>Projects written inside the Tour de App Czech programmer competition</p>
             </div>
         </a>
-        <a href="/project/mcfuck" style="background-image: url(/project/mcfuck/main.png);">
-            <div class="project">
+        <a href="/project/mcfuck">
+            <div class="project" style="background-image: url(/project/mcfuck/main.png);">
                 <h3>MCFuck</h3>
                 <p>Options.txt fucker for Minecraft</p>
             </div>
         </a>
-        <a href="/project/fedi/meow" style="background-image: url(/project/fedi/meow/fedimeow.png);">
-            <div class="project">
+        <a href="/project/fedi/meow">
+            <div class="project" style="background-image: url(/project/fedi/meow/fedimeow.png);">
                 <h3>Fedi meow</h3>
                 <p>A bot that would meow every hour on fedi</p>
             </div>
         </a>
-        <a href="/project/fedi/streaks" style="background-image: url(/project/fedi/streaks/fedistreaks.png);">
-            <div class="project">
+        <a href="/project/fedi/streaks">
+            <div class="project" style="background-image: url(/project/fedi/streaks/fedistreaks.png);">
                 <h3>Fedi Streaks</h3>
                 <p>Akabot-like streaks for daily posting</p>
             </div>
         </a>
-        <a href="/project/fedi/summarizer" style="background-image: url(/project/fedi/summarizer/fedisummarizer.png);">
-            <div class="project">
+        <a href="/project/fedi/summarizer">
+            <div class="project" style="background-image: url(/project/fedi/summarizer/fedisummarizer.png);">
                 <h3>Fedi Summarizer</h3>
                 <p>Akabot-like summaries every night</p>
+            </div>
+        </a>
+        <a href="/project/countdownuntilnewyear.php">
+            <div class="project">
+                <h3>CountdownUntilNewYear</h3>
+                <p>Countdown website for an end-of-the-year 2024 stream</p>
             </div>
         </a>
     </div>

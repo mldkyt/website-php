@@ -40,8 +40,12 @@ require "likes.php";
 
     <h2>Downloads</h2>
     <p>
-        <a href="https://git.mldkyt.com/mldkyt/RaldiMod">Repository</a>
-        <a href="https://git.mldkyt.com/mldkyt/RaldiMod/releases">Download</a>
+        <a href="https://git.mldkyt.com/mldkyt/RaldiMod">
+            <button>Repository</button>
+        </a>
+        <a href="https://git.mldkyt.com/mldkyt/RaldiMod/releases">
+            <button>Download</button>
+        </a>
     </p>
 
     <?php project_likes("raldimod"); ?>

@@ -204,6 +204,12 @@
                 <p>Small r/place clone.</p>
             </div>
         </a>
+        <a href="/project/astolfos">
+            <div class="project"  style="background-image: url(/project/astolfos/desktop.webp);">
+                <h3>AstolfOS</h3>
+                <p>A small Ubuntu 22.04 customization pack.</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

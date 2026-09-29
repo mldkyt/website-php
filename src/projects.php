@@ -222,6 +222,12 @@
                 <p>Unfinished winter mod for Mon Bazou</p>
             </div>
         </a>
+        <a href="/project/cc">
+            <div class="project">
+                <h3>ComputerCraft scripts</h3>
+                <p>A bunch of scripts for ComputerCraft</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

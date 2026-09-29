@@ -210,6 +210,12 @@
                 <p>A small Ubuntu 22.04 customization pack.</p>
             </div>
         </a>
+        <a href="/project/astolfos">
+            <div class="project">
+                <h3>Discord Bot Control</h3>
+                <p>Windows desktop app for controlling a Discord bot</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

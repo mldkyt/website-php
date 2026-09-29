@@ -47,6 +47,9 @@ require "likes.php";
         </a>
     </p>
 
+    <?php project_likes("astolfos"); ?>
+    <?php project_comments("astolfos"); ?>
+
     <?php require "footer.php"; ?>
 </body>
 

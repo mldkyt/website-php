@@ -216,6 +216,12 @@
                 <p>Windows desktop app for controlling a Discord bot</p>
             </div>
         </a>
+        <a href="/project/monbazouwintermod.php">
+            <div class="project">
+                <h3>Mon Bazou Winter Mod</h3>
+                <p>Unfinished winter mod for Mon Bazou</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

@@ -228,6 +228,24 @@
                 <p>A bunch of scripts for ComputerCraft</p>
             </div>
         </a>
+        <a href="/project/cobaltrevoltbot.php">
+            <div class="project">
+                <h3>Cobalt Revolt Bot</h3>
+                <p>Simple Revolt/Stoat bot that downloaded links posted in a channel.</p>
+            </div>
+        </a>
+        <a href="/project/bbcodeceleste.php">
+            <div class="project">
+                <h3>BBCode Celeste</h3>
+                <p>Extension library for Celeste effects in BBCode</p>
+            </div>
+        </a>
+        <a href="/project/nexusenhancementsforfirefox">
+            <div class="project" style="background-image: url(/project/nexusenhancementsforfirefox/nexusmodsfirefox.png);">
+                <h3>Nexus Enhancements for Firefox</h3>
+                <p>Simple extension for blocking usernames inside of the NexusMods comment sections.</p>
+            </div>
+        </a>
     </div>
 
     <h2>Lost Projects</h2>

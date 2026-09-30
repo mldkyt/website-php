@@ -131,6 +131,12 @@
                 <p>Simple extension for blocking usernames inside of the NexusMods comment sections.</p>
             </div>
         </a>
+        <a href="/project/legacymsc">
+            <div class="project" style="background-image: url(/project/legacymsc/legacymsc.webp);">
+                <h3>Legacy MSC</h3>
+                <p>My Summer Car mod for returning My Summer Car to older versions.</p>
+            </div>
+        </a>
     </div>
 
     <br>

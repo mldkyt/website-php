@@ -137,6 +137,12 @@
                 <p>My Summer Car mod for returning My Summer Car to older versions.</p>
             </div>
         </a>
+        <a href="/project/pridemod">
+            <div class="project" style="background-image: url(/project/pridemod/pridemod.webp);">
+                <h3>Pride Mod</h3>
+                <p>Pride mod for My Summer Car and My Winter Car.</p>
+            </div>
+        </a>
     </div>
 
     <br>

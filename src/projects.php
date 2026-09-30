@@ -123,6 +123,18 @@
     </div>
     <br />
 
+    <h2>MSC and MWC mods</h2>
+    <div class="projectContainer">
+        <a href="/project/lunasminimods">
+            <div class="project" style="background-image: url(/project/lunasminimods/main.webp);">
+                <h3>Luna's Mini Mods</h3>
+                <p>Simple extension for blocking usernames inside of the NexusMods comment sections.</p>
+            </div>
+        </a>
+    </div>
+
+    <br>
+
     <h2>Archived Projects</h2>
     <p>A list of projects that are deprecated, archived or deleted. Downloads are available for certain projects.</p>
     <div class="projectContainer">

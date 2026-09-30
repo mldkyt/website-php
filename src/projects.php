@@ -242,8 +242,8 @@
         </a>
         <a href="/project/nexusenhancementsforfirefox">
             <div class="project" style="background-image: url(/project/nexusenhancementsforfirefox/nexusmodsfirefox.png);">
-                <h3>Nexus Enhancements for Firefox</h3>
-                <p>Simple extension for blocking usernames inside of the NexusMods comment sections.</p>
+                <h3>Nexus Enhancements</h3>
+                <p>Simple Firefox extension for blocking usernames inside of the NexusMods comment sections.</p>
             </div>
         </a>
     </div>

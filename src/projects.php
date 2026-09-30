@@ -123,6 +123,30 @@
     </div>
     <br />
 
+    <h2>MSC and MWC mods</h2>
+    <div class="projectContainer">
+        <a href="/project/lunasminimods">
+            <div class="project" style="background-image: url(/project/lunasminimods/main.webp);">
+                <h3>Luna's Mini Mods</h3>
+                <p>Simple extension for blocking usernames inside of the NexusMods comment sections.</p>
+            </div>
+        </a>
+        <a href="/project/legacymsc">
+            <div class="project" style="background-image: url(/project/legacymsc/legacymsc.webp);">
+                <h3>Legacy MSC</h3>
+                <p>My Summer Car mod for returning My Summer Car to older versions.</p>
+            </div>
+        </a>
+        <a href="/project/pridemod">
+            <div class="project" style="background-image: url(/project/pridemod/pridemod.webp);">
+                <h3>Pride Mod</h3>
+                <p>Pride mod for My Summer Car and My Winter Car.</p>
+            </div>
+        </a>
+    </div>
+
+    <br>
+
     <h2>Archived Projects</h2>
     <p>A list of projects that are deprecated, archived or deleted. Downloads are available for certain projects.</p>
     <div class="projectContainer">
@@ -136,6 +160,114 @@
             <div class="project" style="background-image: url(/project/soobscrib/soobscrib.webp);">
                 <h3>Soobscrib</h3>
                 <p>A game where you have to subscribe to win.</p>
+            </div>
+        </a>
+        <a href="/project/akabot/stoat.php">
+            <div class="project">
+                <h3>Akabot for Revolt/Stoat</h3>
+                <p>Akabot attempt to port to Revolt/Stoat. Cancelled.</p>
+            </div>
+        </a>
+        <a href="/project/akabot/fluxer.php">
+            <div class="project">
+                <h3>Akabot for Fluxer</h3>
+                <p>More complete port of Akabot to Fluxer. Cancelled.</p>
+            </div>
+        </a>
+        <a href="/project/ugs">
+            <div class="project">
+                <h3>Urban Grocery Store</h3>
+                <p>Unturned RP server shop</p>
+            </div>
+        </a>
+        <a href="/project/tda">
+            <div class="project">
+                <h3>Tour de App projects</h3>
+                <p>Projects written inside the Tour de App Czech programmer competition</p>
+            </div>
+        </a>
+        <a href="/project/mcfuck">
+            <div class="project" style="background-image: url(/project/mcfuck/main.png);">
+                <h3>MCFuck</h3>
+                <p>Options.txt fucker for Minecraft</p>
+            </div>
+        </a>
+        <a href="/project/fedi/meow">
+            <div class="project" style="background-image: url(/project/fedi/meow/fedimeow.png);">
+                <h3>Fedi meow</h3>
+                <p>A bot that would meow every hour on fedi</p>
+            </div>
+        </a>
+        <a href="/project/fedi/streaks">
+            <div class="project" style="background-image: url(/project/fedi/streaks/fedistreaks.png);">
+                <h3>Fedi Streaks</h3>
+                <p>Akabot-like streaks for daily posting</p>
+            </div>
+        </a>
+        <a href="/project/fedi/summarizer">
+            <div class="project" style="background-image: url(/project/fedi/summarizer/fedisummarizer.png);">
+                <h3>Fedi Summarizer</h3>
+                <p>Akabot-like summaries every night</p>
+            </div>
+        </a>
+        <a href="/project/countdownuntilnewyear.php">
+            <div class="project">
+                <h3>CountdownUntilNewYear</h3>
+                <p>Countdown website for an end-of-the-year 2024 stream</p>
+            </div>
+        </a>
+        <a href="/project/raldimod.php">
+            <div class="project">
+                <h3>Raldi Mod</h3>
+                <p>Cheat menu for Raldi's Crackhouse 1.6.2</p>
+            </div>
+        </a>
+        <a href="/project/place">
+            <div class="project"  style="background-image: url(/project/place/place.png);">
+                <h3>place</h3>
+                <p>Small r/place clone.</p>
+            </div>
+        </a>
+        <a href="/project/astolfos">
+            <div class="project"  style="background-image: url(/project/astolfos/desktop.webp);">
+                <h3>AstolfOS</h3>
+                <p>A small Ubuntu 22.04 customization pack.</p>
+            </div>
+        </a>
+        <a href="/project/astolfos">
+            <div class="project">
+                <h3>Discord Bot Control</h3>
+                <p>Windows desktop app for controlling a Discord bot</p>
+            </div>
+        </a>
+        <a href="/project/monbazouwintermod.php">
+            <div class="project">
+                <h3>Mon Bazou Winter Mod</h3>
+                <p>Unfinished winter mod for Mon Bazou</p>
+            </div>
+        </a>
+        <a href="/project/cc">
+            <div class="project">
+                <h3>ComputerCraft scripts</h3>
+                <p>A bunch of scripts for ComputerCraft</p>
+            </div>
+        </a>
+        <a href="/project/cobaltrevoltbot.php">
+            <div class="project">
+                <h3>Cobalt Revolt Bot</h3>
+                <p>Simple Revolt/Stoat bot that downloaded links posted in a channel.</p>
+            </div>
+        </a>
+        <a href="/project/bbcodeceleste.php">
+            <div class="project">
+                <h3>BBCode Celeste</h3>
+                <p>Extension library for Celeste effects in BBCode</p>
+            </div>
+        </a>
+        <a href="/project/nexusenhancementsforfirefox">
+            <div class="project" style="background-image: url(/project/nexusenhancementsforfirefox/nexusmodsfirefox.png);">
+                <h3>Nexus Enhancements</h3>
+                <p>Simple Firefox extension for blocking usernames inside of the NexusMods comment sections.</p>
             </div>
         </a>
     </div>

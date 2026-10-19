@@ -27,7 +27,6 @@
         <li><a href="https://mail.mldkyt.com/">Stalwart</a>: E-mail</li>
         <li><a href="https://m.mldkyt.com/">Tuwunel</a>: Matrix chatting platform</li>
         <li><a href="https://mc.mldkyt.com/">Minecraft</a>: Minecraft website, server, map etc.</li>
-        <li><a href="https://captcha.mldkyt.com/">mCaptcha</a>: Privacy friendly captcha solution</li>
         <li><a href="https://ntfy.mldkyt.com/">ntfy</a>: Notifications</li>
         <li><a href="https://v.mldkyt.com/">Vaultwarden</a>: Password vault, syncing between devices</li>
         <li><a href="https://xmpp.mldkyt.com/">Prosody</a>: XMPP chatting server</li>

@@ -57,22 +57,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contactType = isset($_POST["contact-type"]) ? $_POST["contact-type"] : "none";
     $contact = isset($_POST["contact"]) ? $_POST["contact"] : "";
 
-    // Check mcaptcha
-    $mcaptchaToken = $_POST["mcaptcha__token"];
+    // Check Cloudflare Turnstile
+    $turnstileToken = $_POST["cf-turnstile-response"] ?? "";
 
     $payload = [
-        "token" => $mcaptchaToken,
-        "key" => getenv("MCAPTCHA_SITE_KEY"),
-        "secret" => getenv("MCAPTCHA_SECRET_KEY"),
+        "secret" => getenv("TURNSTILE_SECRETKEY"),
+        "response" => $turnstileToken,
+        "remoteip" => get_remote_addr(),
     ];
 
-    $ch = curl_init(getenv("MCAPTCHA_DOMAIN") . "/api/v1/pow/siteverify");
+    $ch = curl_init("https://challenges.cloudflare.com/turnstile/v0/siteverify");
 
     curl_setopt_array($ch, [
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_POST => true,
-        CURLOPT_HTTPHEADER => ["Content-Type: application/json"],
-        CURLOPT_POSTFIELDS => json_encode($payload),
+        CURLOPT_HTTPHEADER => ["Content-Type: application/x-www-form-urlencoded"],
+        CURLOPT_POSTFIELDS => http_build_query($payload),
     ]);
 
     $response = curl_exec($ch);
@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $result = json_decode($response, true);
 
-    if (!$result || empty($result["valid"])) {
+    if (!$result || empty($result["success"])) {
         $ok = false;
         $postFail = "Captcha failed";
     }
@@ -183,20 +183,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br/>
         <br/>
 
-        <label
-          data-mcaptcha_url="<?= getenv("MCAPTCHA_DOMAIN") . "/widget/?sitekey=" . getenv("MCAPTCHA_SITE_KEY") ?>"
-          for="mcaptcha__token"
-          id="mcaptcha__token-label"
-        >
-          mCaptcha authorization token.
-          <a
-            href="https://mcaptcha.org/docs/user-manual/how-to-mcaptcha-without-js/"
-            >Instructions</a
-          >.
-          <input type="text" name="mcaptcha__token" id="mcaptcha__token" />
-        </label>
-        <div id="mcaptcha__widget-container"></div>
-        <script src="https://unpkg.com/@mcaptcha/vanilla-glue@0.1.0-rc2/dist/index.js"></script>
+        <div class="cf-turnstile" data-sitekey="<?= getenv("TURNSTILE_SITEKEY") ?>"></div>
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
         <button type="submit">Send</button>
     </form>
